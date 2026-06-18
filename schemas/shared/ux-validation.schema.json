@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UX 검수 결과 스키마",
+  "description": "앱 UX 관점에서 화면을 검수한 결과 양식입니다.",
+  "type": "object",
+  "required": ["validation_id", "screen_id", "overall_assessment", "validated_by", "validated_at"],
+  "properties": {
+    "validation_id": {
+      "type": "string",
+      "description": "검수 고유 ID (예: VAL-001)"
+    },
+    "screen_id": {
+      "type": "string",
+      "description": "검수 대상 화면 ID"
+    },
+    "overall_assessment": {
+      "type": "string",
+      "description": "전체 평가 요약 (1~2문장)"
+    },
+    "strengths": {
+      "type": "array",
+      "description": "잘 된 점",
+      "items": { "type": "string" }
+    },
+    "risks": {
+      "type": "array",
+      "description": "UX 위험 요소",
+      "items": {
+        "type": "object",
+        "required": ["area", "description", "severity"],
+        "properties": {
+          "area": { "type": "string", "description": "문제 영역" },
+          "description": { "type": "string", "description": "문제 설명" },
+          "severity": {
+            "type": "string",
+            "enum": ["critical", "major", "minor"],
+            "description": "심각도"
+          }
+        }
+      }
+    },
+    "missing_information": {
+      "type": "array",
+      "description": "화면에서 빠진 정보나 기능 (예: 빈 화면/에러 상태 미설계)",
+      "items": { "type": "string" }
+    },
+    "recommended_improvements": {
+      "type": "array",
+      "description": "개선 권고 사항",
+      "items": {
+        "type": "object",
+        "required": ["area", "suggestion", "priority"],
+        "properties": {
+          "area": { "type": "string" },
+          "suggestion": { "type": "string" },
+          "priority": {
+            "type": "string",
+            "enum": ["high", "medium", "low"]
+          }
+        }
+      }
+    },
+    "must_fix_before_release": {
+      "type": "array",
+      "description": "출시 전 반드시 수정해야 할 항목",
+      "items": { "type": "string" }
+    },
+    "needs_review": {
+      "type": "array",
+      "description": "불확실하여 사람이 판단해야 할 항목",
+      "items": { "type": "string" }
+    },
+    "validated_by": {
+      "type": "string",
+      "description": "검수를 수행한 담당자 (예: ux-checker)"
+    },
+    "validated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "검수 일시"
+    }
+  }
+}

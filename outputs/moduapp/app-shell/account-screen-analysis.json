@@ -1,0 +1,67 @@
+{
+  "section": "통합계정",
+  "layer": "app-shell",
+  "service": null,
+  "domain": "moduapp",
+  "analyzed_by": "moduapp-reader",
+  "analyzed_at": "2026-05-26",
+  "source": {
+    "figma_file": "aLxh458o9BRXklRFM3YYzk (MoDU-APP-20240327-최종)",
+    "section_node": "30239:26271",
+    "section_size_px": "25575 x 29637",
+    "spec_title": "MoDU App-통합계정 UI 사양서",
+    "method": "전체 섹션 고해상 스크린샷의 좌측 'Screen Definition' 제목과 폰 목업 판독. 이력관리 표 3개 존재(다회 개정된 성숙 사양). 미세 표(요구사항 추적표)는 해상도 한계로 화면 ID 일부 미판독.",
+    "confidence": "블록 구조=높음(제목 판독), 개별 화면 ID=낮음(needs-review)"
+  },
+  "section_summary": "모두앱의 로그인·계정·인증·권한 영역(앱 셸 Layer 0). 통합 로그인부터 회원가입, 내정보, 그리고 사용자 권한(RBAC) 관리까지 포함. '권한' 블록이 여기에 있어 권한관리의 1차 위치가 확인됨.",
+
+  "screen_definition_blocks": [
+    { "order": 1, "name": "로그인/계정 규정", "type": "policy", "note": "로그인·계정 정책/규정 정의 페이지" },
+    { "order": 2, "name": "로그인", "type": "auth", "note": "에스원 통합 ID/비밀번호 로그인, 키보드 입력. 로그인 유형·자동로그인 포함" },
+    { "order": 3, "name": "간편인증", "type": "auth", "note": "간편 비밀번호(6자리 PIN) 및 지문 등 생체인증" },
+    { "order": 4, "name": "회원가입", "type": "onboarding-flow", "note": "약관 동의 등 가입 절차" },
+    { "order": 5, "name": "내정보", "type": "account", "note": "계정/내 정보 관리" },
+    { "order": 6, "name": "권한", "type": "rbac", "note": "사용자 권한 신청/부여/현황 관리 — 횡단(RBAC) 핵심. 별도 심화 분석 권장" }
+  ],
+
+  "ia_groups_from_spec_table": {
+    "note": "하단 IA 표에서 부분 판독 (텍스트 작아 일부 needs-review)",
+    "로그인": ["로그인(유형)", "자동로그인", "아이디 찾기", "비밀번호 찾기", "간편인증 등록", "본인인증/휴대폰 인증"],
+    "회원가입": ["약관 동의", "본인확인", "정보 입력"],
+    "내정보": ["계정 정보", "비밀번호 변경", "알림/연락처"],
+    "권한": ["권한 신청", "권한 부여/현황"]
+  },
+
+  "auth_methods_confirmed": {
+    "note": "담당자 답변(2026-05-27)으로 정정 — PIN/지문/FACE는 로그인이 아니라 '추가 인증' 수단",
+    "login": ["아이디 로그인(아이디/비밀번호)", "휴대전화번호 로그인(PASS 인증)"],
+    "social_login": "없음",
+    "step_up_auth": ["간편번호(6자리 PIN)", "지문/FACE 생체인증"],
+    "step_up_usage": "로그인 수단이 아니라, 앱 내 중요 기능(예: 원격 경비/해제, 카드 관리 페이지 접속) 사용 시 추가 인증으로 사용",
+    "signup": "회원가입은 웹링크(외부 웹페이지). 앱 안에서도 웹페이지를 띄워 가입 완료 처리.",
+    "permission_block": "권한 = 서비스 권한(경비/영상/카드/계약/클라우드매니저) + 초대 + 현황관리. 부여/회수 절차는 permission-matrix.json 참조."
+  },
+
+  "cross_service_findings": [
+    "'권한' 블록이 통합계정 안에 존재 → 사용자가 말한 '사용자 권한관리'의 1차 위치 확인 (홈 대시보드의 서비스×권한 노출 분기와 직접 연결)",
+    "통합계정은 모든 서비스 진입 전 통과하는 게이트(로그인+권한) → 다른 모든 섹션 분석의 전제"
+  ],
+
+  "state_model": [
+    { "state": "default", "present": true },
+    { "state": "error", "present": true, "note": "로그인 실패/인증 오류 케이스 존재 추정(빨강 주석 다수)" },
+    { "state": "empty", "present": "needs-review" }
+  ],
+
+  "ux_risks": [
+    "로그인·인증 경로가 다양(통합ID/PIN/지문) → 진입 분기와 폴백(생체 실패 시) 흐름의 명확성 점검 필요",
+    "권한 신청·부여 흐름은 보안상 중요 → 오인지/오부여 방지 UX 점검 필요(ux-checker)"
+  ],
+
+  "needs_review": [
+    "각 블록의 개별 화면 Storyboard ID/화면명 정밀 목록 (요구사항 추적표 텍스트 미판독 — 필요 시 표 프레임 node-id로 재촬영)",
+    "'권한' 블록의 역할 종류·권한 부여 절차 상세 → permission-matrix 채우기 위해 별도 심화 분석 권장",
+    "소셜 로그인(카카오/네이버 등) 제공 여부",
+    "회원가입이 앱 내 완결인지 외부(에스원 가입) 연계인지"
+  ]
+}

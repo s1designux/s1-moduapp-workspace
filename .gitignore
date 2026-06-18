@@ -1,0 +1,5 @@
+.claude/
+add_data/
+.DS_Store
+node_modules/
+*.local

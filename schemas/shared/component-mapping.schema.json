@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "컴포넌트 매핑 스키마",
+  "description": "기존 UI 요소를 디자인 시스템 컴포넌트로 매핑한 결과 양식입니다.",
+  "type": "object",
+  "required": ["mapping_id", "screen_id", "legacy", "target", "status", "mapped_by", "mapped_at"],
+  "properties": {
+    "mapping_id": {
+      "type": "string",
+      "description": "매핑 고유 ID (예: MAP-001)"
+    },
+    "screen_id": {
+      "type": "string",
+      "description": "원본 화면 ID"
+    },
+    "legacy": {
+      "type": "object",
+      "description": "기존 UI 요소 정보",
+      "required": ["name", "type"],
+      "properties": {
+        "name": { "type": "string", "description": "기존 이름" },
+        "type": { "type": "string", "description": "기존 유형" },
+        "visual_description": { "type": "string", "description": "시각적 특징 설명" }
+      }
+    },
+    "normalized": {
+      "type": "object",
+      "description": "역할과 맥락을 정규화한 정보",
+      "properties": {
+        "role": { "type": "string", "description": "실제 역할" },
+        "intent": { "type": "string", "description": "의도" },
+        "domain_context": { "type": "string", "description": "사용 맥락" }
+      }
+    },
+    "target": {
+      "type": "object",
+      "description": "매핑된 디자인 시스템 컴포넌트",
+      "required": ["component"],
+      "properties": {
+        "component": { "type": "string" },
+        "variant": { "type": "string" },
+        "size": { "type": "string" },
+        "state": { "type": "string" }
+      }
+    },
+    "tokens": {
+      "type": "object",
+      "description": "적용할 디자인 토큰",
+      "properties": {
+        "background": { "type": "string" },
+        "text": { "type": "string" },
+        "border": { "type": "string" }
+      }
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "description": "매핑 확신도 (0.0 = 불확실, 1.0 = 확실)"
+    },
+    "status": {
+      "type": "string",
+      "description": "매핑 상태",
+      "enum": ["mapped", "needs-review", "unmapped"]
+    },
+    "designer_notes": {
+      "type": "array",
+      "description": "디자이너가 확인해야 할 사항",
+      "items": { "type": "string" }
+    },
+    "needs_review": {
+      "type": "array",
+      "description": "불확실하여 사람이 확인해야 할 항목",
+      "items": { "type": "string" }
+    },
+    "mapped_by": {
+      "type": "string",
+      "description": "매핑을 수행한 담당자 (예: ds-mapper)"
+    },
+    "mapped_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "매핑 일시"
+    }
+  }
+}

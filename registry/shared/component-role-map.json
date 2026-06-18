@@ -1,0 +1,115 @@
+{
+  "title": "컴포넌트 역할 기준표",
+  "description": "디자인 시스템 컴포넌트와 모두앱 UI에서의 역할을 정의한 공통 기준표입니다. 모든 담당자가 공통으로 참조합니다.",
+  "version": "1.0.0",
+  "status": "draft",
+  "components": [
+    {
+      "id": "CMP-001",
+      "name": "Button",
+      "description": "사용자가 행동을 실행하는 버튼 컴포넌트",
+      "common_variants": ["primary", "secondary", "outlined", "ghost", "danger"],
+      "common_sizes": ["sm", "md", "lg"],
+      "app_uses": ["주요 CTA(가입/신청/완료)", "보조 행동", "취소/삭제"],
+      "status": "draft"
+    },
+    {
+      "id": "CMP-002",
+      "name": "Badge",
+      "description": "상태, 개수, 신규 여부를 짧게 표시하는 뱃지 컴포넌트",
+      "common_variants": ["filled", "outlined", "dot"],
+      "common_sizes": ["sm", "md"],
+      "app_uses": ["알림 개수", "신규 표시(N)", "상태 라벨"],
+      "status": "draft"
+    },
+    {
+      "id": "CMP-003",
+      "name": "List",
+      "description": "여러 항목을 세로로 나열하는 리스트 컴포넌트",
+      "common_variants": ["default", "with-thumbnail", "with-action"],
+      "app_uses": ["콘텐츠 목록", "설정 메뉴 목록", "알림 목록"],
+      "status": "draft"
+    },
+    {
+      "id": "CMP-004",
+      "name": "Card",
+      "description": "하나의 항목 정보를 카드 형태로 묶어 표시하는 컴포넌트",
+      "common_variants": ["default", "compact", "media"],
+      "app_uses": ["피드 카드", "추천 항목", "요약 정보"],
+      "status": "draft"
+    },
+    {
+      "id": "CMP-005",
+      "name": "TabBar",
+      "description": "화면 하단에 고정되어 앱의 루트 화면 간 이동을 제공하는 탭바",
+      "common_variants": ["icon-label", "icon-only"],
+      "app_uses": ["홈/검색/알림/마이 등 루트 이동"],
+      "status": "draft"
+    },
+    {
+      "id": "CMP-006",
+      "name": "Tabs",
+      "description": "한 화면 안에서 여러 콘텐츠 섹션을 전환하는 탭 컴포넌트",
+      "common_variants": ["line", "filled", "pill"],
+      "app_uses": ["상세 화면 내 정보 섹션 전환", "카테고리 전환"],
+      "status": "draft"
+    },
+    {
+      "id": "CMP-007",
+      "name": "Input",
+      "description": "텍스트 입력 필드",
+      "common_variants": ["default", "search", "password"],
+      "common_sizes": ["sm", "md", "lg"],
+      "app_uses": ["검색", "로그인/가입 폼", "정보 입력"],
+      "status": "draft"
+    },
+    {
+      "id": "CMP-008",
+      "name": "Select",
+      "description": "목록에서 하나를 선택하는 드롭다운/바텀시트 선택 컴포넌트",
+      "common_variants": ["dropdown", "bottom-sheet"],
+      "app_uses": ["옵션 선택", "지역/카테고리 선택", "정렬 기준"],
+      "status": "draft"
+    },
+    {
+      "id": "CMP-009",
+      "name": "Alert",
+      "description": "중요한 정보나 경고를 화면에 표시하는 알림 컴포넌트",
+      "common_variants": ["info", "success", "warning", "danger"],
+      "app_uses": ["안내 배너", "오류 안내", "주의 메시지"],
+      "status": "draft"
+    },
+    {
+      "id": "CMP-010",
+      "name": "Toast",
+      "description": "일시적으로 나타났다 사라지는 짧은 알림 메시지",
+      "common_variants": ["info", "success", "warning", "danger"],
+      "app_uses": ["저장 완료", "복사됨", "일시적 상태 안내"],
+      "status": "draft"
+    },
+    {
+      "id": "CMP-011",
+      "name": "Modal",
+      "description": "화면 위에 겹쳐 나타나는 팝업 대화 상자",
+      "common_variants": ["default", "danger", "confirm"],
+      "app_uses": ["확인/취소 다이얼로그", "삭제 확인", "권한 요청 안내"],
+      "status": "draft"
+    },
+    {
+      "id": "CMP-012",
+      "name": "BottomSheet",
+      "description": "화면 하단에서 올라오는 시트형 컴포넌트",
+      "common_variants": ["action", "selection", "detail"],
+      "app_uses": ["옵션 선택", "추가 행동 메뉴", "상세 미리보기"],
+      "status": "draft"
+    },
+    {
+      "id": "CMP-013",
+      "name": "EmptyState",
+      "description": "보여줄 내용이 없을 때 표시하는 빈 화면 컴포넌트",
+      "common_variants": ["default", "with-action"],
+      "app_uses": ["빈 목록", "검색 결과 없음", "첫 사용 안내"],
+      "status": "draft"
+    }
+  ]
+}

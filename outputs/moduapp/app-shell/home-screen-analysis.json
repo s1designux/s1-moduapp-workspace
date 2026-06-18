@@ -1,0 +1,88 @@
+{
+  "section": "홈",
+  "layer": "app-shell",
+  "service": null,
+  "domain": "moduapp",
+  "analyzed_by": "moduapp-reader",
+  "analyzed_at": "2026-05-26",
+  "source": {
+    "figma_file": "aLxh458o9BRXklRFM3YYzk (MoDU-APP-20240327-최종)",
+    "section_node": "30236:26270",
+    "section_size_px": "10128 x 10076",
+    "spec_title": "MoDU App-홈 UI 사양서",
+    "method": "고해상 스크린샷 영역 판독 (메타데이터는 보드 규모로 타임아웃). 화면명·ID는 사양서 내 '요구사항 추적표'에서 추출."
+  },
+  "section_summary": "모두앱의 통합 홈. 메인(대시보드)을 중심으로 앱 실행 정책(스플래시·업데이트·접근권한), 긴급공지, 팝업 공지, 경비구역 즐겨찾기로 구성. 대시보드 콘텐츠는 '서비스 가입 여부 × 사용자 권한'에 따라 노출이 달라지는 것이 핵심.",
+
+  "screen_inventory": [
+    { "id": "MN1010010", "name": "스플래시 화면", "srs": ["S0001"], "type": "splash", "note": "앱 실행 시 최초 화면" },
+    { "id": "MN1010011", "name": "앱 강제 업데이트 안내", "type": "system-guide", "note": "강제 업데이트" },
+    { "id": "MN1010012", "name": "앱 선택적 업데이트 안내", "type": "system-guide", "note": "선택 업데이트" },
+    { "id": "MN1010020", "name": "긴급공지", "srs": ["S0009", "S0010"], "type": "notice", "note": "긴급 공지 화면" },
+    { "id": "MN1010030(android)", "name": "앱 접근 권한 안내(안드로이드)", "type": "system-guide", "note": "OS 권한 안내" },
+    { "id": "MN1010031", "name": "앱 접근 권한 안내(iOS)", "type": "system-guide", "note": "OS 권한 안내" },
+    { "id": "MN1010030", "name": "메인(대시보드)", "srs": ["S0015","S0016","S0017","S0018","S0019","S0020","S0041","S0042","S0048","S0049","S0056"], "type": "dashboard", "note": "홈 기본 화면" },
+    { "id": "MN1010040", "name": "메인(대시보드) - 미게약", "type": "dashboard-state", "state": "미게약", "note": "계약(서비스 가입) 없는 상태" },
+    { "id": "MN1010041/MN1010042", "name": "메인(대시보드) - 영상 기기 미등록 / 이력 없음", "type": "dashboard-state", "state": "no-data", "note": "영상 no-data 상태" },
+    { "id": "MN1010043", "name": "메인(대시보드) - 알림 발생", "type": "dashboard-state", "state": "알림", "srs": ["S0050"], "note": "상단 알림 노출 상태" },
+    { "id": "MN1010044", "name": "메인(대시보드) - 경비 미게시", "type": "dashboard-state", "state": "경비미게시" },
+    { "id": "MN1010050", "name": "메인(대시보드) - 경비 미게시", "type": "dashboard-state", "state": "경비미게시", "note": "MN1010044와 유사 — 차이 확인 필요(needs-review)" },
+    { "id": "MN1010070", "name": "경비구역 즐겨찾기", "type": "feature", "note": "시스템경비 구역 즐겨찾기 (홈에서 진입)" }
+  ],
+
+  "dashboard_content_model": {
+    "description": "메인(대시보드)의 영역 노출은 '서비스 가입 여부 × 권한'으로 결정됨. 모두앱(허브) 모델의 핵심 횡단 규칙.",
+    "matrix": [
+      { "condition": "서비스X / 권한X", "exposure": "신청 유도 배너 노출", "note": "미가입 사용자에게 서비스 신청 유도" },
+      { "condition": "서비스O / 권한X", "exposure": "안내화면 노출 (서비스 권한 없음)", "note": "가입했으나 권한 없는 사용자" },
+      { "condition": "서비스O / 권한O", "exposure": "경비/해제·출입문 제어 + 최근 접속 기기 목록 노출", "note": "가입+권한 보유 사용자에게 실제 제어 기능" }
+    ],
+    "always_visible": ["상시 노출 영역 (확인 필요)"],
+    "notes_from_spec": [
+      "권한이 일반사용자인 경우와 관리자인 경우 노출이 다름 (빨강 주석)",
+      "권한·카드 신청 현황이 없는 경우 처리 별도 (빨강 주석 — 정확한 문구 needs-review)"
+    ]
+  },
+
+  "dashboard_regions": [
+    { "id": "R-header", "label": "상단 헤더/알림", "role": "인사·알림 진입(알림 발생 시 상단 노출)", "criticality": "medium" },
+    { "id": "R-guard-control", "label": "경비 제어 카드", "role": "시스템경비 경비설정/해제, 출입문 제어 (권한 보유 시)", "criticality": "high", "service_link": "시스템경비" },
+    { "id": "R-recent-devices", "label": "최근 접속 기기 목록", "role": "최근 접속/영상 기기 목록", "criticality": "medium", "service_link": "영상" },
+    { "id": "R-signup-banner", "label": "신청 유도 배너", "role": "미가입 서비스 신청 유도", "criticality": "medium" },
+    { "id": "R-tabbar", "label": "하단 탭바", "role": "글로벌 네비게이션 (상시 노출)", "criticality": "high" }
+  ],
+
+  "cross_service_findings": [
+    "홈 대시보드가 시스템경비(경비 제어)와 영상(최근 접속 기기)을 직접 표면화 → 홈이 멀티서비스 허브의 진입점임을 확증",
+    "콘텐츠 노출이 권한(RBAC)에 강하게 종속 → permission-matrix가 화면 설계의 전제",
+    "'카드 신청 현황'이 대시보드에 노출(버전 이력 1.42~1.5V) → '카드' 서비스도 홈과 연계"
+  ],
+
+  "state_model": [
+    { "state": "default", "present": true, "note": "메인 대시보드 기본" },
+    { "state": "empty", "present": true, "note": "미게약 / 영상 기기 미등록 / 이력 없음 / 경비 미게시 등 다수 no-data 케이스 정의됨" },
+    { "state": "notification", "present": true, "note": "알림 발생 시 상단 노출" },
+    { "state": "error", "present": "needs-review", "note": "네트워크/오류 케이스 별도 정의 여부 확인 필요" }
+  ],
+
+  "ux_risks": [
+    "대시보드가 서비스×권한 조합별로 다수의 분기 화면을 가짐 → 조합 폭발 위험. 분기 규칙의 일관성·우선순위 정의 필요",
+    "경비 제어(경비/해제·출입문)는 되돌릴 수 없는 중요 액션 → 확인 단계·오작동 방지 UX 점검 필요(ux-checker)"
+  ],
+
+  "owner_confirmed_2026-05-27": {
+    "dashboard_branch_cases": "위 3종(미가입/권한없음/권한있음)이 전부. 추가 케이스 없음. (HOME-01)",
+    "MN1010044": "서비스 권한이 없는 case로 추정(담당자). MN1010050과의 미세 차이는 잔여. (HOME-02)",
+    "always_visible": "추천/혜택 영역이 상시 노출. (HOME-03)",
+    "popup_triggers": {
+      "팝업 공지": "홈페이지 어드민에서 공지 등록 시 노출",
+      "첫화면 설정 안내": "영상 가입 계약처 중 홈 설정이 '영상'이 아닌 경우 노출. (고객이 앱 진입 시 영상탭으로 바로 가고 싶어하는 니즈로 추가됨)"
+    },
+    "tab_bar": "홈/경비/영상/전체메뉴 4탭 확정"
+  },
+  "needs_review": [
+    "MN1010044 vs MN1010050 미세 차이(담당자도 044=권한없음으로 추정, 050 불명)",
+    "MN1010030 중복 표기(사양서 오기 가능성)",
+    "빨강 주석 정확한 문구"
+  ]
+}

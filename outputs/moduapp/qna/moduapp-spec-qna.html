@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>모두앱 사양 확인 질의응답</title>
+<style>
+  :root{
+    --blue:#1c6ef2; --blue-d:#1559c9; --blue-50:#eef4ff;
+    --ink:#1a2233; --gray:#5a6577; --line:#e6e9ef; --bg:#f5f7fb;
+    --p1:#e8453c; --p1bg:#fdecea; --p2:#f59e0b; --p2bg:#fff7e6;
+    --ok:#16a34a; --ok-bg:#e9f9ef;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 80px}
+  header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 1px 8px rgba(0,0,0,.03)}
+  .head-in{max-width:920px;margin:0 auto;padding:14px 16px;display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+  .title{font-size:18px;font-weight:800;letter-spacing:-.3px}
+  .title small{display:block;font-size:12px;font-weight:500;color:var(--gray);margin-top:2px}
+  .grow{flex:1}
+  .prog{font-size:12px;color:var(--gray);min-width:120px}
+  .bar{height:7px;background:var(--line);border-radius:99px;overflow:hidden;margin-top:4px}
+  .bar > i{display:block;height:100%;width:0;background:var(--blue);transition:width .25s}
+  .btn{border:1px solid var(--line);background:#fff;color:var(--ink);font-size:13px;font-weight:600;padding:8px 13px;border-radius:9px;cursor:pointer;transition:.12s}
+  .btn:hover{border-color:var(--blue);color:var(--blue)}
+  .btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}
+  .btn.primary:hover{background:var(--blue-d)}
+  .intro{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:22px 0}
+  .intro h1{font-size:20px;margin-bottom:8px}
+  .intro p{font-size:14px;color:var(--gray);margin-bottom:6px}
+  .meta{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}
+  .meta label{font-size:12px;font-weight:600;color:var(--gray);display:block;margin-bottom:4px}
+  .meta input{border:1px solid var(--line);border-radius:8px;padding:8px 11px;font-size:14px;width:200px}
+  .howto{background:var(--blue-50);border-radius:10px;padding:12px 14px;font-size:13px;color:var(--ink);margin-top:14px}
+  .howto b{color:var(--blue-d)}
+  .warn{background:var(--p1bg);border:1px solid #f7c9c5;border-radius:10px;padding:12px 14px;font-size:13px;color:#8a2a23;margin-top:10px}
+  .warn b{color:var(--p1)}
+  .done{background:var(--ok-bg);border:1px solid #bfe3cb;border-radius:10px;padding:12px 14px;font-size:12.5px;color:#1d6b39;margin-top:10px}
+  .done b{color:var(--ok)}
+  .done ul{margin:6px 0 0 18px}
+  .filter{margin-top:12px;font-size:13px}
+  .filter label{display:inline-flex;align-items:center;gap:7px;cursor:pointer;color:var(--gray);font-weight:600}
+  .sec{margin-top:26px}
+  .sec-h{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+  .sec-h .dot{width:9px;height:9px;border-radius:50%;background:var(--blue)}
+  .sec-h h2{font-size:16px;font-weight:800}
+  .sec-h .cnt{font-size:12px;color:var(--gray)}
+  .refimg{margin:0 0 12px;border:1px solid var(--line);border-radius:11px;overflow:hidden;background:#fff}
+  .refimg .cap{font-size:12px;color:var(--gray);padding:7px 12px;border-bottom:1px solid var(--line);background:#fafbfd}
+  .refimg .cap b{color:var(--blue-d)}
+  .refimg img{display:block;width:100%;cursor:zoom-in}
+  .q{background:#fff;border:1px solid var(--line);border-radius:13px;padding:16px 18px;margin-bottom:12px;transition:.15s}
+  .q.answered{border-color:#bfe3cb;background:#fcfffd}
+  .q-top{display:flex;align-items:flex-start;gap:9px;margin-bottom:6px}
+  .chip{font-size:10.5px;font-weight:800;padding:2px 8px;border-radius:99px;white-space:nowrap;margin-top:3px}
+  .chip.P1{background:var(--p1bg);color:var(--p1)}
+  .chip.P2{background:var(--p2bg);color:var(--p2)}
+  .qid{font-size:11px;color:#9aa3b2;font-weight:700;margin-top:4px}
+  .q-text{font-size:15px;font-weight:700;flex:1}
+  .why{font-size:12.5px;color:var(--gray);background:#f8fafc;border-left:3px solid var(--line);padding:6px 10px;border-radius:6px;margin:4px 0 10px}
+  textarea{width:100%;border:1px solid var(--line);border-radius:9px;padding:10px 12px;font-size:14px;font-family:inherit;resize:vertical;min-height:62px;line-height:1.5}
+  textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(28,110,242,.12)}
+  .q-foot{display:flex;align-items:center;gap:14px;margin-top:8px}
+  .unsure{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--gray);cursor:pointer;user-select:none}
+  .saved-tag{font-size:11.5px;color:var(--ok);font-weight:700;opacity:0;transition:.2s}
+  .saved-tag.show{opacity:1}
+  footer{margin-top:30px;text-align:center;font-size:12px;color:#9aa3b2}
+  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:11px 18px;border-radius:10px;font-size:13.5px;opacity:0;pointer-events:none;transition:.25s;z-index:50}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+  .lb{position:fixed;inset:0;background:rgba(0,0,0,.82);display:none;align-items:center;justify-content:center;z-index:60;padding:20px;cursor:zoom-out}
+  .lb.open{display:flex}
+  .lb img{max-width:100%;max-height:100%;border-radius:8px}
+  @media(max-width:560px){.meta input{width:100%}}
+</style>
+</head>
+<body>
+<header>
+  <div class="head-in">
+    <div>
+      <div class="title">모두앱 사양 확인 질의응답
+        <small>모두앱 화면 사양 확인 · 작성 2026-05-26</small>
+      </div>
+    </div>
+    <div class="grow"></div>
+    <div class="prog">
+      <span id="progText">0 / 0 답변</span>
+      <div class="bar"><i id="progBar"></i></div>
+    </div>
+    <button class="btn" onclick="loadFile()">불러오기</button>
+    <button class="btn" onclick="copyMd()">텍스트 복사</button>
+    <button class="btn primary" onclick="downloadJson()">답변 내보내기</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="intro">
+    <h1>안녕하세요 🙏 모두앱 화면 사양 확인 요청입니다</h1>
+    <p>모두앱(MoDU APP) Figma 사양서를 검토하며 정리한 내용 중, <b>화면만으로는 알 수 없어 담당자 확인이 필요한 항목</b>만 모았습니다.</p>
+    <p>아는 항목만 답해주셔도 됩니다. 모르거나 해당 없으면 <b>'잘 모름/해당없음'</b>에 체크해 주세요.</p>
+    <div class="meta">
+      <div><label>답변자 이름/소속</label><input id="respondent" placeholder="예: 홍길동 / 모두앱 UX"></div>
+      <div><label>작성일</label><input id="answerDate" placeholder="2026-05-__"></div>
+    </div>
+    <div class="howto">
+      <b>작성 방법</b> · 각 질문 아래 칸에 답을 적으면 <b>이 브라우저에 자동 임시저장</b>됩니다(중간에 닫아도 같은 PC에서 다시 열면 이어쓰기 가능).
+    </div>
+    <div class="warn">
+      ⚠️ <b>저장만으로는 전달되지 않습니다.</b> 다 쓰신 뒤(또는 중간까지만 하셨더라도) 반드시 우측 상단
+      <b>[답변 내보내기]</b>(파일) 또는 <b>[텍스트 복사]</b>를 눌러 그 결과를 요청자에게 <b>회신</b>해 주세요. 회신해야만 전달됩니다.
+    </div>
+    <div class="done">
+      <b>✓ 이미 화면에서 확인한 내용(질문 안 함)</b>
+      <ul>
+        <li>하단 탭바 4개: 홈 · 경비 · 영상 · 전체메뉴</li>
+        <li>전체메뉴에 전 서비스 메뉴 포함(계약/권한/청구 · 경비 · 영상 · 카드 · 이벤트 · 제휴 · 고객센터 등)</li>
+        <li>알림센터는 서비스별 탭(경비/영상 등)으로 분류</li>
+        <li>영상에 녹화영상 재생(날짜/시간 조회) 존재 · 경비 카드 초록 = '경비중'</li>
+      </ul>
+      혹시 위 내용 중 사실과 다른 게 있으면 알려주세요.
+    </div>
+    <div class="filter">
+      <label><input type="checkbox" id="onlyP1" onchange="toggleFilter(this.checked)"> 중요(P1) 질문만 보기 — 시간이 부족하면 이것부터</label>
+    </div>
+  </div>
+
+  <div id="sections"></div>
+
+  <footer>이 페이지는 인터넷 연결·로그인 없이 동작합니다. 입력 내용은 이 브라우저에만 임시 저장되며, 내보내기 전까지 외부로 전송되지 않습니다.</footer>
+</div>
+<div class="toast" id="toast"></div>
+<div class="lb" id="lb" onclick="this.classList.remove('open')"><img id="lbimg" src=""></div>
+
+<script>
+const REFIMG = {};
+const QUESTIONS = [
+  { sec:"전체 구조", items:[
+    {id:"IA-01", p:"P1", q:"모두앱이 묶는 서비스가 다음 9개가 맞나요? (홈 · 통합계정 · 공통 · 설정 · 시스템경비 · 영상 · 카드 · 마이에스원 · 고객센터). 빠지거나 다른 서비스가 있나요?", why:"Figma 보드 섹션에서 추출 — 누락/추가 여부만 확인 부탁"},
+  ]},
+  { sec:"권한(RBAC) — 가장 중요", img:"home", imgCap:"참고: 홈 대시보드 + '서비스별 노출 화면 정의' 표 (권한·서비스 가입 여부에 따라 노출이 달라짐)", items:[
+    {id:"PERM-01", p:"P1", q:"사용자 권한(역할)은 몇 종류이고 명칭이 무엇인가요? (예: 관리자 / 일반사용자 외에 더 있나요?)", why:"화면 노출이 권한에 따라 갈리는데, 역할 종류가 화면엔 안 적혀 있음"},
+    {id:"PERM-02", p:"P1", q:"역할별로 접근 가능한 서비스/기능이 어떻게 다른가요? (가능하면 역할 × 기능 표로)", why:"권한 매트릭스 작성에 필요"},
+    {id:"PERM-03", p:"P1", q:"권한 신청·부여는 누가(어떤 역할이) 하고, 절차는 어떻게 되나요?", why:"통합계정>권한, 카드 초대·승인 흐름과 연결"},
+  ]},
+  { sec:"홈 (대시보드)", img:"home", imgCap:"참고: 홈 대시보드 화면 변형들 (경비중 카드 / 신청 유도 / 권한 신청 현황 등)", items:[
+    {id:"HOME-01", p:"P1", q:"대시보드 노출 분기 '서비스X/권한X(신청유도)', '서비스O/권한X(권한없음 안내)', '서비스O/권한O(제어 노출)' 외에 다른 케이스가 있나요?", why:"노출 정의표는 확인했으나 누락 케이스 여부 확인"},
+    {id:"HOME-02", p:"P2", q:"'메인(대시보드) - 경비 미게시' 화면이 두 개(MN1010044 / MN1010050) 있는데 차이가 무엇인가요?", why:"동일 명칭 2건 — 차이 불명"},
+    {id:"HOME-03", p:"P2", q:"대시보드에서 권한·서비스와 상관없이 '상시 노출'되는 영역은 무엇인가요?", why:"노출 정의표의 '상시 노출' 항목 내용 미확인"},
+    {id:"HOME-04", p:"P2", q:"팝업 공지 / 첫화면 설정 안내 팝업은 어떤 조건에서 뜨나요?", why:"트리거 조건은 화면에 안 나타남"},
+  ]},
+  { sec:"통합계정 (로그인·계정·권한)", items:[
+    {id:"ACC-01", p:"P1", q:"로그인 방식은 통합 ID/비밀번호 · 6자리 간편 PIN · 지문 외에 소셜 로그인(카카오/네이버 등)도 있나요?", why:"인증 수단 3종은 확인, 추가 여부 미확인"},
+    {id:"ACC-02", p:"P2", q:"회원가입은 앱 안에서 완결되나요, 아니면 외부(에스원 회원가입) 연계인가요?", why:"가입 흐름 범위 확인"},
+    {id:"ACC-03", p:"P1", q:"'권한' 블록에서 관리하는 권한의 종류와 부여/회수 절차를 알려주세요.", why:"PERM-01~03과 연계 — 화면 단위 확인"},
+  ]},
+  { sec:"시스템경비", img:"home", imgCap:"참고: 홈의 '내 경비 구역' 카드(경비중 표시). 시스템경비 메인 제어와 연결됨", items:[
+    {id:"GUARD-01", p:"P1", q:"메인 제어 화면의 '경비 상태 노출 분기 정의' 규칙을 알려주세요. (경비중 / 해제 / 미게시 등 상태별 화면 차이)", why:"분기표가 있으나 글씨가 작아 규칙 판독 불가"},
+    {id:"GUARD-03", p:"P2", q:"긴급연락처는 사용자가 직접 편집할 수 있나요? 권한 제한이 있나요?", why:"편집 가능 여부/권한이 화면에 안 나타남"},
+    {id:"GUARD-04", p:"P2", q:"'모바일보고서'(구 출동보고서)에는 어떤 내용이 담기나요?", why:"명칭만 확인, 내용 구성 미확인"},
+  ]},
+  { sec:"카드 (출입카드)", img:"card", imgCap:"참고: 카드 조회·등록·정보 화면 (실물/모바일/방문자 카드)", items:[
+    {id:"CARD-01", p:"P1", q:"카드 유형(실물 보안카드 / 모바일 보안카드 / 방문자 카드)별 발급 조건과 권한 차이를 알려주세요.", why:"3종 카드 체계 확인, 조건·권한 차이 미확인"},
+    {id:"CARD-02", p:"P1", q:"'모바일카드 초대·승인'과 '방문자 모바일카드 신청 승인'은 누가 초대하고 누가 승인하나요? (사양서에 '매니저 사용여부 확인 필요' 메모도 있었습니다)", why:"출입 권한 부여 주체 확인"},
+  ]},
+  { sec:"영상", img:"video", imgCap:"참고: 영상 화면 (실시간 다중 카메라 / 녹화 재생 / 가로·세로)", items:[
+    {id:"VID-02", p:"P2", q:"실시간 영상 화질 옵션(Full/HD) 전환 기준은 무엇인가요?", why:"화질 표기 정의는 있으나 전환 기준 미확인"},
+    {id:"VID-03", p:"P2", q:"영상 기기 연결 실패/오류 시 화면은 어떻게 처리되나요?", why:"에러 상태 화면 처리 확인"},
+  ]},
+  { sec:"공통", items:[
+    {id:"COM-02", p:"P2", q:"'추가 인증(재인증)'은 어떤 상황·기능 진입 시 요구되나요?", why:"step-up 인증 트리거 조건은 화면에 안 나타남"},
+  ]},
+];
+
+const KEY="moduapp-qna-v2";
+const root=document.getElementById('sections');
+let state=JSON.parse(localStorage.getItem(KEY)||"{}");
+let onlyP1=false;
+function toggleFilter(v){onlyP1=v;render();}
+function openLb(src){document.getElementById('lbimg').src=src;document.getElementById('lb').classList.add('open');}
+
+function render(){
+  root.innerHTML="";
+  QUESTIONS.forEach(group=>{
+    const items=onlyP1?group.items.filter(it=>it.p==='P1'):group.items;
+    if(!items.length)return;
+    const sec=document.createElement('div'); sec.className="sec";
+    const answered=group.items.filter(it=>isAnswered(it.id)).length;
+    let html=`<div class="sec-h"><span class="dot"></span><h2>${group.sec}</h2><span class="cnt">(${answered}/${group.items.length})</span></div>`;
+    sec.innerHTML=html;
+    items.forEach(it=>{
+      const a=state[it.id]||{};
+      const card=document.createElement('div'); card.className="q"+(isAnswered(it.id)?" answered":"");
+      card.id="card-"+it.id;
+      card.innerHTML=`
+        <div class="q-top">
+          <span class="chip ${it.p}">${it.p==='P1'?'중요':'보조'}</span>
+          <div class="q-text">${it.q}<div class="qid">${it.id}</div></div>
+        </div>
+        ${it.why?`<div class="why">${it.why}</div>`:""}
+        <textarea placeholder="답변을 입력하세요" data-id="${it.id}">${a.answer||""}</textarea>
+        <div class="q-foot">
+          <label class="unsure"><input type="checkbox" data-unsure="${it.id}" ${a.unsure?"checked":""}> 잘 모름 / 해당없음</label>
+          <span class="saved-tag" id="saved-${it.id}">저장됨</span>
+        </div>`;
+      sec.appendChild(card);
+    });
+    root.appendChild(sec);
+  });
+  bind(); updateProgress();
+}
+function isAnswered(id){const a=state[id]||{};return (a.answer&&a.answer.trim())||a.unsure;}
+function bind(){
+  document.querySelectorAll('textarea[data-id]').forEach(t=>{
+    t.addEventListener('input',()=>{const id=t.dataset.id;state[id]=state[id]||{};state[id].answer=t.value;persist(id);});
+  });
+  document.querySelectorAll('input[data-unsure]').forEach(c=>{
+    c.addEventListener('change',()=>{const id=c.dataset.unsure;state[id]=state[id]||{};state[id].unsure=c.checked;persist(id);refreshCard(id);});
+  });
+  document.getElementById('respondent').value=state.__respondent||"";
+  document.getElementById('answerDate').value=state.__date||"";
+  document.getElementById('respondent').oninput=e=>{state.__respondent=e.target.value;save();};
+  document.getElementById('answerDate').oninput=e=>{state.__date=e.target.value;save();};
+}
+function refreshCard(id){const c=document.getElementById('card-'+id);if(c)c.className="q"+(isAnswered(id)?" answered":"");}
+function persist(id){save();refreshCard(id);updateProgress();const tag=document.getElementById('saved-'+id);if(tag){tag.classList.add('show');clearTimeout(tag._t);tag._t=setTimeout(()=>tag.classList.remove('show'),900);}}
+function save(){localStorage.setItem(KEY,JSON.stringify(state));}
+function updateProgress(){
+  const all=QUESTIONS.flatMap(g=>g.items);
+  const done=all.filter(it=>isAnswered(it.id)).length;
+  document.getElementById('progText').textContent=`${done} / ${all.length} 답변`;
+  document.getElementById('progBar').style.width=(all.length?done/all.length*100:0)+"%";
+}
+function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),1800);}
+function buildExport(){
+  const out={respondent:state.__respondent||"",date:state.__date||"",exportedAt:new Date().toISOString(),answers:{}};
+  QUESTIONS.forEach(g=>g.items.forEach(it=>{const a=state[it.id]||{};out.answers[it.id]={section:g.sec,question:it.q,answer:(a.answer||"").trim(),unsure:!!a.unsure};}));
+  return out;
+}
+function downloadJson(){
+  const data=buildExport();
+  const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);
+  a.download=`moduapp-답변_${(data.respondent||"담당자").replace(/\s/g,'')}_${(data.date||'').replace(/[^0-9]/g,'')||'date'}.json`;
+  a.click();toast("답변 파일을 저장했습니다. 요청자에게 회신해 주세요 🙌");
+}
+function copyMd(){
+  const d=buildExport();let md=`# 모두앱 사양 답변\n- 답변자: ${d.respondent||'-'}\n- 작성일: ${d.date||'-'}\n`;
+  QUESTIONS.forEach(g=>{md+=`\n## ${g.sec}\n`;g.items.forEach(it=>{const a=d.answers[it.id];const v=a.unsure?"(잘 모름/해당없음)":(a.answer||"(미답변)");md+=`\n**[${it.id}] ${it.q}**\n→ ${v}\n`;});});
+  navigator.clipboard.writeText(md).then(()=>toast("답변이 텍스트로 복사되었습니다. 메일/메신저에 붙여넣기 하세요")).catch(()=>{prompt("아래 내용을 복사하세요",md);});
+}
+function loadFile(){
+  const inp=document.createElement('input');inp.type="file";inp.accept=".json,application/json";
+  inp.onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);state.__respondent=d.respondent||"";state.__date=d.date||"";Object.entries(d.answers||{}).forEach(([id,a])=>{state[id]={answer:a.answer||"",unsure:!!a.unsure};});save();render();toast("저장된 답변을 불러왔습니다");}catch(err){toast("파일을 읽을 수 없습니다");}};r.readAsText(f);};
+  inp.click();
+}
+render();
+</script>
+</body>
+</html>

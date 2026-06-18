@@ -1,0 +1,65 @@
+{
+  "section": "카드",
+  "layer": "service",
+  "service": "카드(출입카드)",
+  "domain": "moduapp",
+  "analyzed_by": "moduapp-reader",
+  "analyzed_at": "2026-05-26",
+  "source": {
+    "figma_file": "aLxh458o9BRXklRFM3YYzk (MoDU-APP-20240327-최종)",
+    "section_node": "30247:26272",
+    "section_size_px": "28211 x 19815",
+    "spec_title": "MoDU App-카드 UI 사양서",
+    "method": "전체 섹션 고해상 스크린샷의 좌측 'Screen Definition' 제목 판독."
+  },
+  "section_summary": "출입카드(보안카드·모바일카드·방문자카드) 발급/관리 서비스. 사용자가 말한 '출입관리'에 해당. 카드 발급·초대·승인 등 출입 권한 부여 흐름을 포함해 권한(RBAC)과 밀접.",
+
+  "service_identity": {
+    "maps_to_user_term": "출입관리",
+    "note": "물리 보안카드 + 모바일(디지털) 출입카드 + 방문자 출입카드 관리. '출입관리 → 카드' 가설이 확인됨."
+  },
+
+  "screen_definition_blocks": [
+    { "order": 1, "name": "카드 조회·관리", "type": "list-manage", "note": "보유/발급 카드 목록 조회 및 관리" },
+    { "order": 2, "name": "보안(실물)카드 신청", "type": "application", "note": "실물 보안카드 신청 흐름" },
+    { "order": 3, "name": "모바일 보안카드 발급", "type": "issuance", "note": "모바일(디지털) 보안카드 발급 — 디지털 출입키" },
+    { "order": 4, "name": "모바일카드 초대·승인", "type": "grant-approval", "note": "타인에게 모바일카드(출입권한) 초대/승인 — 권한 부여 흐름" },
+    { "order": 5, "name": "방문자 조회·관리", "type": "list-manage", "note": "방문자 출입 조회/관리" },
+    { "order": 6, "name": "방문자 모바일카드 신청 승인", "type": "grant-approval", "note": "방문자의 모바일카드 신청을 관리자가 승인" }
+  ],
+
+  "cross_service_findings": [
+    "'카드 신청 현황'이 홈 대시보드에 노출(홈 사양서 v1.42~1.5) → 카드 서비스가 홈과 연계",
+    "초대·승인/신청 승인 흐름은 출입 권한 부여 = RBAC와 직접 연결 → permission-matrix와 교차",
+    "카드는 탭바에 없음 → '전체메뉴' 하위 진입으로 추정(공통 분석 참조)"
+  ],
+
+  "required_role_note": "카드 발급/초대/승인(특히 '모바일카드 초대·승인', '방문자 신청 승인')은 출입 권한 부여 행위 → 관리자/권한 보유자만 가능 추정. 신청은 일반 사용자 가능 추정. 정확한 권한 매핑 needs-review.",
+
+  "state_model": [
+    { "state": "default", "present": true },
+    { "state": "empty", "present": "needs-review", "note": "카드/방문자 없음 케이스" },
+    { "state": "pending/approval", "present": true, "note": "신청·승인 대기 상태 존재(초대/승인 흐름)" }
+  ],
+
+  "ux_risks": [
+    "카드(출입권한) 발급·승인은 보안 직결 → 오발급/오승인 방지, 승인 주체 명확화 UX 점검 필요(ux-checker)",
+    "실물/모바일/방문자 카드 유형이 많아 사용자 혼동 가능 → 유형 구분 명료성 점검"
+  ],
+
+  "owner_confirmed_2026-05-27": {
+    "card_types": {
+      "실물카드": "리더기를 통해 사용 범위 설정(출입용인지, 경비도 같이 할지 등).",
+      "모바일카드": "모두앱 또는 모바일카드 웹포털에서 발급, 사용자 휴대전화번호로 발급. 발급 시 경비구역 설정 또는 출입/경비 기능 적용. (부가서비스 가입 필요)",
+      "방문자카드": "모바일카드에만 존재. 1회성 방문용으로 방문자 휴대전화번호로 발급. (모바일카드 + 안심방문관리 부가서비스 가입 필수)"
+    },
+    "issue_approve_actor": "모두앱은 관리자만 존재. 카드 권한이 있는 관리자가 초대·승인.",
+    "manager_note": "'매니저'는 별도 권한이 아니라 매니저(클라우드매니저/세콤매니저)를 쓰는 계약처를 의미. 원래는 매니저 사용처에 모두앱 카드 발급/승인이 없었으나 승인 가능하도록 열어줌."
+  },
+  "needs_review": [
+    "각 블록 개별 화면 Storyboard ID/화면명 정밀 목록",
+    "카드 유형별(보안/모바일/방문자) 발급 조건과 권한 차이",
+    "초대·승인 흐름의 정확한 주체(누가 초대하고 누가 승인하는지)",
+    "탭바가 아닌 전체메뉴 진입 경로 확정"
+  ]
+}

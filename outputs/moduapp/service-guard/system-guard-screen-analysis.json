@@ -1,0 +1,66 @@
+{
+  "section": "시스템경비",
+  "layer": "service",
+  "service": "시스템경비",
+  "domain": "moduapp",
+  "analyzed_by": "moduapp-reader",
+  "analyzed_at": "2026-05-26",
+  "source": {
+    "figma_file": "aLxh458o9BRXklRFM3YYzk (MoDU-APP-20240327-최종)",
+    "section_node": "30239:26272",
+    "section_size_px": "29186 x 14725",
+    "spec_title": "MoDU App-시스템 경비 UI 사양서",
+    "method": "전체 섹션 고해상 스크린샷의 좌측 'Screen Definition' 제목 + 메인 제어 화면 판독. 미세 요구사항 표는 해상도 한계로 화면 ID 일부 미판독.",
+    "confidence": "블록 구조=높음, 개별 화면 ID=낮음(needs-review)"
+  },
+  "section_summary": "에스원 시스템경비(무인경비) 서비스의 모바일 화면. 경비 설정/해제 제어가 핵심이며, 서비스 현황·모바일보고서(구 출동보고서)·경비/해제 이력·긴급연락처로 구성. 제어 기능은 권한 보유자에게만 노출(홈 대시보드 권한 분기와 연결).",
+
+  "screen_definition_blocks": [
+    { "order": 1, "name": "시스템 경비", "type": "control", "note": "메인 제어 — 경비구역 목록 + 경비/해제, 구역 선택 팝업, 경비 상태 노출 분기 정의" },
+    { "order": 2, "name": "서비스 현황", "type": "status", "note": "가입/이용 중인 경비 서비스 현황" },
+    { "order": 3, "name": "모바일보고서", "type": "report", "note": "구(舊) '출동보고서' → '모바일보고서'로 명칭 변경됨", "renamed_from": "출동보고서" },
+    { "order": 4, "name": "경비/해제 이력", "type": "history", "note": "경비 설정/해제 이력 목록" },
+    { "order": 5, "name": "긴급연락처", "type": "feature", "note": "긴급 연락처 조회/관리" },
+    { "order": 6, "name": "경비/해제 이력_이력팝업", "type": "popup", "note": "이력 상세 팝업" }
+  ],
+
+  "main_control_screen": {
+    "name": "시스템 경비 (메인 제어)",
+    "regions": [
+      { "id": "R-header", "label": "상단 헤더/탭", "role": "경비 구역/유형 전환", "criticality": "medium" },
+      { "id": "R-zone-list", "label": "경비구역 목록", "role": "구역별 경비 상태 표시 및 선택", "criticality": "high" },
+      { "id": "R-arm-control", "label": "경비/해제 제어", "role": "경비 설정·해제 실행(주요 CTA)", "criticality": "high" },
+      { "id": "R-zone-select-popup", "label": "경비 구역 선택 팝업", "role": "제어 대상 구역 선택", "criticality": "medium" }
+    ],
+    "state_exposure": "사양서에 '경비 상태 노출 분기 정의' 표 존재 — 경비 상태(설정/해제/미게시 등)에 따른 화면 분기 규칙. 세부 needs-review.",
+    "color_semantics": "초록 카드 = '경비중'(armed) 상태 — 홈 대시보드 '내 경비 구역' 카드에서 직접 확인됨."
+  },
+
+  "required_role_note": "경비/해제·구역 제어는 '서비스O/권한O' 사용자에게만 노출(홈 UI 사양서 권한 분기와 일치). 권한 없으면 안내/현황만.",
+
+  "cross_service_findings": [
+    "홈 대시보드의 '경비/해제·출입문 제어'가 이 서비스의 메인 제어를 표면화한 것",
+    "'경비 미게시' 상태는 홈 대시보드 변형(MN1010044/050)과 연결됨",
+    "제어 가능 여부가 통합계정>권한 블록의 권한에 종속"
+  ],
+
+  "state_model": [
+    { "state": "default", "present": true, "note": "경비 설정/해제 가능 상태" },
+    { "state": "empty", "present": true, "note": "경비 미게시 / 미가입 상태 분기 존재" },
+    { "state": "error", "present": "needs-review" }
+  ],
+
+  "ux_risks": [
+    "경비 설정/해제는 물리 보안에 직결되는 고위험 액션 → 오작동 방지(확인 단계·구역 명확화) UX 점검 필수(ux-checker)",
+    "구역이 많을 경우 목록 가독성/선택 정확성 점검 필요"
+  ],
+
+  "owner_confirmed_2026-05-27": {
+    "guard_state": "경비 상태 = 현재 '경비중' 또는 '해제중' (초록=경비중)",
+    "emergency_contact": "긴급연락처는 마스터관리자만 페이지 접근. 수정은 즉시 반영이 아니라 VOC 접수 → 신청자에게 유선 확인 후 업데이트.",
+    "mobile_report": "담당자가 긴급출동/순찰 등을 하면 CS모바일로 보고서 작성→SMS 발송, 그 정보를 앱에서 리스트업."
+  },
+  "needs_review": [
+    "각 블록 개별 화면 Storyboard ID/화면명 정밀 목록 (요구사항 표 미판독)"
+  ]
+}

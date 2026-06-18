@@ -1,0 +1,60 @@
+{
+  "section": "영상",
+  "layer": "service",
+  "service": "영상(영상관리)",
+  "domain": "moduapp",
+  "analyzed_by": "moduapp-reader",
+  "analyzed_at": "2026-05-26",
+  "source": {
+    "figma_file": "aLxh458o9BRXklRFM3YYzk (MoDU-APP-20240327-최종)",
+    "section_node": "30248:26273",
+    "section_size_px": "26776 x 17805",
+    "spec_title": "MoDU App-영상 UI 사양서",
+    "method": "전체 섹션 고해상 스크린샷의 좌측 'Screen Definition'(Chapter 01. Foundation) 제목 판독."
+  },
+  "section_summary": "CCTV/카메라 기반 영상관리 서비스. 기기 등록부터 실시간 영상, (녹화영상 재생 추정), 기기 비밀번호 재설정, 기기 업데이트, 원격지원요청까지. 탭바 3번째 탭(영상)으로 핵심 서비스. 홈 대시보드 '최근 접속 기기 목록'과 연결.",
+
+  "service_identity": {
+    "maps_to_user_term": "영상관리",
+    "note": "사용자가 말한 '영상관리'와 일치. 탭바에 직접 노출되는 핵심 서비스."
+  },
+
+  "screen_definition_blocks": [
+    { "order": 1, "name": "기기등록/가져오기", "chapter": "01. Foundation", "type": "device-setup", "note": "카메라/기기 등록 및 가져오기" },
+    { "order": 2, "name": "실시간 영상", "chapter": "01. Foundation", "type": "live-view", "note": "실시간 라이브 영상 보기. 화질(Full/HD) 표기 관련 정의 존재(홈 사양서 이력 참조)" },
+    { "order": 3, "name": "녹화영상(재생)", "chapter": "01. Foundation", "type": "playback", "note": "녹화기(NVR) 기반 녹화영상 재생. 날짜/시간 선택 조회 + 다중 카메라 그리드 + 가로/세로 방향 확인됨", "status": "confirmed" },
+    { "order": 4, "name": "비밀번호 재설정", "chapter": "01. Foundation", "type": "device-auth", "note": "영상 기기 비밀번호 재설정" },
+    { "order": 5, "name": "기기업데이트/모바일데이터 사용 팝업", "chapter": "01. Foundation", "type": "system-popup", "note": "기기 펌웨어 업데이트 안내 + 모바일데이터 사용 경고 팝업" },
+    { "order": 6, "name": "원격지원요청", "chapter": "01. Foundation", "type": "support", "note": "영상 관련 원격 지원 요청" }
+  ],
+
+  "cross_service_findings": [
+    "탭바 3번째 탭(영상) = 이 서비스 직접 진입 (공통 Navigation 분석과 일치)",
+    "홈 대시보드 '최근 접속 기기 목록' + '영상 기기 미등록/이력 없음' no-data 상태가 이 서비스와 연결(홈 사양서 MN1010041/042)",
+    "실시간 영상 화질(Full/HD) 표기·영상 영역 시간 표기 방식이 홈 사양서에서도 정의됨 → 홈과 영상 간 연계"
+  ],
+
+  "required_role_note": "영상 시청/기기 제어는 '서비스O/권한O'(영상 권한 보유자)에게 노출. 권한 없으면 안내화면(홈 권한 분기와 동일). 정확한 매핑 needs-review.",
+
+  "state_model": [
+    { "state": "default", "present": true },
+    { "state": "empty", "present": true, "note": "기기 미등록/녹화 이력 없음(no-data) 상태 존재 — 홈 대시보드 변형과 연결" },
+    { "state": "error", "present": "needs-review", "note": "기기 연결 실패/네트워크 오류 케이스 확인 필요" }
+  ],
+
+  "ux_risks": [
+    "실시간/녹화 영상은 데이터 사용량·로딩이 큼 → 모바일데이터 사용 팝업·로딩/버퍼링 상태 UX 점검 필요",
+    "기기 다수일 때 목록/전환 가독성, no-data·연결실패 상태 안내 명확성 점검"
+  ],
+
+  "owner_confirmed_2026-05-27": {
+    "error_handling": "영상 기기 연결 실패/오류 시 '기기 접속 끊김' 화면으로 안내. (VID-03)",
+    "quality_option": "실시간 영상 화질(Full/HD) 전환 기능은 사양에서 빠진 것으로 보임(담당자). 위치 재확인 후 검토 예정 — 화질 옵션 미존재 가능성. (VID-02)"
+  },
+  "needs_review": [
+    "녹화영상(재생) 블록의 정확한 명칭 — 날짜/시간 picker로 추정",
+    "각 블록 개별 화면 Storyboard ID/화면명 정밀 목록",
+    "화질 옵션(Full/HD) 및 영상 영역 시간 표기 상세",
+    "Chapter 02 이상 존재 여부(현재 모두 Chapter 01 Foundation으로 보임)"
+  ]
+}

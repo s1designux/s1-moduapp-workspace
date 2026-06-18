@@ -1,0 +1,66 @@
+{
+  "section": "공통",
+  "layer": "app-shell",
+  "service": null,
+  "domain": "moduapp",
+  "analyzed_by": "moduapp-reader",
+  "analyzed_at": "2026-05-26",
+  "source": {
+    "figma_file": "aLxh458o9BRXklRFM3YYzk (MoDU-APP-20240327-최종)",
+    "section_node": "30245:26270",
+    "section_size_px": "20391 x 14362",
+    "spec_title": "MoDU App-공통 UI 사양서",
+    "method": "전체 섹션 고해상 스크린샷의 좌측 'Screen Definition' 제목 + 공통 Navigation 블록(하단 탭바) 판독."
+  },
+  "section_summary": "앱 전역에서 쓰이는 공통 화면·네비게이션 정의(앱 셸 Layer 0). 가장 중요한 산출물은 하단 탭바(글로벌 네비게이션) 구성. 전체메뉴·알림·추가 인증·에러·우편번호 검색 등 공통 유틸 포함.",
+
+  "screen_definition_blocks": [
+    { "order": 1, "name": "전체메뉴", "type": "menu", "note": "탭바 4번째 탭. 탭에 없는 모든 서비스/기능의 진입 허브(카드·마이에스원·고객센터·설정 등 추정)" },
+    { "order": 2, "name": "알림", "type": "notification", "note": "통합 알림센터(여러 서비스 알림 수집 추정)" },
+    { "order": 3, "name": "추가 인증", "type": "auth", "note": "중요 기능 진입 시 재인증(step-up). 통합계정 인증과 연계" },
+    { "order": 4, "name": "기타 공통화면", "type": "common", "note": "기타 공통 화면 모음" },
+    { "order": 5, "name": "Error 페이지", "type": "error", "note": "공통 에러 화면 정의" },
+    { "order": 6, "name": "공통 Navigation", "type": "navigation", "note": "하단 탭바 + 공통 상단바 정의 (아래 global_navigation 참조)" },
+    { "order": 7, "name": "우편번호 검색", "type": "utility", "note": "주소/우편번호 검색 공통 컴포넌트" }
+  ],
+
+  "global_navigation": {
+    "bottom_tab_bar": {
+      "tab_count": 4,
+      "tabs": [
+        { "order": 1, "label": "홈", "icon": "집(house)", "target": "통합 홈/대시보드", "confidence": "high" },
+        { "order": 2, "label": "경비", "icon": "방패(shield)", "target": "시스템경비", "confidence": "high(아이콘)/label needs-review" },
+        { "order": 3, "label": "영상", "icon": "카메라(CCTV)", "target": "영상", "confidence": "high(아이콘)/label needs-review" },
+        { "order": 4, "label": "전체메뉴", "icon": "햄버거(menu)", "target": "전체메뉴(나머지 서비스/설정 허브)", "confidence": "high" }
+      ],
+      "insight": "1차 네비게이션에 '경비'와 '영상'이 직접 노출 → 두 서비스가 모두앱의 핵심. 카드·마이에스원·고객센터·설정 등은 '전체메뉴' 하위로 추정."
+    },
+    "top_app_bar": {
+      "elements": ["뒤로가기(←)", "화면 제목", "닫기(X)"],
+      "note": "공통 상단바. Back 버튼/상태바 동작 규칙(Native) 정의됨"
+    }
+  },
+
+  "cross_service_findings": [
+    "탭바가 모두앱의 멀티서비스 구조를 직접 반영: 홈(허브) + 경비/영상(핵심 서비스) + 전체메뉴(나머지)",
+    "알림은 공통(여러 서비스 통합 알림)으로 설계 → 횡단 관심사",
+    "추가 인증(재인증)이 공통 → 권한/보안 흐름이 서비스 공통으로 작동"
+  ],
+
+  "state_model": [
+    { "state": "error", "present": true, "note": "공통 Error 페이지 블록 별도 정의" },
+    { "state": "empty", "present": "needs-review" }
+  ],
+
+  "ux_risks": [
+    "핵심 서비스(경비/영상)만 탭에 노출되고 나머지는 전체메뉴 깊숙이 → 카드/마이에스원 등 접근 깊이 점검 필요",
+    "전체메뉴가 여러 서비스의 관문 → 권한별 메뉴 노출/숨김 규칙 일관성 점검 필요"
+  ],
+
+  "needs_review": [
+    "탭바 각 탭의 정확한 레이블 텍스트(아이콘은 확실, 글자 미세) — 홈/경비/영상/전체메뉴로 추정",
+    "전체메뉴에 실제 포함되는 서비스 목록(카드/마이에스원/고객센터/설정 여부)",
+    "알림센터가 서비스별 분류를 갖는지",
+    "각 블록 개별 화면 ID 정밀 목록"
+  ]
+}

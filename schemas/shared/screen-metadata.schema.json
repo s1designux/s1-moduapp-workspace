@@ -1,0 +1,120 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "화면 메타데이터 스키마",
+  "description": "모두앱(모바일 앱) 화면 분석 결과 양식입니다. 모든 담당자가 공통으로 사용합니다.",
+  "type": "object",
+  "required": ["screen_id", "screen_type", "domain", "analyzed_by", "analyzed_at"],
+  "properties": {
+    "screen_id": {
+      "type": "string",
+      "description": "화면 고유 ID (예: MODU-SCR-001)"
+    },
+    "screen_type": {
+      "type": "string",
+      "description": "화면 유형 (예: 홈, 목록, 상세, 온보딩, 설정, 마이페이지)"
+    },
+    "domain": {
+      "type": "string",
+      "description": "서비스 도메인 (예: moduapp)"
+    },
+    "layer": {
+      "type": "string",
+      "description": "다층 모델에서의 위치. app-shell=공통 뼈대, service=개별 서비스, cross-service=횡단",
+      "enum": ["app-shell", "service", "cross-service"]
+    },
+    "service": {
+      "type": "string",
+      "description": "이 화면이 속한 하위 서비스 (예: 출입관리, 영상관리, 사용자 권한관리). app-shell/cross-service면 비워둘 수 있음"
+    },
+    "required_role": {
+      "type": "array",
+      "description": "이 화면/기능 접근에 필요한 역할 목록 (permission-matrix.json의 role id 참조)",
+      "items": { "type": "string" }
+    },
+    "navigation_role": {
+      "type": "string",
+      "description": "이 화면에서 네비게이션의 역할 (예: 탭바 루트, 상세 진입, 모달)"
+    },
+    "regions": {
+      "type": "array",
+      "description": "화면을 구성하는 영역 목록",
+      "items": {
+        "type": "object",
+        "required": ["id", "label", "role"],
+        "properties": {
+          "id": { "type": "string" },
+          "label": { "type": "string" },
+          "role": { "type": "string" },
+          "position": { "type": "string" }
+        }
+      }
+    },
+    "components": {
+      "type": "array",
+      "description": "화면에서 발견된 컴포넌트 목록",
+      "items": {
+        "type": "object",
+        "required": ["name", "type"],
+        "properties": {
+          "name": { "type": "string" },
+          "type": { "type": "string" },
+          "region": { "type": "string" },
+          "role": { "type": "string" }
+        }
+      }
+    },
+    "information_density": {
+      "type": "string",
+      "description": "정보 위계/밀도 평가",
+      "enum": ["low", "medium", "high", "very-high"]
+    },
+    "state_model": {
+      "type": "array",
+      "description": "로딩/빈 화면(empty)/에러/완료 등 상태 표현 방식",
+      "items": {
+        "type": "object",
+        "properties": {
+          "state": { "type": "string", "enum": ["loading", "empty", "error", "success", "default"] },
+          "visual": { "type": "string" },
+          "present": { "type": "boolean" }
+        }
+      }
+    },
+    "primary_actions": {
+      "type": "array",
+      "description": "화면의 주요 행동 버튼(CTA) 목록",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": { "type": "string" },
+          "intent": { "type": "string" },
+          "emphasis": { "type": "string" }
+        }
+      }
+    },
+    "user_flow": {
+      "type": "array",
+      "description": "사용자가 수행하는 이용 단계",
+      "items": { "type": "string" }
+    },
+    "ux_risks": {
+      "type": "array",
+      "description": "발견된 UX 위험 요소",
+      "items": { "type": "string" }
+    },
+    "needs_review": {
+      "type": "array",
+      "description": "불확실하여 사람이 확인해야 할 항목",
+      "items": { "type": "string" }
+    },
+    "analyzed_by": {
+      "type": "string",
+      "description": "분석을 수행한 담당자 (예: moduapp-reader)"
+    },
+    "analyzed_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "분석 일시"
+    }
+  }
+}

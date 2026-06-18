@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>컴포넌트 기준표 검토 — 모두앱</title>
+<style>
+  :root {
+    --blue-600:#2563eb; --blue-50:#eff6ff; --blue-200:#bfdbfe;
+    --gray-900:#111827; --gray-700:#374151; --gray-500:#6b7280;
+    --gray-300:#d1d5db; --gray-200:#e5e7eb; --gray-100:#f3f4f6; --gray-50:#f9fafb;
+    --amber-500:#f59e0b; --amber-50:#fffbeb; --slate-400:#94a3b8;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body {
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI",Roboto,sans-serif;
+    background:var(--gray-50); color:var(--gray-900); line-height:1.55; padding:32px 20px;
+  }
+  .wrap { max-width:1140px; margin:0 auto; }
+  .back { display:inline-block; color:var(--blue-600); font-size:13px; font-weight:600; text-decoration:none; margin-bottom:14px; }
+  .back:hover { text-decoration:underline; }
+  h1 { font-size:24px; font-weight:700; }
+  .sub { color:var(--gray-500); margin-top:6px; font-size:14px; }
+  .draft-note {
+    background:var(--amber-50); border:1px solid #fcd9a3; border-radius:10px;
+    padding:12px 16px; font-size:13px; color:#92660a; margin:18px 0 24px;
+  }
+  .draft-note b { color:#92660a; }
+  .tabs { display:flex; gap:24px; border-bottom:1px solid var(--gray-200); margin-bottom:24px; }
+  .tab {
+    background:none; border:none; cursor:pointer; font-size:15px; font-weight:600;
+    color:var(--gray-500); padding:10px 2px; border-bottom:2px solid transparent; margin-bottom:-1px;
+    font-family:inherit;
+  }
+  .tab[aria-selected="true"] { color:var(--blue-600); border-bottom-color:var(--blue-600); }
+  .tab .count { color:var(--slate-400); font-weight:500; font-size:13px; margin-left:5px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(330px,1fr)); gap:18px; }
+  .card { background:#fff; border:1px solid var(--gray-200); border-radius:14px; padding:18px; }
+  .card-head { display:flex; align-items:flex-start; gap:14px; }
+  .thumb {
+    flex:0 0 auto; width:104px; height:128px; background:var(--gray-50);
+    border:1px solid var(--gray-100); border-radius:10px; display:flex; align-items:center; justify-content:center;
+  }
+  .thumb.wide { width:120px; height:88px; }
+  .card-title { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .card-id { color:var(--slate-400); font-size:12px; font-weight:600; }
+  .card-name { font-size:16px; font-weight:700; }
+  .badge { display:inline-block; font-size:11px; font-weight:700; padding:2px 9px; border-radius:999px; background:var(--amber-50); color:var(--amber-500); }
+  .card-desc { color:var(--gray-700); font-size:13px; margin-top:6px; }
+  .meta { margin-top:14px; padding-top:14px; border-top:1px solid var(--gray-100); }
+  .row { display:flex; gap:10px; font-size:13px; margin-bottom:8px; }
+  .row:last-child { margin-bottom:0; }
+  .row .k { flex:0 0 64px; color:var(--gray-500); font-weight:600; }
+  .row .v { flex:1; color:var(--gray-700); }
+  .chips { display:flex; flex-wrap:wrap; gap:6px; }
+  .chip { background:var(--blue-50); color:var(--blue-600); border:1px solid var(--blue-200); border-radius:7px; padding:2px 9px; font-size:12px; font-weight:600; }
+  .chip.gray { background:var(--gray-100); color:var(--gray-700); border-color:var(--gray-200); }
+  ul.uses { margin:0; padding-left:16px; color:var(--gray-700); font-size:12.5px; }
+  ul.uses li { margin-bottom:2px; }
+  .hidden { display:none; }
+  .err { background:#fef2f2; border:1px solid #fecaca; color:#b91c1c; border-radius:10px; padding:14px 16px; font-size:13px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./index.html">← 현황 대시보드</a>
+  <h1>컴포넌트 기준표 검토</h1>
+  <div class="sub">모두앱 디자인 시스템 기준표 — <span id="counts"></span></div>
+
+  <div class="draft-note">
+    이 화면은 <b>'있어야 할 기준표(draft)'</b>입니다. 카드의 그림은 각 항목의 <b>구조를 한눈에 보여주는 대표 도식</b>이며,
+    시안에서 추출한 <b>실제 부품 캡처·Figma 썸네일은 아직 없습니다</b> — 화면→컴포넌트 매핑 단계를 돌린 뒤 실제 이미지로 교체됩니다.
+  </div>
+
+  <div id="panel-comp" class="grid"></div>
+</div>
+
+<script>
+/* ── 대표 도식 (SVG) ── 항목별 구조를 한눈에 보여주는 미니 목업. 실제 시안 캡처가 아님. */
+const C = { fr:'#d1d5db', bg:'#fff', soft:'#f3f4f6', line:'#e5e7eb', mid:'#cbd5e1', blue:'#2563eb', bl50:'#eff6ff', bl200:'#bfdbfe', gray:'#9ca3af' };
+function phone(inner){ // 104x128 thumb, phone frame 72x112 centered
+  return `<svg width="84" height="120" viewBox="0 0 84 120" xmlns="http://www.w3.org/2000/svg">
+    <rect x="2" y="2" width="80" height="116" rx="12" fill="${C.bg}" stroke="${C.fr}"/>${inner}</svg>`;
+}
+function box(w){ // 120x88 wide swatch
+  return `<svg width="116" height="80" viewBox="0 0 116 80" xmlns="http://www.w3.org/2000/svg">${w}</svg>`;
+}
+const r=(x,y,w,h,f,rx)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${rx||1.5}" fill="${f}"/>`;
+const sr=(x,y,w,h,f,s,rx)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${rx||1.5}" fill="${f}" stroke="${s}"/>`;
+
+/* 컴포넌트 도식 — wide swatch 116x80 (또는 폰) */
+const CMP = {
+  "Button": box(r(14,30,88,20,C.blue,6)+r(40,38,36,4,'#fff',2)),
+  "Badge": box(sr(14,28,52,24,C.bg,C.line,5)+r(20,37,28,6,C.mid)+`<circle cx="78" cy="26" r="11" fill="${C.blue}"/><text x="78" y="30" font-size="11" fill="#fff" text-anchor="middle" font-family="sans-serif" font-weight="700">3</text>`),
+  "List": box(sr(12,14,92,16,C.bg,C.line,3)+r(18,20,40,4,C.mid)+sr(12,34,92,16,C.bg,C.line,3)+r(18,40,52,4,C.mid)+sr(12,54,92,16,C.bg,C.line,3)+r(18,60,34,4,C.mid)),
+  "Card": box(sr(14,12,88,58,C.bg,C.line,6)+r(22,20,72,20,C.line,3)+r(22,46,46,5,C.mid)+r(22,56,60,4,C.line)),
+  "TabBar": phone(r(8,96,68,16,C.soft)+r(15,100,8,8,C.blue,2)+r(33,100,8,8,C.mid,2)+r(51,100,8,8,C.mid,2)+r(65,100,8,8,C.mid,2)+r(14,30,56,8,C.line)+r(14,44,40,8,C.line)),
+  "Tabs": box(r(12,18,30,5,C.blue)+r(50,18,28,5,C.mid)+r(84,18,20,5,C.mid)+r(12,26,30,2.5,C.blue)+r(12,44,80,5,C.line)+r(12,56,60,5,C.line)),
+  "Input": box(sr(12,28,92,24,C.bg,C.blue,5)+r(20,37,30,6,C.line)+r(54,33,1.5,14,C.blue)),
+  "Select": box(sr(12,28,92,24,C.bg,C.line,5)+r(20,37,34,6,C.mid)+`<path d="M88 36 l5 6 5 -6" fill="none" stroke="${C.gray}" stroke-width="2"/>`),
+  "Alert": box(sr(10,24,96,32,C.bl50,C.bl200,6)+`<circle cx="24" cy="40" r="7" fill="${C.blue}"/><text x="24" y="44" font-size="10" fill="#fff" text-anchor="middle" font-weight="700">i</text>`+r(38,33,52,5,'#1e40af')+r(38,43,40,4,C.bl200)),
+  "Toast": box(r(0,0,0,0,'#fff')+`<rect x="20" y="30" width="76" height="22" rx="11" fill="#374151"/>`+r(30,39,38,5,'#e5e7eb')),
+  "Modal": box(r(0,0,116,80,'#f3f4f6')+sr(24,16,68,48,C.bg,C.line,6)+r(34,24,48,5,C.mid)+r(34,34,40,4,C.line)+r(34,48,20,8,C.line,3)+r(60,48,22,8,C.blue,3)),
+  "BottomSheet": phone(r(8,8,68,60,C.soft)+sr(8,60,68,52,C.bg,C.line,8)+`<rect x="34" y="66" width="16" height="3" rx="1.5" fill="${C.mid}"/>`+r(16,78,52,7,C.line)+r(16,90,40,7,C.line)),
+  "EmptyState": box(`<rect x="22" y="14" width="72" height="52" rx="8" fill="none" stroke="${C.mid}" stroke-dasharray="4 3"/>`+`<circle cx="58" cy="34" r="9" fill="${C.line}"/>`+r(40,50,36,5,C.line))
+};
+
+/* ── 폴백 데이터 (file:// 로 직접 열 때 fetch 실패 대비). 정본은 registry/shared/*.json ── */
+const FALLBACK = {
+  components:{title:"컴포넌트 역할 기준표",components:[
+    {id:"CMP-001",name:"Button",description:"사용자가 행동을 실행하는 버튼 컴포넌트",common_variants:["primary","secondary","outlined","ghost","danger"],common_sizes:["sm","md","lg"],app_uses:["주요 CTA(가입/신청/완료)","보조 행동","취소/삭제"]},
+    {id:"CMP-002",name:"Badge",description:"상태, 개수, 신규 여부를 짧게 표시하는 뱃지 컴포넌트",common_variants:["filled","outlined","dot"],common_sizes:["sm","md"],app_uses:["알림 개수","신규 표시(N)","상태 라벨"]},
+    {id:"CMP-003",name:"List",description:"여러 항목을 세로로 나열하는 리스트 컴포넌트",common_variants:["default","with-thumbnail","with-action"],app_uses:["콘텐츠 목록","설정 메뉴 목록","알림 목록"]},
+    {id:"CMP-004",name:"Card",description:"하나의 항목 정보를 카드 형태로 묶어 표시하는 컴포넌트",common_variants:["default","compact","media"],app_uses:["피드 카드","추천 항목","요약 정보"]},
+    {id:"CMP-005",name:"TabBar",description:"화면 하단에 고정되어 앱의 루트 화면 간 이동을 제공하는 탭바",common_variants:["icon-label","icon-only"],app_uses:["홈/검색/알림/마이 등 루트 이동"]},
+    {id:"CMP-006",name:"Tabs",description:"한 화면 안에서 여러 콘텐츠 섹션을 전환하는 탭 컴포넌트",common_variants:["line","filled","pill"],app_uses:["상세 화면 내 정보 섹션 전환","카테고리 전환"]},
+    {id:"CMP-007",name:"Input",description:"텍스트 입력 필드",common_variants:["default","search","password"],common_sizes:["sm","md","lg"],app_uses:["검색","로그인/가입 폼","정보 입력"]},
+    {id:"CMP-008",name:"Select",description:"목록에서 하나를 선택하는 드롭다운/바텀시트 선택 컴포넌트",common_variants:["dropdown","bottom-sheet"],app_uses:["옵션 선택","지역/카테고리 선택","정렬 기준"]},
+    {id:"CMP-009",name:"Alert",description:"중요한 정보나 경고를 화면에 표시하는 알림 컴포넌트",common_variants:["info","success","warning","danger"],app_uses:["안내 배너","오류 안내","주의 메시지"]},
+    {id:"CMP-010",name:"Toast",description:"일시적으로 나타났다 사라지는 짧은 알림 메시지",common_variants:["info","success","warning","danger"],app_uses:["저장 완료","복사됨","일시적 상태 안내"]},
+    {id:"CMP-011",name:"Modal",description:"화면 위에 겹쳐 나타나는 팝업 대화 상자",common_variants:["default","danger","confirm"],app_uses:["확인/취소 다이얼로그","삭제 확인","권한 요청 안내"]},
+    {id:"CMP-012",name:"BottomSheet",description:"화면 하단에서 올라오는 시트형 컴포넌트",common_variants:["action","selection","detail"],app_uses:["옵션 선택","추가 행동 메뉴","상세 미리보기"]},
+    {id:"CMP-013",name:"EmptyState",description:"보여줄 내용이 없을 때 표시하는 빈 화면 컴포넌트",common_variants:["default","with-action"],app_uses:["빈 목록","검색 결과 없음","첫 사용 안내"]}
+  ]}
+};
+
+const esc = s => String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const chips = (arr,gray) => `<div class="chips">${arr.map(x=>`<span class="chip${gray?' gray':''}">${esc(x)}</span>`).join('')}</div>`;
+const uses = arr => `<ul class="uses">${arr.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`;
+
+function compCard(c){
+  const dia = CMP[c.name] || '';
+  const wide = !["TabBar","BottomSheet"].includes(c.name);
+  return `<div class="card">
+    <div class="card-head">
+      <div class="thumb${wide?' wide':''}">${dia}</div>
+      <div>
+        <div class="card-title"><span class="card-id">${esc(c.id)}</span><span class="card-name">${esc(c.name)}</span><span class="badge">초안</span></div>
+        <div class="card-desc">${esc(c.description)}</div>
+      </div>
+    </div>
+    <div class="meta">
+      <div class="row"><span class="k">변형</span><span class="v">${chips(c.common_variants||[])}</span></div>
+      ${c.common_sizes?`<div class="row"><span class="k">사이즈</span><span class="v">${chips(c.common_sizes,true)}</span></div>`:''}
+      <div class="row"><span class="k">앱에서 쓰임</span><span class="v">${uses(c.app_uses||[])}</span></div>
+    </div>
+  </div>`;
+}
+async function loadJson(path, fb){
+  try { const res = await fetch(path); if(!res.ok) throw 0; return await res.json(); }
+  catch(e){ return fb; }
+}
+async function init(){
+  const comp = await loadJson('../registry/shared/component-role-map.json', FALLBACK.components);
+  const cs = comp.components||[];
+  document.getElementById('panel-comp').innerHTML = cs.map(compCard).join('');
+  document.getElementById('counts').textContent = `컴포넌트 ${cs.length}`;
+}
+init();
+</script>
+</body>
+</html>

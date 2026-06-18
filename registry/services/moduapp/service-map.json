@@ -1,0 +1,78 @@
+{
+  "title": "모두앱 서비스맵 (IA)",
+  "description": "모두앱 마스터 플로우 보드(Figma node 19338:3437)에서 추출한 실제 정보구조. Phase 0 결과. 섹션(서비스 묶음) 단위까지 확정했고, 각 섹션 내부 화면 목록은 섹션별 심화 분석에서 채운다.",
+  "version": "0.3.0",
+  "status": "owner-confirmed",
+  "owner_clarifications_2026-05-27": {
+    "core_services": ["경비(시스템경비)", "영상", "카드", "마이에스원(계약/청구/입금)"],
+    "note": "담당자 기준 '서비스'는 위 4종. 홈·통합계정·공통·설정은 앱 셸이고, 고객센터는 지원/소통 영역(핵심 서비스 아님). 앞서 '9개 서비스'는 서비스가 아니라 보드 섹션(메뉴) 단위였음.",
+    "users_are_all_admins": "모두앱 사용자는 전원 관리자(마스터관리자/일반관리자). 일반 end-user 개념 없음. 상세: permission-matrix.json"
+  },
+  "source": {
+    "figma_file": "aLxh458o9BRXklRFM3YYzk (MoDU-APP-20240327-최종)",
+    "board_node": "19338:3437",
+    "board_size_px": "164086 x 62688",
+    "captured_at": "2026-05-26",
+    "method": "전체 보드 스크린샷(최대 4000px)으로 섹션 헤더 판독. 개별 화면 내용은 미판독."
+  },
+  "app_shell": {
+    "description": "어느 단일 서비스에도 속하지 않는 공통/허브 영역 (Layer 0)",
+    "areas": [
+      { "id": "SHELL-home", "name": "홈", "note": "통합 홈(대시보드). 시스템경비 제어·영상 최근기기·카드 신청현황을 표면화하는 멀티서비스 진입점. 노출은 서비스×권한으로 분기. 상세: outputs/moduapp/app-shell/home-screen-analysis.json", "screen_count": 13, "status": "analyzed" },
+      { "id": "SHELL-account", "name": "통합계정", "note": "로그인·계정·인증·권한 영역. 블록: 로그인/계정 규정 → 로그인 → 간편인증(PIN/지문) → 회원가입 → 내정보 → 권한. '권한' 블록에 사용자 권한관리(RBAC) 존재 확인. 상세: outputs/moduapp/app-shell/account-screen-analysis.json", "status": "analyzed" },
+      { "id": "SHELL-common", "name": "공통", "note": "공통 화면/네비게이션. 블록: 전체메뉴·알림·추가 인증·기타 공통화면·Error 페이지·공통 Navigation·우편번호 검색. 상세: outputs/moduapp/app-shell/common-screen-analysis.json", "status": "analyzed" },
+      { "id": "SHELL-settings", "name": "설정", "note": "앱 설정", "status": "confirmed-label" }
+    ]
+  },
+  "services": [
+    { "id": "SVC-guard", "name": "시스템경비", "output_folder": "outputs/moduapp/service-guard/", "blocks": ["시스템 경비(메인 제어)", "서비스 현황", "모바일보고서(구 출동보고서)", "경비/해제 이력", "긴급연락처", "경비/해제 이력 팝업"], "note": "경비 설정/해제 제어가 핵심. 제어는 권한 보유자만. 상세: outputs/moduapp/service-guard/system-guard-screen-analysis.json", "status": "analyzed" },
+    { "id": "SVC-video", "name": "영상", "output_folder": "outputs/moduapp/service-video/", "blocks": ["기기등록/가져오기", "실시간 영상", "녹화영상(재생, 추정)", "비밀번호 재설정", "기기업데이트/모바일데이터 사용 팝업", "원격지원요청"], "note": "CCTV 영상관리. 탭바 직접 노출 핵심 서비스. 홈 '최근 접속 기기 목록'과 연결. 상세: outputs/moduapp/service-video/video-screen-analysis.json", "status": "analyzed" },
+    { "id": "SVC-card", "name": "카드(출입카드)", "output_folder": "outputs/moduapp/service-card/", "blocks": ["카드 조회·관리", "보안(실물)카드 신청", "모바일 보안카드 발급", "모바일카드 초대·승인", "방문자 조회·관리", "방문자 모바일카드 신청 승인"], "note": "출입카드(보안/모바일/방문자) 발급·관리 = 사용자가 말한 '출입관리' 확인됨. 카드 발급/승인은 권한 부여 흐름. 상세: outputs/moduapp/service-card/card-screen-analysis.json", "status": "analyzed" },
+    { "id": "SVC-mys1", "name": "마이에스원(계약/청구/입금)", "output_folder": "outputs/moduapp/service-mys1/", "screens": [], "status": "confirmed-label" },
+    { "id": "SVC-cs", "name": "고객센터", "output_folder": "outputs/moduapp/service-cs/", "screens": [], "status": "support-area", "note": "담당자 기준 핵심 '서비스'가 아니라 지원/소통 영역(뉴스/공지·1:1문의·자주하는질문·방문예약·자료실)" }
+  ],
+  "global_navigation": {
+    "bottom_tab_bar": ["홈", "경비(시스템경비)", "영상", "전체메뉴"],
+    "note": "1차 네비게이션 = 4탭(아이콘+레이블 확인). 경비·영상이 핵심 서비스로 탭 노출. 출처: 공통 > 공통 Navigation + 전체메뉴 (node 30245:26270)",
+    "status": "confirmed"
+  },
+  "full_menu_ia": {
+    "source": "공통 > 전체메뉴 화면 (node 30245:26270)",
+    "note": "전체메뉴(4번째 탭)에 전 서비스가 그룹으로 나열됨 — 화면 직접 판독으로 확인",
+    "groups": {
+      "마이에스원/계약": ["계약정보", "서비스 권한", "청구·입금"],
+      "시스템경비": ["경비/해제(서비스 현황)", "모바일보고서", "경비/해제 이력", "긴급연락처 관리"],
+      "영상": ["영상보기(실시간/녹화)"],
+      "카드(출입)": ["카드 조회·관리", "실물카드 신청", "모바일카드 발급", "모바일카드 초대·승인", "방문자 조회·관리", "방문자카드 발급", "방문자카드 승인"],
+      "이벤트": ["진행중인 이벤트", "지난 이벤트", "당첨자 발표"],
+      "제휴": ["제휴 카드", "제휴 멤버"],
+      "소통": ["궁금해요 에스원", "고객의소리 에스원"],
+      "고객센터": ["뉴스/공지", "1:1 문의", "자주하는 질문", "방문예약 신청", "자료실"],
+      "기타": ["고객센터 전화 1599-3412", "로그아웃"]
+    },
+    "status": "analyzed"
+  },
+  "notification_center": {
+    "source": "공통 > 전체메뉴 인접 알림 화면",
+    "note": "알림센터는 서비스별 탭(예: 시스템경비 / 영상)으로 분류됨 — 화면 직접 확인",
+    "status": "confirmed"
+  },
+  "cross_service_flows": [],
+  "assumption_vs_actual": {
+    "user_said": ["출입관리", "영상관리", "사용자 권한관리"],
+    "board_actual_sections": ["홈", "통합계정", "공통", "설정", "시스템경비", "영상", "카드", "마이에스원(계약/청구/입금)", "고객센터"],
+    "notes": [
+      "영상관리 → '영상' 섹션으로 일치",
+      "출입관리 → '카드' 섹션(출입카드 발급·관리)으로 확인됨 (해결)",
+      "사용자 권한관리 → '통합계정' 섹션 내 '권한' 블록으로 확인됨 (해결)",
+      "사용자 설명에 없던 서비스: 시스템경비, 마이에스원, 고객센터"
+    ]
+  },
+  "needs_review": [
+    "각 섹션의 블루 타이틀 카드 부제(버전/범위) 미판독 — 고해상 재확인 필요",
+    "좌측 하단 범례/메모 블록(색상·상태 코드 규칙 추정) 미판독",
+    "섹션별 개별 화면 목록·node-id 미수집 (보드가 164086px로 커서 전체 메타데이터 조회 타임아웃)",
+    "'사용자 권한관리'와 '출입관리'의 실제 위치 확정 필요",
+    "각 섹션이 보드상 독립 프레임인지(=node-id 보유) 확인 필요"
+  ]
+}
