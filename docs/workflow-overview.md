@@ -70,7 +70,7 @@ Figma 링크가 제공된 경우 아래 4단계 순서로 분석합니다.
 
 ### 3단계 — 디자인 시스템 매핑 (A2)
 - **담당자**: `ds-mapper`
-- **입력**: `screen-analysis.json` + `registry/shared/component-role-map.json`
+- **입력**: `screen-analysis.json` + 디자인시스템 가이드 repo의 컴포넌트·토큰 registry (정본 참조, 위키에 사본 없음)
 - **출력**: `component-mapping.json`, `token-mapping.json`
 
 ### 4단계 — UX 검수 (A3)
