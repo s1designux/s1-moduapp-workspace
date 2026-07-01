@@ -3,116 +3,1096 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>S1 모두앱 UX Subagent Workspace — 현황</title>
+<title>모두앱 UX 분석 워크스페이스</title>
 <style>
   :root {
-    --blue-600:#2563eb; --blue-50:#eff6ff;
-    --gray-900:#111827; --gray-700:#374151; --gray-500:#6b7280;
-    --gray-300:#d1d5db; --gray-200:#e5e7eb; --gray-100:#f3f4f6; --gray-50:#f9fafb;
-    --green-500:#22c55e; --green-50:#f0fdf4;
-    --amber-500:#f59e0b; --amber-50:#fffbeb;
-    --slate-400:#94a3b8;
+    --blue-700:#1d4ed8; --blue-600:#2563eb; --blue-100:#dbeafe; --blue-50:#eff6ff; --blue-200:#bfdbfe;
+    --green-700:#15803d; --green-600:#16a34a; --green-100:#dcfce7; --green-50:#f0fdf4; --green-200:#bbf7d0;
+    --amber-700:#b45309; --amber-600:#d97706; --amber-100:#fef3c7; --amber-50:#fffbeb;
+    --red-700:#b91c1c; --red-600:#dc2626; --red-100:#fee2e2; --red-50:#fef2f2;
+    --gray-900:#111827; --gray-800:#1f2937; --gray-700:#374151; --gray-600:#4b5563;
+    --gray-500:#6b7280; --gray-400:#9ca3af; --gray-300:#d1d5db;
+    --gray-200:#e5e7eb; --gray-100:#f3f4f6; --gray-50:#f9fafb;
+    --slate-500:#64748b; --slate-400:#94a3b8; --slate-200:#e2e8f0;
+    --lnb-w: 208px;
   }
   * { box-sizing:border-box; margin:0; padding:0; }
   body {
     font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI",Roboto,sans-serif;
-    background:var(--gray-50); color:var(--gray-900); line-height:1.55; padding:32px 20px;
+    background:var(--gray-50); color:var(--gray-900); line-height:1.55;
+    display:flex; min-height:100vh;
   }
-  .wrap { max-width:1080px; margin:0 auto; }
-  header { margin-bottom:28px; }
-  h1 { font-size:24px; font-weight:700; }
-  .sub { color:var(--gray-500); margin-top:6px; font-size:14px; }
-  .updated { color:var(--slate-400); font-size:12px; margin-top:4px; }
-  section { background:#fff; border:1px solid var(--gray-200); border-radius:14px; padding:24px; margin-bottom:20px; }
-  h2 { font-size:16px; font-weight:700; margin-bottom:16px; display:flex; align-items:center; gap:8px; }
-  .badge { display:inline-block; font-size:11px; font-weight:700; padding:2px 9px; border-radius:999px; }
-  .badge-active { background:var(--green-50); color:var(--green-500); }
-  .badge-standby { background:var(--amber-50); color:var(--amber-500); }
-  .badge-planned { background:var(--gray-100); color:var(--gray-500); }
-  table { width:100%; border-collapse:collapse; font-size:13px; }
-  th, td { text-align:left; padding:9px 12px; border-bottom:1px solid var(--gray-100); }
-  th { color:var(--gray-500); font-weight:600; font-size:12px; background:var(--gray-50); }
-  td.name { font-weight:600; }
-  .flow { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
-  .step { background:var(--blue-50); color:var(--blue-600); border:1px solid #bfdbfe; border-radius:8px; padding:8px 12px; font-size:13px; font-weight:600; }
-  .arrow { color:var(--gray-300); font-weight:700; }
-  .empty { text-align:center; padding:36px 20px; color:var(--gray-500); }
-  .empty .icon { font-size:34px; }
-  .empty .label { margin-top:8px; font-size:14px; }
-  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; }
-  .card { border:1px solid var(--gray-200); border-radius:10px; padding:14px 16px; }
-  .card .role { font-weight:700; font-size:14px; }
-  .card .desc { color:var(--gray-500); font-size:12.5px; margin-top:4px; }
-  .next { background:var(--blue-50); border:1px solid #bfdbfe; border-radius:10px; padding:14px 16px; font-size:13.5px; color:var(--gray-700); }
-  .next b { color:var(--blue-600); }
-  .hint { color:var(--gray-500); font-size:12.5px; margin-top:10px; }
-  code { background:var(--gray-100); padding:1px 6px; border-radius:5px; font-size:12px; }
+
+  /* ══════════════════════════
+     LNB
+  ══════════════════════════ */
+  .lnb {
+    width:var(--lnb-w); flex-shrink:0;
+    background:var(--gray-900); color:#fff;
+    position:fixed; top:0; left:0; bottom:0;
+    display:flex; flex-direction:column;
+    overflow-y:auto; z-index:10;
+  }
+  .lnb-title {
+    padding:20px 16px 14px;
+    border-bottom:1px solid rgba(255,255,255,.1);
+  }
+  .lnb-title h1 { font-size:13.5px; font-weight:800; color:#fff; line-height:1.4; }
+  .lnb-title p  { font-size:11px; color:var(--slate-400); margin-top:4px; }
+
+  .lnb-group { padding:12px 0 4px; }
+  .lnb-group-label {
+    font-size:10px; font-weight:700; color:var(--slate-500);
+    letter-spacing:.8px; text-transform:uppercase;
+    padding:0 16px 6px;
+  }
+  .lnb-item {
+    display:flex; align-items:center; gap:8px;
+    padding:8px 16px; cursor:pointer;
+    font-size:13px; color:var(--gray-300);
+    border-left:3px solid transparent;
+    transition:background .12s, color .12s;
+    text-decoration:none; user-select:none;
+  }
+  .lnb-item:hover { background:rgba(255,255,255,.06); color:#fff; }
+  .lnb-item.active {
+    background:rgba(255,255,255,.1); color:#fff;
+    border-left-color:var(--blue-500);
+    font-weight:700;
+  }
+  .lnb-icon { font-size:14px; flex-shrink:0; width:18px; text-align:center; }
+  .lnb-right { margin-left:auto; }
+
+  /* 상태 도트 */
+  .dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+  .dot-done    { background:var(--green-500, #22c55e); }
+  .dot-partial { background:var(--amber-500, #f59e0b); }
+  .dot-next    { background:var(--blue-500); }
+  .dot-wait    { background:var(--gray-600); }
+
+  /* ══════════════════════════
+     메인 콘텐츠
+  ══════════════════════════ */
+  .main {
+    margin-left:var(--lnb-w);
+    flex:1; padding:32px 36px;
+    max-width:calc(100vw - var(--lnb-w));
+  }
+
+  /* 섹션 전환 */
+  .page { display:none; }
+  .page.active { display:block; }
+
+  /* 페이지 헤더 */
+  .page-header { margin-bottom:24px; }
+  .page-header h2 { font-size:20px; font-weight:800; display:flex; align-items:center; gap:10px; }
+  .page-header .sub { font-size:13px; color:var(--gray-500); margin-top:6px; }
+
+  /* ══════════════════════════
+     배지
+  ══════════════════════════ */
+  .badge {
+    display:inline-flex; align-items:center; gap:4px;
+    font-size:11px; font-weight:700; padding:2px 9px; border-radius:999px;
+  }
+  .b-done    { background:var(--green-100); color:var(--green-700); }
+  .b-partial { background:var(--amber-100); color:var(--amber-700); }
+  .b-next    { background:var(--blue-100);  color:var(--blue-700); }
+  .b-wait    { background:var(--gray-100);  color:var(--gray-500); }
+  .b-open    { background:var(--red-100);   color:var(--red-700); }
+  .b-small   { font-size:10px; padding:1px 7px; }
+
+  /* ══════════════════════════
+     개요 카드
+  ══════════════════════════ */
+  .overview-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(200px,1fr));
+    gap:12px; margin-bottom:24px;
+  }
+  .stat-card {
+    background:#fff; border:1px solid var(--gray-200); border-radius:12px;
+    padding:16px 18px;
+  }
+  .stat-card .num { font-size:28px; font-weight:900; color:var(--gray-900); }
+  .stat-card .lbl { font-size:12px; color:var(--gray-500); margin-top:3px; }
+
+  /* 단계 요약 테이블 */
+  .phase-summary {
+    background:#fff; border:1px solid var(--gray-200); border-radius:12px;
+    overflow:hidden; margin-bottom:24px;
+  }
+  .phase-summary table { width:100%; border-collapse:collapse; font-size:13px; }
+  .phase-summary th {
+    background:var(--gray-50); color:var(--gray-500);
+    font-size:11px; font-weight:700; text-align:left;
+    padding:9px 16px; border-bottom:1px solid var(--gray-200);
+  }
+  .phase-summary td { padding:10px 16px; border-bottom:1px solid var(--gray-100); vertical-align:middle; }
+  .phase-summary tr:last-child td { border-bottom:none; }
+  .phase-summary td.name { font-weight:700; }
+  .phase-summary td.rounds { color:var(--gray-500); font-size:12px; }
+  .phase-summary .go-btn {
+    font-size:11.5px; color:var(--blue-600); font-weight:700;
+    cursor:pointer; background:none; border:none; padding:2px 0;
+    text-decoration:underline;
+  }
+
+  /* ══════════════════════════
+     차수(iteration) 카드
+  ══════════════════════════ */
+  .round-list { display:flex; flex-direction:column; gap:0; }
+
+  .round-card {
+    display:flex; gap:0; position:relative;
+  }
+
+  /* 타임라인 선 */
+  .round-timeline {
+    display:flex; flex-direction:column; align-items:center;
+    width:40px; flex-shrink:0; padding-top:2px;
+  }
+  .round-dot {
+    width:28px; height:28px; border-radius:50%; border:2px solid;
+    display:flex; align-items:center; justify-content:center;
+    font-size:11px; font-weight:800; flex-shrink:0; z-index:1;
+  }
+  .round-dot.done    { background:var(--green-600); border-color:var(--green-600); color:#fff; }
+  .round-dot.next    { background:var(--blue-600);  border-color:var(--blue-600);  color:#fff; }
+  .round-dot.wait    { background:#fff; border-color:var(--gray-300); color:var(--gray-400); }
+  .round-line {
+    width:2px; flex:1; margin-top:4px;
+    background:var(--gray-200); min-height:16px;
+  }
+  .round-card:last-child .round-line { background:transparent; }
+
+  /* 차수 내용 */
+  .round-body {
+    flex:1; padding:0 0 28px 16px;
+  }
+  .round-head {
+    display:flex; align-items:center; gap:8px; margin-bottom:10px; padding-top:3px;
+  }
+  .round-label { font-size:14px; font-weight:800; }
+  .round-date  { font-size:11.5px; color:var(--slate-400); }
+
+  /* 차수 내용 블록 */
+  .round-section { margin-bottom:14px; }
+  .round-section-title {
+    font-size:11px; font-weight:700; color:var(--gray-500);
+    letter-spacing:.5px; text-transform:uppercase;
+    margin-bottom:6px;
+  }
+
+  /* 완료 항목 리스트 */
+  .check-list { list-style:none; display:flex; flex-direction:column; gap:4px; }
+  .check-list li { display:flex; gap:7px; font-size:13px; color:var(--gray-700); align-items:flex-start; }
+  .chk {
+    flex-shrink:0; width:17px; height:17px; border-radius:4px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:9px; margin-top:1.5px;
+  }
+  .chk.done  { background:var(--green-600); color:#fff; }
+  .chk.open  { background:var(--amber-100); color:var(--amber-700); border:1px solid var(--amber-200); }
+  .chk.wait  { background:var(--gray-100); color:var(--gray-400); border:1px solid var(--gray-200); }
+
+  /* 산출물 */
+  .artifact-list { display:flex; flex-wrap:wrap; gap:5px; }
+  .artifact {
+    font-size:11.5px; background:var(--gray-100); color:var(--gray-700);
+    border-radius:6px; padding:3px 9px; font-family:monospace;
+  }
+  .artifact.json { background:var(--blue-50); color:var(--blue-700); border:1px solid var(--blue-100); }
+  .artifact.html { background:var(--green-50); color:var(--green-700); border:1px solid var(--green-100); }
+
+  /* 다음 차수 계획 (점선 카드) */
+  .plan-card {
+    background:var(--blue-50); border:1.5px dashed var(--blue-300, #93c5fd);
+    border-radius:12px; padding:14px 16px; margin-top:4px;
+  }
+  .plan-card-title { font-size:12.5px; font-weight:700; color:var(--blue-700); margin-bottom:8px; }
+
+  /* ══════════════════════════
+     Q&A 테이블
+  ══════════════════════════ */
+  .qna-stats { display:flex; gap:10px; margin-bottom:16px; flex-wrap:wrap; }
+  .qna-stat {
+    padding:10px 16px; border-radius:10px; font-size:13px;
+    background:#fff; border:1px solid var(--gray-200);
+  }
+  .qna-stat .n { font-size:22px; font-weight:900; display:block; }
+  .qna-stat .l { font-size:11px; color:var(--gray-500); }
+  .qna-stat.g { border-color:var(--green-200); background:var(--green-50); }
+  .qna-stat.g .n { color:var(--green-700); }
+  .qna-stat.r { border-color:var(--red-100); background:var(--red-50); }
+  .qna-stat.r .n { color:var(--red-700); }
+
+  .qna-table { width:100%; border-collapse:collapse; font-size:12.5px; background:#fff; border-radius:12px; overflow:hidden; border:1px solid var(--gray-200); }
+  .qna-table th { background:var(--gray-50); color:var(--gray-500); font-size:11px; font-weight:600; padding:8px 12px; border-bottom:1px solid var(--gray-200); text-align:left; }
+  .qna-table td { padding:9px 12px; border-bottom:1px solid var(--gray-100); vertical-align:top; }
+  .qna-table tr:last-child td { border-bottom:none; }
+  .qna-table td.qid { font-family:monospace; color:var(--slate-400); font-size:11px; white-space:nowrap; }
+  .qna-table td.sec { color:var(--gray-500); white-space:nowrap; }
+  .qna-table td.ans { color:var(--gray-700); line-height:1.55; }
+  .qna-table td.ans.warn { color:var(--amber-700); }
+
+  /* 분석결과 접이식 */
+  .result-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(440px,1fr)); gap:14px; }
+  .result-card { background:#fff; border:1px solid var(--gray-200); border-radius:12px; overflow:hidden; }
+  .rc-head { padding:14px 16px 10px; }
+  .rc-title-row { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
+  .rc-title { font-size:14px; font-weight:800; }
+  .rc-meta  { color:var(--slate-400); font-size:11px; }
+  .rc-summary { font-size:12.5px; color:var(--gray-700); line-height:1.6; }
+  .rc-counts { display:flex; gap:8px; margin-top:8px; flex-wrap:wrap; }
+  .rc-count { font-size:11.5px; font-weight:700; padding:2px 9px; border-radius:999px; }
+  .cnt-sc { background:var(--blue-50); color:var(--blue-700); }
+  .cnt-ri { background:var(--amber-50); color:var(--amber-700); }
+  .cnt-rv { background:var(--red-50); color:var(--red-700); }
+
+  details { border-top:1px solid var(--gray-100); }
+  details summary { padding:8px 16px; font-size:12.5px; font-weight:600; color:var(--gray-700); cursor:pointer; list-style:none; display:flex; align-items:center; gap:6px; user-select:none; }
+  details summary::-webkit-details-marker { display:none; }
+  details summary::before { content:'▶'; font-size:9px; color:var(--slate-400); transition:transform .2s; }
+  details[open] summary::before { transform:rotate(90deg); }
+  details summary:hover { background:var(--gray-50); }
+  .detail-body { padding:10px 16px 14px; }
+
+  .screen-table { width:100%; border-collapse:collapse; font-size:12px; }
+  .screen-table th { background:var(--gray-50); color:var(--gray-500); font-size:11px; font-weight:600; padding:5px 10px; border-bottom:1px solid var(--gray-200); text-align:left; }
+  .screen-table td { padding:6px 10px; border-bottom:1px solid var(--gray-100); vertical-align:top; }
+  .screen-table tr:last-child td { border-bottom:none; }
+  .screen-table td.sn { font-weight:600; }
+  .screen-table td.si { color:var(--slate-400); font-size:10.5px; font-family:monospace; }
+  .type-chip { font-size:10px; padding:1px 6px; border-radius:4px; background:var(--gray-100); color:var(--gray-600); font-weight:600; }
+
+  .bul { list-style:none; display:flex; flex-direction:column; gap:5px; }
+  .bul li { display:flex; gap:7px; font-size:12px; color:var(--gray-700); line-height:1.55; }
+  .bul li::before { flex-shrink:0; width:17px; height:17px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:700; margin-top:1px; }
+  .bul.risk   li::before { content:'!'; background:var(--amber-100); color:var(--amber-700); }
+  .bul.review li::before { content:'?'; background:var(--red-100);   color:var(--red-700); }
+  .bul.cross  li { padding-left:14px; position:relative; }
+  .bul.cross  li::before { content:'↔'; position:absolute; left:0; color:var(--blue-600); font-size:10px; background:none; width:auto; height:auto; border-radius:0; }
+
+  code { background:var(--gray-100); padding:1px 6px; border-radius:5px; font-size:11.5px; }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <h1>S1 모두앱 UX Subagent Workspace</h1>
-    <div class="sub">앱 UI 분석 → 메타데이터화 → 디자인 시스템 매핑 → UX 검수 → 신규 화면 초안 생성</div>
-    <div class="updated">마지막 업데이트: 2026-05-26 · 대상 서비스: 모두앱 (출입·영상·권한 등 다중 서비스 통합 허브 앱)</div>
-  </header>
 
-  <section>
-    <h2>현재 진행 상태 <span class="badge badge-active">S0 완료</span></h2>
-    <div class="next">
-      <b>S0 완료</b> — 워크스페이스 세팅 + <b>다층 수집 모델</b>(앱 셸 / 서비스별 / 횡단) 반영, 담당자 5종 정의, 기준표 스켈레톤 작성.<br>
-      <b>다음 단계 (Phase 0):</b> Figma Dev Mode MCP 연결 후 <code>moduapp-ia-mapper</code>로 서비스맵·전체 IA를 먼저 파악합니다.
+<!-- ══════════════════════════
+     LNB
+══════════════════════════ -->
+<aside class="lnb">
+  <div class="lnb-title">
+    <h1>모두앱<br>UX 분석 워크스페이스</h1>
+    <p>기준일: 2026-05-27</p>
+  </div>
+
+  <div class="lnb-group">
+    <div class="lnb-item active" data-page="overview">
+      <span class="lnb-icon">⊞</span> 전체 현황
     </div>
-  </section>
+  </div>
 
-  <section>
-    <h2>다층 수집 모델 (Top-down)</h2>
-    <div class="flow">
-      <span class="step">Phase 0 · 서비스맵/IA<br>moduapp-ia-mapper</span><span class="arrow">→</span>
-      <span class="step">Phase 1 · 앱 셸·공통<br>moduapp-reader</span><span class="arrow">→</span>
-      <span class="step">Phase 2 · 서비스별<br>moduapp-reader</span><span class="arrow">→</span>
-      <span class="step">Phase 3 · 횡단(권한·연계)<br>moduapp-permission-mapper</span><span class="arrow">→</span>
-      <span class="step">Phase 4 · UX 검수<br>ux-checker</span>
+  <div class="lnb-group">
+    <div class="lnb-group-label">분석 단계</div>
+    <div class="lnb-item" data-page="p1">
+      <span class="dot dot-partial"></span>
+      P1 · 앱 셸 분석
+      <span class="lnb-right badge b-small b-partial">1차 완</span>
     </div>
-    <div class="hint">모빌리티(화면 먼저)와 달리, 모두앱은 <b>구조 먼저(Top-down)</b> — 어떤 서비스가 있고 누가 무엇을 보는지(권한)부터 파악합니다.</div>
-  </section>
-
-  <section>
-    <h2>담당자(에이전트) 현황</h2>
-    <table>
-      <thead><tr><th>레이어</th><th>담당자</th><th>역할</th><th>상태</th></tr></thead>
-      <tbody>
-        <tr><td>오케스트레이션</td><td class="name">main-orchestrator</td><td>작업 흐름·상태 관리, 통합 보고</td><td><span class="badge badge-active">active</span></td></tr>
-        <tr><td>리더십</td><td class="name">s1-service-intelligence-lead</td><td>서비스 간 통합 비교 분석</td><td><span class="badge badge-standby">standby</span></td></tr>
-        <tr><td>공통</td><td class="name">ui-reader</td><td>기존 화면 구조 분석</td><td><span class="badge badge-active">active</span></td></tr>
-        <tr><td>공통</td><td class="name">ds-mapper</td><td>디자인 시스템 매핑</td><td><span class="badge badge-standby">standby</span></td></tr>
-        <tr><td>공통</td><td class="name">ux-checker</td><td>앱 UX 검수</td><td><span class="badge badge-active">active</span></td></tr>
-        <tr><td>공통</td><td class="name">research-synthesizer</td><td>복수 자료 교차 종합</td><td><span class="badge badge-standby">standby</span></td></tr>
-        <tr><td>모두앱</td><td class="name">moduapp-ia-mapper</td><td>서비스맵·전체 IA 파악 (Phase 0)</td><td><span class="badge badge-active">active</span></td></tr>
-        <tr><td>모두앱</td><td class="name">moduapp-reader</td><td>서비스별 화면 전문 분석</td><td><span class="badge badge-standby">standby</span></td></tr>
-        <tr><td>모두앱</td><td class="name">moduapp-permission-mapper</td><td>역할·권한(RBAC) 매트릭스 정리</td><td><span class="badge badge-standby">standby</span></td></tr>
-        <tr><td>모두앱</td><td class="name">moduapp-screen-maker</td><td>신규 화면 초안 생성</td><td><span class="badge badge-standby">standby</span></td></tr>
-      </tbody>
-    </table>
-  </section>
-
-  <section>
-    <h2>분석 결과</h2>
-    <div class="empty">
-      <div class="icon">📂</div>
-      <div class="label">아직 분석 결과가 없습니다.<br>화면 자료를 <code>samples/moduapp/</code>에 넣거나 Figma 링크를 전달한 뒤 분석을 시작하세요.</div>
+    <div class="lnb-item" data-page="p2">
+      <span class="dot dot-partial"></span>
+      P2 · 서비스 분석
+      <span class="lnb-right badge b-small b-partial">1차 진행</span>
     </div>
-  </section>
-
-  <section>
-    <h2>자료 넣는 곳</h2>
-    <div class="cards">
-      <div class="card"><div class="role">Figma 익스포트</div><div class="desc">samples/moduapp/figma-export/</div></div>
-      <div class="card"><div class="role">스크린샷</div><div class="desc">samples/moduapp/screenshots/</div></div>
-      <div class="card"><div class="role">기획서·사양서</div><div class="desc">samples/moduapp/spec-docs/</div></div>
-      <div class="card"><div class="role">Figma 링크</div><div class="desc">채팅으로 바로 전달 (node-id 포함)</div></div>
+    <div class="lnb-item" data-page="p3">
+      <span class="dot dot-next"></span>
+      P3 · 권한 매트릭스
+      <span class="lnb-right badge b-small b-next">다음</span>
     </div>
-  </section>
-</div>
+    <div class="lnb-item" data-page="p4">
+      <span class="dot dot-wait"></span>
+      P4 · UX 검수
+      <span class="lnb-right badge b-small b-wait">예정</span>
+    </div>
+    <div class="lnb-item" data-page="p5">
+      <span class="dot dot-wait"></span>
+      P5 · 신규 화면
+      <span class="lnb-right badge b-small b-wait">예정</span>
+    </div>
+  </div>
+
+  <div class="lnb-group">
+    <div class="lnb-group-label">횡단 관리</div>
+    <div class="lnb-item" data-page="qna">
+      <span class="dot dot-partial"></span>
+      Q&A 담당자 질문
+      <span class="lnb-right badge b-small b-open">재질문</span>
+    </div>
+    <div class="lnb-item" data-page="screens">
+      <span class="dot dot-done"></span>
+      화면 분석 결과
+    </div>
+  </div>
+</aside>
+
+<!-- ══════════════════════════
+     메인
+══════════════════════════ -->
+<main class="main">
+
+  <!-- ─── 전체 현황 ─── -->
+  <div class="page active" id="page-overview">
+    <div class="page-header">
+      <h2>⊞ 전체 현황</h2>
+      <div class="sub">앱 UI 분석 → 메타데이터화 → 권한 매트릭스 → UX 검수 → 신규 화면 초안 · 각 단계는 반복(N차) 가능</div>
+    </div>
+
+    <div class="overview-grid">
+      <div class="stat-card">
+        <div class="num">6</div>
+        <div class="lbl">분석 완료 섹션 (P1·P2 합산)</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">44</div>
+        <div class="lbl">정의된 화면 수</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">18</div>
+        <div class="lbl">담당자 질문 · 답변</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">2</div>
+        <div class="lbl">재질문 필요 항목</div>
+      </div>
+    </div>
+
+    <div class="phase-summary">
+      <table>
+        <thead>
+          <tr>
+            <th>단계</th>
+            <th>담당자</th>
+            <th>현재 차수</th>
+            <th>이번 차수 결과</th>
+            <th>다음 차수 할 것</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="name">P1 앱 셸 분석</td>
+            <td><code>moduapp-reader</code></td>
+            <td class="rounds"><span class="badge b-partial">1차 완료</span></td>
+            <td>홈·통합계정·공통 26개 화면</td>
+            <td>답변 반영 → needs_review 해소</td>
+            <td><button class="go-btn" data-page="p1">보기 →</button></td>
+          </tr>
+          <tr>
+            <td class="name">P2 서비스 분석</td>
+            <td><code>moduapp-reader</code></td>
+            <td class="rounds"><span class="badge b-partial">1차 진행 중</span></td>
+            <td>카드·영상·시스템경비 18개 화면</td>
+            <td>마이에스원 분석 (4번째 서비스)</td>
+            <td><button class="go-btn" data-page="p2">보기 →</button></td>
+          </tr>
+          <tr>
+            <td class="name">P3 권한 매트릭스</td>
+            <td><code>moduapp-permission-mapper</code></td>
+            <td class="rounds"><span class="badge b-next">0차 · 다음</span></td>
+            <td>—</td>
+            <td>답변 기반 초안 작성 + 재질문</td>
+            <td><button class="go-btn" data-page="p3">보기 →</button></td>
+          </tr>
+          <tr>
+            <td class="name">P4 UX 검수</td>
+            <td><code>ux-checker</code></td>
+            <td class="rounds"><span class="badge b-wait">미착수</span></td>
+            <td>—</td>
+            <td>P3 완료 후 고위험 액션 우선</td>
+            <td><button class="go-btn" data-page="p4">보기 →</button></td>
+          </tr>
+          <tr>
+            <td class="name">P5 신규 화면</td>
+            <td><code>moduapp-screen-maker</code></td>
+            <td class="rounds"><span class="badge b-wait">미착수</span></td>
+            <td>—</td>
+            <td>P4 완료 후 착수</td>
+            <td><button class="go-btn" data-page="p5">보기 →</button></td>
+          </tr>
+          <tr>
+            <td class="name">Q&A 담당자 질문</td>
+            <td>배지숙</td>
+            <td class="rounds"><span class="badge b-partial">1차 완료</span></td>
+            <td>18개 질문 · 답변 완료</td>
+            <td>PERM-02·ACC-03 재질문</td>
+            <td><button class="go-btn" data-page="qna">보기 →</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ─── P1 앱 셸 ─── -->
+  <div class="page" id="page-p1">
+    <div class="page-header">
+      <h2>P1 · 앱 셸 화면 분석 <span class="badge b-partial">1차 완료 · 2차 예정</span></h2>
+      <div class="sub">담당자: <code>moduapp-reader</code> · layer = app-shell · 반복 시 새로운 사양서/Figma 자료가 생기면 차수를 추가합니다</div>
+    </div>
+    <div class="round-list">
+
+      <!-- 1차 -->
+      <div class="round-card">
+        <div class="round-timeline">
+          <div class="round-dot done">1</div>
+          <div class="round-line"></div>
+        </div>
+        <div class="round-body">
+          <div class="round-head">
+            <span class="round-label">1차</span>
+            <span class="badge b-done">완료</span>
+            <span class="round-date">2026-05-26 · Figma: MoDU-APP-20240327-최종</span>
+          </div>
+
+          <div class="round-section">
+            <div class="round-section-title">이번 차수에 한 것</div>
+            <ul class="check-list">
+              <li><span class="chk done">✓</span> 홈(대시보드) — 13개 화면 정의. 서비스×권한 분기 3종 확정.</li>
+              <li><span class="chk done">✓</span> 통합계정 — 6개 블록 (로그인·간편인증·가입·내정보·권한)</li>
+              <li><span class="chk done">✓</span> 공통 — 7개 블록 + 탭바 4탭(홈/경비/영상/전체메뉴) 확정</li>
+              <li><span class="chk done">✓</span> UX 리스크 6개 · needs_review 11개 기록</li>
+            </ul>
+          </div>
+
+          <div class="round-section">
+            <div class="round-section-title">산출물</div>
+            <div class="artifact-list">
+              <span class="artifact json">home-screen-analysis.json</span>
+              <span class="artifact json">account-screen-analysis.json</span>
+              <span class="artifact json">common-screen-analysis.json</span>
+            </div>
+          </div>
+
+          <div class="round-section">
+            <div class="round-section-title">이번 차수에서 남은 것</div>
+            <ul class="check-list">
+              <li><span class="chk open">!</span> 일부 화면 Storyboard ID 미확정 (요구사항 추적표 텍스트 미판독)</li>
+              <li><span class="chk open">!</span> MN1010044 vs MN1010050 차이 미확정</li>
+              <li><span class="chk open">!</span> 전체메뉴 포함 서비스 목록 미확정</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2차 계획 -->
+      <div class="round-card">
+        <div class="round-timeline">
+          <div class="round-dot next">2</div>
+          <div class="round-line"></div>
+        </div>
+        <div class="round-body">
+          <div class="round-head">
+            <span class="round-label">2차</span>
+            <span class="badge b-next">예정</span>
+          </div>
+          <div class="plan-card">
+            <div class="plan-card-title">2차 계획 — 담당자 답변 반영</div>
+            <ul class="check-list">
+              <li><span class="chk wait">○</span> 받은 답변(HOME-01~04, ACC-01~03)을 JSON에 반영 → needs_review 해소</li>
+              <li><span class="chk wait">○</span> MN1010044/050 차이 → 답변(HOME-02) 기반으로 정정</li>
+              <li><span class="chk wait">○</span> 상시 노출 영역 = 추천/혜택 → home-screen-analysis.json 업데이트</li>
+              <li><span class="chk wait">○</span> 전체메뉴 포함 서비스 목록 확인 후 common-screen-analysis.json 업데이트</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3차+ -->
+      <div class="round-card">
+        <div class="round-timeline">
+          <div class="round-dot wait">N</div>
+        </div>
+        <div class="round-body">
+          <div class="round-head">
+            <span class="round-label">이후 차수</span>
+            <span class="badge b-wait">조건부</span>
+          </div>
+          <div style="font-size:12.5px; color:var(--gray-500); padding-top:4px;">
+            새로운 Figma 사양서 버전 업데이트, 화면 추가·변경, 또는 P4 UX 검수에서 P1 재분석이 필요한 발견이 나오면 차수를 추가합니다.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ─── P2 서비스별 ─── -->
+  <div class="page" id="page-p2">
+    <div class="page-header">
+      <h2>P2 · 서비스별 화면 분석 <span class="badge b-partial">1차 진행 중 (3/4 서비스)</span></h2>
+      <div class="sub">담당자: <code>moduapp-reader</code> · layer = service · 서비스가 추가되거나 사양서가 갱신될 때마다 차수를 추가합니다</div>
+    </div>
+    <div class="round-list">
+
+      <!-- 1차 -->
+      <div class="round-card">
+        <div class="round-timeline">
+          <div class="round-dot done">1</div>
+          <div class="round-line"></div>
+        </div>
+        <div class="round-body">
+          <div class="round-head">
+            <span class="round-label">1차</span>
+            <span class="badge b-partial">부분 완료</span>
+            <span class="round-date">2026-05-26 · Figma: MoDU-APP-20240327-최종</span>
+          </div>
+
+          <div class="round-section">
+            <div class="round-section-title">이번 차수에 한 것</div>
+            <ul class="check-list">
+              <li><span class="chk done">✓</span> 카드(출입카드) — 6개 블록. 실물·모바일·방문자 카드 발급/승인 흐름.</li>
+              <li><span class="chk done">✓</span> 영상 — 6개 블록. 기기등록·실시간·녹화·원격지원.</li>
+              <li><span class="chk done">✓</span> 시스템경비 — 6개 블록. 제어·이력·모바일보고서·긴급연락처.</li>
+              <li><span class="chk open">!</span> 마이에스원 — 미분석. 담당자 답변에서 4번째 서비스로 확정됨.</li>
+            </ul>
+          </div>
+
+          <div class="round-section">
+            <div class="round-section-title">산출물</div>
+            <div class="artifact-list">
+              <span class="artifact json">card-screen-analysis.json</span>
+              <span class="artifact json">video-screen-analysis.json</span>
+              <span class="artifact json">system-guard-screen-analysis.json</span>
+            </div>
+          </div>
+
+          <div class="round-section">
+            <div class="round-section-title">이번 차수에서 남은 것</div>
+            <ul class="check-list">
+              <li><span class="chk open">!</span> 마이에스원(계약·청구/입금) Figma 노드 확인 후 분석 필요</li>
+              <li><span class="chk open">!</span> 각 블록 개별 화면 Storyboard ID 정밀 목록 (사양서 표 텍스트 미판독)</li>
+              <li><span class="chk open">!</span> 영상 화질 옵션(Full/HD) 사양 위치 재확인 (담당자: 사양서에서 빠진 것으로 추정)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2차 계획 -->
+      <div class="round-card">
+        <div class="round-timeline">
+          <div class="round-dot next">2</div>
+          <div class="round-line"></div>
+        </div>
+        <div class="round-body">
+          <div class="round-head">
+            <span class="round-label">2차</span>
+            <span class="badge b-next">예정</span>
+          </div>
+          <div class="plan-card">
+            <div class="plan-card-title">2차 계획 — 마이에스원 분석</div>
+            <ul class="check-list">
+              <li><span class="chk wait">○</span> Figma에서 마이에스원(계약·청구/입금) 섹션 노드 확인</li>
+              <li><span class="chk wait">○</span> <code>moduapp-reader</code>로 화면 분석 → <code>mys1-screen-analysis.json</code> 산출</li>
+              <li><span class="chk wait">○</span> 서비스맵에 마이에스원 추가 → <code>service-map.json</code> 업데이트</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- N차 -->
+      <div class="round-card">
+        <div class="round-timeline">
+          <div class="round-dot wait">N</div>
+        </div>
+        <div class="round-body">
+          <div class="round-head">
+            <span class="round-label">이후 차수</span>
+            <span class="badge b-wait">조건부</span>
+          </div>
+          <div style="font-size:12.5px; color:var(--gray-500); padding-top:4px;">
+            고객센터·설정 등 서비스가 추가 확인되거나, 기존 서비스 사양서가 갱신될 때 차수를 추가합니다. P4 UX 검수에서 재분석 필요 발견 시에도 추가.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ─── P3 권한 매트릭스 ─── -->
+  <div class="page" id="page-p3">
+    <div class="page-header">
+      <h2>P3 · 권한 매트릭스 <span class="badge b-next">다음 단계</span></h2>
+      <div class="sub">담당자: <code>moduapp-permission-mapper</code> · 담당자 답변이 보강될 때마다 차수를 추가합니다</div>
+    </div>
+    <div class="round-list">
+
+      <!-- 1차 계획 -->
+      <div class="round-card">
+        <div class="round-timeline">
+          <div class="round-dot next">1</div>
+          <div class="round-line"></div>
+        </div>
+        <div class="round-body">
+          <div class="round-head">
+            <span class="round-label">1차</span>
+            <span class="badge b-next">착수 가능</span>
+          </div>
+          <div class="plan-card">
+            <div class="plan-card-title">1차 계획 — 기존 답변으로 초안 작성</div>
+            <ul class="check-list">
+              <li><span class="chk wait">○</span> 역할 확정: 마스터관리자 / 일반관리자 (일반 사용자 없음 — PERM-01 확인)</li>
+              <li><span class="chk wait">○</span> 서비스 권한 5종(경비·영상·카드·계약·클라우드매니저) 매트릭스 초안 작성</li>
+              <li><span class="chk wait">○</span> 현재 알고 있는 제한 사항 정리: 긴급연락처=마스터만, 카드 초대·승인=카드권한 있는 관리자만</li>
+              <li><span class="chk wait">○</span> <code>permission-matrix.json</code> 산출</li>
+              <li><span class="chk open">!</span> PERM-02 미해소 → 일반관리자 기능 제한 항목은 재질문 후 채움</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2차 계획 -->
+      <div class="round-card">
+        <div class="round-timeline">
+          <div class="round-dot wait">2</div>
+          <div class="round-line"></div>
+        </div>
+        <div class="round-body">
+          <div class="round-head">
+            <span class="round-label">2차</span>
+            <span class="badge b-wait">PERM-02 답변 수령 후</span>
+          </div>
+          <div class="plan-card">
+            <div class="plan-card-title">2차 계획 — 재질문 답변 반영</div>
+            <ul class="check-list">
+              <li><span class="chk wait">○</span> "마스터관리자만 되고, 일반관리자는 못 하는 기능이 뭔가요?" 재질문 발송</li>
+              <li><span class="chk wait">○</span> 답변 수령 후 마트릭스 보완 → <code>permission-matrix.json</code> 2차 업데이트</li>
+              <li><span class="chk wait">○</span> 역할별 화면 분기 규칙이 P1·P2 분석 결과와 일치하는지 교차 검증</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- N차 -->
+      <div class="round-card">
+        <div class="round-timeline">
+          <div class="round-dot wait">N</div>
+        </div>
+        <div class="round-body">
+          <div class="round-head">
+            <span class="round-label">이후 차수</span>
+            <span class="badge b-wait">조건부</span>
+          </div>
+          <div style="font-size:12.5px; color:var(--gray-500); padding-top:4px;">
+            P4 UX 검수에서 권한 분기 오류가 발견되거나, 신규 서비스 추가로 권한 체계가 변경될 때 차수를 추가합니다.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ─── P4 UX 검수 ─── -->
+  <div class="page" id="page-p4">
+    <div class="page-header">
+      <h2>P4 · UX 검수 <span class="badge b-wait">미착수</span></h2>
+      <div class="sub">담당자: <code>ux-checker</code> · P3 권한 매트릭스 완성 후 착수 · 발견된 이슈마다 차수를 추가합니다</div>
+    </div>
+    <div class="round-list">
+
+      <div class="round-card">
+        <div class="round-timeline">
+          <div class="round-dot wait">1</div>
+          <div class="round-line"></div>
+        </div>
+        <div class="round-body">
+          <div class="round-head">
+            <span class="round-label">1차 계획</span>
+            <span class="badge b-wait">P3 완료 후</span>
+          </div>
+          <div class="plan-card">
+            <div class="plan-card-title">1차 계획 — 고위험 액션 우선 검수</div>
+            <ul class="check-list">
+              <li><span class="chk wait">○</span> 경비 설정/해제 — 되돌릴 수 없는 고위험 액션. 확인 단계·오작동 방지 UX.</li>
+              <li><span class="chk wait">○</span> 카드 발급·승인 — 보안 직결. 오발급·오승인 방지, 승인 주체 명확화.</li>
+              <li><span class="chk wait">○</span> 권한별 화면 분기 일관성 — 권한 없는 사용자에게 접근 차단이 일관적인지.</li>
+              <li><span class="chk wait">○</span> no-data·에러 상태 처리 — 미계약·기기 미등록·연결 실패 화면 UX.</li>
+              <li><span class="chk wait">○</span> 전체메뉴 접근 깊이 — 카드·마이에스원 등 탭에 없는 서비스의 접근성.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="round-card">
+        <div class="round-timeline">
+          <div class="round-dot wait">N</div>
+        </div>
+        <div class="round-body">
+          <div class="round-head">
+            <span class="round-label">이후 차수</span>
+            <span class="badge b-wait">조건부</span>
+          </div>
+          <div style="font-size:12.5px; color:var(--gray-500); padding-top:4px;">
+            1차 검수에서 발견된 이슈를 P1/P2로 피드백해 재분석하거나, P5 신규 화면이 생겼을 때 추가 검수합니다.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ─── P5 신규 화면 ─── -->
+  <div class="page" id="page-p5">
+    <div class="page-header">
+      <h2>P5 · 신규 화면 초안 <span class="badge b-wait">미착수</span></h2>
+      <div class="sub">담당자: <code>moduapp-screen-maker</code> · P4 UX 검수 완료 후 착수 · 요구사항이 올 때마다 차수 추가</div>
+    </div>
+    <div class="round-list">
+
+      <div class="round-card">
+        <div class="round-timeline">
+          <div class="round-dot wait">1</div>
+          <div class="round-line"></div>
+        </div>
+        <div class="round-body">
+          <div class="round-head">
+            <span class="round-label">1차 계획</span>
+            <span class="badge b-wait">P4 완료 후</span>
+          </div>
+          <div class="plan-card">
+            <div class="plan-card-title">1차 계획 — 요구사항 기반 화면 초안</div>
+            <ul class="check-list">
+              <li><span class="chk wait">○</span> 신규 화면 요구사항 입력 → 화면 구조·영역 구성 초안 작성</li>
+              <li><span class="chk wait">○</span> 컴포넌트 트리 + semantic token 매핑 초안</li>
+              <li><span class="chk wait">○</span> ux-checker 검수 → Figma 전달</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ─── Q&A 현황 ─── -->
+  <div class="page" id="page-qna">
+    <div class="page-header">
+      <h2>Q&A · 담당자 질문 현황 <span class="badge b-partial">1차 완료 · 2차 재질문 필요</span></h2>
+      <div class="sub">담당자: 배지숙 · 새로운 분석 단계에서 모르는 내용이 생길 때마다 차수를 추가합니다</div>
+    </div>
+
+    <div class="round-list">
+
+      <!-- 1차 -->
+      <div class="round-card">
+        <div class="round-timeline">
+          <div class="round-dot done">1</div>
+          <div class="round-line"></div>
+        </div>
+        <div class="round-body">
+          <div class="round-head">
+            <span class="round-label">1차</span>
+            <span class="badge b-done">완료</span>
+            <span class="round-date">2026-05-27 · 배지숙</span>
+          </div>
+
+          <div class="round-section">
+            <div class="qna-stats">
+              <div class="qna-stat"><span class="n">18</span><span class="l">전체 질문</span></div>
+              <div class="qna-stat g"><span class="n">16</span><span class="l">답변 완료</span></div>
+              <div class="qna-stat r"><span class="n">2</span><span class="l">재질문 필요</span></div>
+            </div>
+          </div>
+
+          <div class="round-section">
+            <div class="round-section-title">주요 확정 내용</div>
+            <ul class="check-list">
+              <li><span class="chk done">✓</span> 서비스: 경비·영상·카드·마이에스원 4개 (나머지는 메뉴 기준)</li>
+              <li><span class="chk done">✓</span> 사용자: 마스터관리자 + 일반관리자 (일반 사용자 없음)</li>
+              <li><span class="chk done">✓</span> 로그인: 아이디/비밀번호 + PASS인증. 소셜 없음. PIN/지문=step-up 인증.</li>
+              <li><span class="chk done">✓</span> 탭바 4탭(홈/경비/영상/전체메뉴) 확정</li>
+              <li><span class="chk done">✓</span> 대시보드 분기 3종이 전부 (미가입/권한없음/권한있음)</li>
+              <li><span class="chk done">✓</span> 회원가입 = 외부 웹링크 (앱 안에서 웹페이지 띄워 완료)</li>
+              <li><span class="chk done">✓</span> 긴급연락처 = 마스터관리자만 접속. 수정 = VOC 접수 후 처리.</li>
+              <li><span class="chk done">✓</span> 카드 초대·승인 주체 = 카드권한 있는 관리자</li>
+              <li><span class="chk done">✓</span> 영상 기기 연결 실패 → '기기 접속 끊김' 화면</li>
+              <li><span class="chk done">✓</span> 추가 인증(step-up) 시점: 원격 경비/해제, 카드 관리 페이지 접속 등</li>
+            </ul>
+          </div>
+
+          <div class="round-section">
+            <div class="round-section-title">미해소 (재질문 필요)</div>
+            <ul class="check-list">
+              <li><span class="chk open">!</span> <b>PERM-02</b> — "역할별 접근 가능 기능" → 답변자가 질문 이해 못함. 재질문: <em>"마스터관리자만 되고, 일반관리자는 못 하는 기능이 뭔가요?"</em></li>
+              <li><span class="chk open">!</span> <b>ACC-03</b> — 권한 종류 정의 재확인. 답변이 불명확해 정확한 종류·절차 재확인 필요.</li>
+            </ul>
+          </div>
+
+          <div class="round-section">
+            <div class="round-section-title">산출물</div>
+            <div class="artifact-list">
+              <span class="artifact html">moduapp-spec-qna.html</span>
+              <span class="artifact json">answers_배지숙_2026-05-27.json</span>
+            </div>
+          </div>
+
+          <details style="margin-top:12px; border:1px solid var(--gray-200); border-radius:10px; overflow:hidden;">
+            <summary style="background:var(--gray-50);">전체 Q&A 목록 펼치기</summary>
+            <div class="detail-body" style="padding:0;">
+              <table class="qna-table" style="border:none; border-radius:0;">
+                <thead><tr><th>ID</th><th>섹션</th><th>핵심 답변</th><th>상태</th></tr></thead>
+                <tbody>
+                  <tr><td class="qid">IA-01</td><td class="sec">전체 구조</td><td class="ans">서비스: 경비·영상·카드·마이에스원 4개</td><td><span class="badge b-done b-small">✓</span></td></tr>
+                  <tr><td class="qid">PERM-01</td><td class="sec">권한</td><td class="ans">마스터관리자 + 일반관리자. 일반 사용자 없음.</td><td><span class="badge b-done b-small">✓</span></td></tr>
+                  <tr><td class="qid">PERM-02</td><td class="sec">권한</td><td class="ans warn">질문 이해 못함 → 재질문 필요</td><td><span class="badge b-open b-small">재질문</span></td></tr>
+                  <tr><td class="qid">PERM-03</td><td class="sec">권한</td><td class="ans">최초 계약담당자=마스터. 마스터가 초대·권한지정·승인.</td><td><span class="badge b-done b-small">✓</span></td></tr>
+                  <tr><td class="qid">HOME-01</td><td class="sec">홈</td><td class="ans">분기 3종(미가입/권한없음/권한있음)이 전부</td><td><span class="badge b-done b-small">✓</span></td></tr>
+                  <tr><td class="qid">HOME-02</td><td class="sec">홈</td><td class="ans">MN1010044 = 서비스권한 없는 케이스 추정. 050 차이 미확정.</td><td><span class="badge b-done b-small">✓</span></td></tr>
+                  <tr><td class="qid">HOME-03</td><td class="sec">홈</td><td class="ans">상시 노출 = 추천/혜택</td><td><span class="badge b-done b-small">✓</span></td></tr>
+                  <tr><td class="qid">HOME-04</td><td class="sec">홈</td><td class="ans">팝업공지=어드민 등록 시. 첫화면 설정=영상 계약처 중 홈설정이 영상 아닌 경우.</td><td><span class="badge b-done b-small">✓</span></td></tr>
+                  <tr><td class="qid">ACC-01</td><td class="sec">통합계정</td><td class="ans">로그인: 아이디/PASS 2종. 소셜 없음. PIN/지문=step-up.</td><td><span class="badge b-done b-small">✓</span></td></tr>
+                  <tr><td class="qid">ACC-02</td><td class="sec">통합계정</td><td class="ans">회원가입=외부 웹링크 (앱 안에서 웹페이지 띄워 완료)</td><td><span class="badge b-done b-small">✓</span></td></tr>
+                  <tr><td class="qid">ACC-03</td><td class="sec">통합계정</td><td class="ans warn">권한 종류 정의 불명확 → 재확인 필요</td><td><span class="badge b-open b-small">재확인</span></td></tr>
+                  <tr><td class="qid">GUARD-01</td><td class="sec">시스템경비</td><td class="ans">경비 상태 = 경비중/해제중. 초록=경비중.</td><td><span class="badge b-done b-small">✓</span></td></tr>
+                  <tr><td class="qid">GUARD-03</td><td class="sec">시스템경비</td><td class="ans">긴급연락처=마스터관리자만. 수정=VOC 접수 후 유선 확인.</td><td><span class="badge b-done b-small">✓</span></td></tr>
+                  <tr><td class="qid">GUARD-04</td><td class="sec">시스템경비</td><td class="ans">모바일보고서=CS모바일 보고서(긴급출동/순찰) SMS 정보 리스트업</td><td><span class="badge b-done b-small">✓</span></td></tr>
+                  <tr><td class="qid">CARD-01</td><td class="sec">카드</td><td class="ans">실물=리더기 범위설정. 모바일=앱/웹포털, 부가서비스 필요. 방문자=1회성, 안심방문관리 필수.</td><td><span class="badge b-done b-small">✓</span></td></tr>
+                  <tr><td class="qid">CARD-02</td><td class="sec">카드</td><td class="ans">초대·승인=카드권한 있는 관리자. 매니저=별도 권한 아님, 솔루션 사용 계약처 의미.</td><td><span class="badge b-done b-small">✓</span></td></tr>
+                  <tr><td class="qid">VID-02</td><td class="sec">영상</td><td class="ans">화질 옵션(Full/HD)=사양서에서 빠진 것으로 추정. 재검토 예정.</td><td><span class="badge b-done b-small">✓</span></td></tr>
+                  <tr><td class="qid">VID-03</td><td class="sec">영상</td><td class="ans">기기 연결 실패→'기기 접속 끊김' 화면 안내</td><td><span class="badge b-done b-small">✓</span></td></tr>
+                  <tr><td class="qid">COM-02</td><td class="sec">공통</td><td class="ans">step-up 인증: 원격 경비/해제, 카드 관리 페이지 접속 등</td><td><span class="badge b-done b-small">✓</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <!-- 2차 계획 -->
+      <div class="round-card">
+        <div class="round-timeline">
+          <div class="round-dot next">2</div>
+          <div class="round-line"></div>
+        </div>
+        <div class="round-body">
+          <div class="round-head">
+            <span class="round-label">2차</span>
+            <span class="badge b-next">예정</span>
+          </div>
+          <div class="plan-card">
+            <div class="plan-card-title">2차 계획 — 재질문 + P3 필요 항목</div>
+            <ul class="check-list">
+              <li><span class="chk wait">○</span> PERM-02 재질문: "마스터관리자만 되고, 일반관리자는 못 하는 기능이 뭔가요?"</li>
+              <li><span class="chk wait">○</span> ACC-03 재확인: 권한 종류(서비스권한·초대·현황관리)와 부여/회수 절차 명확화</li>
+              <li><span class="chk wait">○</span> P3 권한 매트릭스 1차 초안 검토 요청 → 맞는지 담당자 확인</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- N차 -->
+      <div class="round-card">
+        <div class="round-timeline">
+          <div class="round-dot wait">N</div>
+        </div>
+        <div class="round-body">
+          <div class="round-head">
+            <span class="round-label">이후 차수</span>
+            <span class="badge b-wait">조건부</span>
+          </div>
+          <div style="font-size:12.5px; color:var(--gray-500); padding-top:4px;">
+            P2 마이에스원 분석, P4 UX 검수 등 새 단계에서 모르는 내용이 생길 때마다 질문지를 추가하고 차수를 늘립니다.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ─── 화면 분석 결과 ─── -->
+  <div class="page" id="page-screens">
+    <div class="page-header">
+      <h2>화면 분석 결과 <span id="screen-count" class="badge b-done"></span></h2>
+      <div class="sub">P1·P2에서 분석한 모든 섹션. 차수가 추가될 때마다 업데이트됩니다.</div>
+    </div>
+    <div style="display:flex; gap:6px; margin-bottom:14px;">
+      <button class="filter-btn on" data-filter="all" style="padding:4px 13px; border-radius:999px; border:1px solid var(--gray-200); background:var(--gray-900); color:#fff; font-size:12.5px; font-weight:600; cursor:pointer;">전체</button>
+      <button class="filter-btn" data-filter="app-shell" style="padding:4px 13px; border-radius:999px; border:1px solid var(--gray-200); background:#fff; font-size:12.5px; font-weight:600; cursor:pointer; color:var(--gray-700);">앱 셸</button>
+      <button class="filter-btn" data-filter="service" style="padding:4px 13px; border-radius:999px; border:1px solid var(--gray-200); background:#fff; font-size:12.5px; font-weight:600; cursor:pointer; color:var(--gray-700);">서비스</button>
+    </div>
+    <div class="result-grid" id="result-grid"></div>
+  </div>
+
+</main>
+
+<script>
+/* ── 네비게이션 ── */
+function goTo(pageId) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.lnb-item').forEach(i => i.classList.remove('active'));
+  const page = document.getElementById('page-' + pageId);
+  if (page) page.classList.add('active');
+  const item = document.querySelector(`.lnb-item[data-page="${pageId}"]`);
+  if (item) item.classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+document.querySelectorAll('.lnb-item').forEach(item => {
+  item.addEventListener('click', () => goTo(item.dataset.page));
+});
+document.querySelectorAll('.go-btn').forEach(btn => {
+  btn.addEventListener('click', () => goTo(btn.dataset.page));
+});
+
+/* ── 화면 분석 결과 데이터 ── */
+const SCREENS = [
+  { key:"home", section:"홈", layer:"app-shell", analyzed_at:"2026-05-26",
+    summary:"모두앱의 통합 홈. 대시보드 콘텐츠가 '서비스 가입 여부 × 사용자 권한'에 따라 달라지는 것이 핵심. 앱 실행 정책·긴급공지·팝업 공지·경비구역 즐겨찾기 포함.",
+    screens:[
+      {id:"MN1010010",name:"스플래시",type:"splash",note:"앱 실행 시 최초 화면"},
+      {id:"MN1010011",name:"앱 강제 업데이트",type:"system-guide",note:"강제 업데이트"},
+      {id:"MN1010012",name:"앱 선택 업데이트",type:"system-guide",note:"선택 업데이트"},
+      {id:"MN1010020",name:"긴급공지",type:"notice",note:"긴급 공지"},
+      {id:"MN1010030(aos)",name:"접근 권한 안내(AOS)",type:"system-guide",note:"OS 권한 안내"},
+      {id:"MN1010031",name:"접근 권한 안내(iOS)",type:"system-guide",note:"OS 권한 안내"},
+      {id:"MN1010030",name:"메인(대시보드)",type:"dashboard",note:"서비스×권한 조합에 따라 콘텐츠 분기"},
+      {id:"MN1010040",name:"메인 — 미계약",type:"dashboard-state",note:"서비스 가입 없는 상태"},
+      {id:"MN1010041/042",name:"메인 — 영상 no-data",type:"dashboard-state",note:"기기 미등록/이력 없음"},
+      {id:"MN1010043",name:"메인 — 알림 발생",type:"dashboard-state",note:"상단 알림 노출"},
+      {id:"MN1010044",name:"메인 — 경비 미게시",type:"dashboard-state",note:"서비스권한 없는 케이스 추정"},
+      {id:"MN1010050",name:"메인 — 경비 미게시 유사",type:"dashboard-state",note:"MN1010044와 차이 미확정"},
+      {id:"MN1010070",name:"경비구역 즐겨찾기",type:"feature",note:"시스템경비 구역 즐겨찾기"},
+    ],
+    risks:["대시보드 서비스×권한 조합별 분기 → 조합 폭발 위험. 분기 규칙 일관성·우선순위 정의 필요","경비 제어는 되돌릴 수 없는 고위험 액션 → 확인 단계·오작동 방지 UX 점검 필요"],
+    review:["MN1010044 vs MN1010050 차이 미확정","MN1010030 중복 표기 가능성"],
+    cross:["홈이 시스템경비·영상을 직접 표면화 → 멀티서비스 허브 진입점","콘텐츠 노출이 RBAC에 강하게 종속 → permission-matrix가 화면 설계 전제"] },
+
+  { key:"account", section:"통합계정", layer:"app-shell", analyzed_at:"2026-05-26",
+    summary:"로그인·계정·인증·권한 영역(앱 셸 Layer 0). 로그인부터 회원가입·내정보·서비스 권한(RBAC) 관리까지 포함.",
+    screens:[
+      {id:"-",name:"로그인/계정 규정",type:"policy",note:"정책/규정 정의"},
+      {id:"-",name:"로그인",type:"auth",note:"아이디+PASS인증. 회원가입=외부 웹링크."},
+      {id:"-",name:"간편인증(step-up)",type:"auth",note:"PIN+지문/FACE. 중요 기능 추가 인증 수단."},
+      {id:"-",name:"회원가입",type:"onboarding",note:"앱 안에서 웹페이지 띄워 완료"},
+      {id:"-",name:"내정보",type:"account",note:"계정/내 정보 관리"},
+      {id:"-",name:"권한",type:"rbac",note:"서비스권한 신청·부여·현황. permission-matrix와 연결."},
+    ],
+    risks:["로그인 경로 다양(아이디/PASS/step-up) → 분기·폴백 흐름 명확성 점검","권한 신청·부여 흐름 보안 직결 → 오인지·오부여 방지 UX 점검"],
+    review:["각 블록 화면 Storyboard ID 미확정","ACC-03 권한 종류 재확인 필요"],
+    cross:["통합계정=모든 서비스 진입 전 게이트(로그인+권한)","권한 블록=사용자 권한관리 1차 위치"] },
+
+  { key:"common", section:"공통", layer:"app-shell", analyzed_at:"2026-05-26",
+    summary:"앱 전역 공통 화면·네비게이션 정의. 핵심: 탭바 4탭(홈/경비/영상/전체메뉴) 확정.",
+    screens:[
+      {id:"-",name:"전체메뉴",type:"menu",note:"탭바 4번째. 카드·마이에스원·고객센터·설정 허브."},
+      {id:"-",name:"알림",type:"notification",note:"통합 알림센터"},
+      {id:"-",name:"추가 인증(step-up)",type:"auth",note:"원격 경비/해제, 카드 관리 페이지 등"},
+      {id:"-",name:"기타 공통화면",type:"common",note:"공통 화면 모음"},
+      {id:"-",name:"Error 페이지",type:"error",note:"공통 에러 화면"},
+      {id:"-",name:"공통 Navigation",type:"navigation",note:"탭바+상단바 정의"},
+      {id:"-",name:"우편번호 검색",type:"utility",note:"주소/우편번호 검색 공통 컴포넌트"},
+    ],
+    risks:["경비/영상만 탭 직접 노출, 나머지 전체메뉴 깊숙이 → 카드·마이에스원 접근 깊이 점검","전체메뉴 권한별 노출/숨김 규칙 일관성 점검"],
+    review:["전체메뉴 포함 서비스 목록 확정","알림센터 서비스별 분류 여부"],
+    cross:["탭바가 멀티서비스 구조 직접 반영: 홈(허브)+경비/영상(핵심)+전체메뉴(나머지)","알림·추가인증이 공통 → 횡단 관심사"] },
+
+  { key:"card", section:"카드", layer:"service", analyzed_at:"2026-05-26",
+    summary:"출입카드(실물·모바일·방문자) 발급/관리 서비스. 탭바 없음 → 전체메뉴 하위 진입.",
+    screens:[
+      {id:"-",name:"카드 조회·관리",type:"list-manage",note:"보유/발급 카드 목록"},
+      {id:"-",name:"보안(실물)카드 신청",type:"application",note:"실물 카드. 리더기로 범위 설정."},
+      {id:"-",name:"모바일 보안카드 발급",type:"issuance",note:"앱/웹포털 발급. 부가서비스 필요."},
+      {id:"-",name:"모바일카드 초대·승인",type:"grant-approval",note:"카드권한 있는 관리자가 초대·승인"},
+      {id:"-",name:"방문자 조회·관리",type:"list-manage",note:"1회성 방문자 출입. 안심방문관리 필수."},
+      {id:"-",name:"방문자 모바일카드 신청 승인",type:"grant-approval",note:"방문자 신청을 관리자가 승인"},
+    ],
+    risks:["카드 발급·승인 보안 직결 → 오발급·오승인 방지, 승인 주체 명확화 점검","실물/모바일/방문자 유형 혼동 가능 → 유형 구분 명료성 점검"],
+    review:["각 블록 화면 Storyboard ID 미확정","전체메뉴 진입 경로 확정"],
+    cross:["카드 신청 현황이 홈 대시보드에 노출","초대·승인 흐름=출입 권한 부여 → permission-matrix 교차"] },
+
+  { key:"video", section:"영상", layer:"service", analyzed_at:"2026-05-26",
+    summary:"CCTV/카메라 기반 영상관리 서비스. 탭바 3번째(영상) 직접 진입.",
+    screens:[
+      {id:"-",name:"기기등록/가져오기",type:"device-setup",note:"카메라/기기 등록"},
+      {id:"-",name:"실시간 영상",type:"live-view",note:"실시간 라이브. 화질 옵션 재검토."},
+      {id:"-",name:"녹화영상(재생)",type:"playback",note:"NVR 기반. 날짜/시간picker+다중카메라+가로/세로."},
+      {id:"-",name:"비밀번호 재설정",type:"device-auth",note:"기기 비밀번호 재설정"},
+      {id:"-",name:"기기업데이트/모바일데이터 팝업",type:"system-popup",note:"펌웨어+모바일데이터 경고"},
+      {id:"-",name:"원격지원요청",type:"support",note:"영상 원격 지원 요청"},
+    ],
+    risks:["실시간/녹화 = 데이터·로딩 큼 → 모바일데이터 팝업·버퍼링 UX 점검","기기 다수 시 목록 가독성, no-data·연결실패 상태 안내 점검"],
+    review:["화질 옵션(Full/HD) 위치 재확인","각 블록 화면 Storyboard ID 미확정"],
+    cross:["탭바 3번째(영상) 직접 진입","홈 대시보드 '최근 접속 기기 목록'·no-data 변형과 연결","기기 연결 실패→'기기 접속 끊김' 화면(담당자 확인)"] },
+
+  { key:"guard", section:"시스템경비", layer:"service", analyzed_at:"2026-05-26",
+    summary:"에스원 시스템경비(무인경비) 모바일 화면. 경비 설정/해제 제어가 핵심. 탭바 2번째(경비) 직접 진입.",
+    screens:[
+      {id:"-",name:"시스템 경비(메인 제어)",type:"control",note:"경비구역 목록+경비/해제 CTA+구역 선택 팝업. 초록=경비중."},
+      {id:"-",name:"서비스 현황",type:"status",note:"가입/이용 중인 경비 서비스 현황"},
+      {id:"-",name:"모바일보고서",type:"report",note:"구 출동보고서. CS모바일 보고서 정보 리스트업."},
+      {id:"-",name:"경비/해제 이력",type:"history",note:"경비 설정/해제 이력 목록"},
+      {id:"-",name:"긴급연락처",type:"feature",note:"마스터관리자만 접속. 수정=VOC 접수 후 처리."},
+      {id:"-",name:"경비/해제 이력_팝업",type:"popup",note:"이력 상세 팝업"},
+    ],
+    risks:["경비 설정/해제=물리 보안 고위험 → 오작동 방지(확인 단계·구역 명확화) UX 점검 필수","구역 많을 때 목록 가독성·선택 정확성 점검"],
+    review:["각 블록 화면 Storyboard ID 미확정"],
+    cross:["홈 대시보드 '경비/해제 제어'가 이 서비스 메인을 표면화","'경비 미게시' 상태가 홈 변형(MN1010044/050)과 연결","제어 가능 여부=통합계정>권한 블록 종속"] }
+];
+
+function renderResultCard(d){
+  const lb = d.layer==="app-shell"
+    ? `<span class="badge" style="background:var(--blue-50);color:var(--blue-700);border:1px solid var(--blue-200);font-size:10px;">앱 셸</span>`
+    : `<span class="badge" style="background:var(--green-50);color:var(--green-700);border:1px solid var(--green-200);font-size:10px;">서비스</span>`;
+  const rows = d.screens.map(s=>`<tr>
+    <td class="si">${s.id!=="-"?s.id:""}</td>
+    <td class="sn">${s.name}</td>
+    <td><span class="type-chip">${s.type}</span></td>
+    <td>${s.note}</td></tr>`).join("");
+  return `<div class="result-card" data-layer="${d.layer}">
+    <div class="rc-head">
+      <div class="rc-title-row"><span class="rc-title">${d.section}</span>${lb}<span class="rc-meta">분석일 ${d.analyzed_at}</span></div>
+      <div class="rc-summary">${d.summary}</div>
+      <div class="rc-counts">
+        <span class="rc-count cnt-sc">화면 ${d.screens.length}개</span>
+        <span class="rc-count cnt-ri">리스크 ${d.risks.length}개</span>
+        <span class="rc-count cnt-rv">확인필요 ${d.review.length}개</span>
+      </div>
+    </div>
+    <details><summary>화면 목록 (${d.screens.length}개)</summary>
+      <div class="detail-body">
+        <table class="screen-table">
+          <thead><tr><th>ID</th><th>화면명</th><th>유형</th><th>설명</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+    </details>
+    <details><summary>UX 리스크 (${d.risks.length}개)</summary>
+      <div class="detail-body"><ul class="bul risk">${d.risks.map(r=>`<li>${r}</li>`).join("")}</ul></div>
+    </details>
+    <details><summary>확인 필요 (${d.review.length}개)</summary>
+      <div class="detail-body"><ul class="bul review">${d.review.map(r=>`<li>${r}</li>`).join("")}</ul></div>
+    </details>
+    <details><summary>서비스 간 연계 (${d.cross.length}개)</summary>
+      <div class="detail-body"><ul class="bul cross">${d.cross.map(c=>`<li>${c}</li>`).join("")}</ul></div>
+    </details>
+  </div>`;
+}
+
+function renderScreens(filter){
+  const filtered = filter==="all" ? SCREENS : SCREENS.filter(d=>d.layer===filter);
+  document.getElementById("result-grid").innerHTML = filtered.map(renderResultCard).join("");
+  const total = filtered.reduce((s,d)=>s+d.screens.length,0);
+  document.getElementById("screen-count").textContent = `${filtered.length}개 섹션 · ${total}개 화면`;
+}
+document.querySelectorAll(".filter-btn").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    document.querySelectorAll(".filter-btn").forEach(b=>{
+      b.style.background=b===btn?"var(--gray-900)":"#fff";
+      b.style.color=b===btn?"#fff":"var(--gray-700)";
+    });
+    renderScreens(btn.dataset.filter);
+  });
+});
+renderScreens("all");
+</script>
 </body>
 </html>
