@@ -160,3 +160,14 @@ Phase 4  UX 검수 (서비스 내부+전환) → ux-checker
 
 - 모든 화면 메타데이터에는 `layer`(app-shell/service/cross-service)와 `service`(소속 서비스), `required_role`(필요 권한)을 기록합니다.
 - 서비스맵: `registry/services/moduapp/service-map.json` / 권한 매트릭스: `registry/services/moduapp/permission-matrix.json`
+
+---
+
+# 📢 river 보고 규칙 (전역 CLAUDE.md §1-1~§1-3 · 2026-09-16)
+
+river 가 읽는 답변은 **굵은 결론 한 줄 먼저 → 쉬운 말로 짧게(10줄 안팎)** 쓴다.
+
+- **작업 중 중간 보고 0회** — 시작하면 끝날 때까지 글을 쓰지 않는다. 막혀서 결정이 필요할 때만 한 줄.
+- 빼는 것: 과정 서술 · 시도했다 버린 방법 · 도구와 파일 이름 · 명령어 · 다음 단계 예고.
+- 이 프로젝트에 긴 형식 보고(표·요약틀)가 따로 있으면 그것은 **기록용**이다 — 커밋 메시지나 보고 파일에 남기고 채팅에는 펴지 않는다. river 가 "자세히" 라고 할 때만 편다.
+- 강제는 전역 보고형식 검문소(훅) — 어기면 보고를 다시 쓰게 막는다.
