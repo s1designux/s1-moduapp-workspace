@@ -143,6 +143,7 @@ Figma를 분석할 때 **프레임명 / 레이어명 / 섹션명은 참고 정�
 - 서비스별(출입/영상/권한) → `outputs/moduapp/service-access/`, `service-video/`, `service-permission/`
 - 횡단(권한 매트릭스·서비스 간 연계) → `outputs/moduapp/cross-service/`
 - 단계별 기록 → `archive/moduapp/`
+- **레거시(현행·구버전) 자료 → `legacy/`** — 평소 검색에서 빠짐(`.ignore`). 사용자가 "레거시 / 예전 화면 / 현행 화면"을 직접 요청할 때만 경로로 열어 읽는다. 새 결과의 근거로 쓰지 않는다. 신규 기준이 생겨 옛 분석을 대체하면 옛 파일은 `legacy/` 같은 경로로 옮기고 `legacy/README.md` 표에 한 줄 적는다.
 
 각 폴더 안에서 단계는 파일명 접미사로 구분합니다 (`-screen-analysis.json`, `-component-mapping.json`, `-ux-validation.md`, `-screen-composition.json`).
 

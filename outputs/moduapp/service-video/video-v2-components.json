@@ -1,0 +1,777 @@
+{
+ "meta": {
+  "service": "video",
+  "source_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-10933",
+  "analyzed_at": "2026-10-14",
+  "note": "Figma 레이어명이 Component 5/44 같은 의미 없는 이름이라 생김새로 이름을 붙임. usage_screens = 해당 부품이 들어간 화면 수(메타데이터 기준).",
+  "basis": "NVR(녹화기) 연동 기준으로 제작된 화면. 클라우드영상시스템 대응 화면·기능·구조는 포함되지 않음(별도 프로젝트에서 이 기준 위에 얹음)",
+  "role": "신규 기준(baseline) — 모두앱 영상 탭 개선 화면"
+ },
+ "components": [
+  {
+   "key": "app_header",
+   "name": "상단 현장 정보 헤더",
+   "scope": "앱 공통",
+   "role": "사용자명·현장명·고객번호와 현장 바꾸기(더보기 ▾). 영상 화면 맨 위에서 \"어느 현장의 카메라인지\" 알려줌",
+   "figma_names": [
+    "StatusBar",
+    "More"
+   ],
+   "usage_screens": {
+    "StatusBar": 141,
+    "More": 141
+   },
+   "used_in": [
+    "세로 기본 보기 전 화면"
+   ],
+   "variants": [],
+   "figma_local_component": []
+  },
+  {
+   "key": "mode_chip",
+   "name": "실시간/녹화영상 전환 칩",
+   "scope": "영상 공통",
+   "role": "상단 오른쪽 두 칸 칩. 같은 카메라를 실시간 ↔ 녹화영상으로 바꿔 봄",
+   "figma_names": [
+    "Chip",
+    "m_chips"
+   ],
+   "usage_screens": {
+    "Chip": 141,
+    "m_chips": 141
+   },
+   "used_in": [
+    "세로 기본 보기 전 화면"
+   ],
+   "variants": [
+    "실시간 선택",
+    "녹화영상 선택"
+   ],
+   "figma_local_component": []
+  },
+  {
+   "key": "tabbar",
+   "name": "하단 탭바",
+   "scope": "앱 공통",
+   "role": "홈·경비(under security)·영상(dome camera)·메뉴 탭. 영상 탭이 활성",
+   "figma_names": [
+    "home",
+    "under security",
+    "dome camera",
+    "menu(hamburger)",
+    "phone_navi"
+   ],
+   "usage_screens": {
+    "home": 141,
+    "under security": 141,
+    "dome camera": 141,
+    "menu(hamburger)": 141,
+    "phone_navi": 141
+   },
+   "used_in": [
+    "세로 기본 보기 전 화면"
+   ],
+   "variants": [],
+   "figma_local_component": []
+  },
+  {
+   "key": "video_tile",
+   "name": "영상 칸(타일)·분할 격자",
+   "scope": "영상 공통",
+   "role": "카메라 영상 한 칸. 다채널은 1×2·1×3·2×4(세로) / 2×2·3×3·4×4(가로) 격자로 배치, 칸마다 카메라 이름표",
+   "figma_names": [],
+   "usage_screens": {},
+   "used_in": [
+    "전 화면"
+   ],
+   "variants": [
+    "기본",
+    "선택됨(테두리)",
+    "원본 비율",
+    "화면 채우기",
+    "카메라 숨김"
+   ],
+   "figma_local_component": []
+  },
+  {
+   "key": "video_state",
+   "name": "영상 상태 표시",
+   "scope": "영상 공통",
+   "role": "영상이 안 나올 때 칸 안 표시: 수신 상태 나쁨(빨간 띠), 카메라 없음(에스원 로고), 신호 없음(아이콘+글자)",
+   "figma_names": [
+    "dome camera trouble",
+    "state_emoji"
+   ],
+   "usage_screens": {
+    "dome camera trouble": 8,
+    "state_emoji": 8
+   },
+   "used_in": [
+    "화면 상태 값 묶음 전체"
+   ],
+   "variants": [
+    "수신 불량",
+    "카메라 없음",
+    "신호 없음"
+   ],
+   "figma_local_component": []
+  },
+  {
+   "key": "mode_badge",
+   "name": "모드 배지 + 상단 툴바",
+   "scope": "영상 공통",
+   "role": "영상 위 왼쪽 \"● 실시간\"/\"녹화영상\" 배지, 오른쪽 화면 구성·비율·PTZ·카메라 목록·더보기 아이콘",
+   "figma_names": [
+    "Component 5"
+   ],
+   "usage_screens": {
+    "Component 5": 33
+   },
+   "used_in": [
+    "딤 상태 화면"
+   ],
+   "variants": [
+    "영상 유형: 실시간 / 녹화영상",
+    "화면비율: 원본비율 / 화면 채우기",
+    "PTZ(카메라 방향 조절): 없음 / 끔 / 켬",
+    "카메라목록(SVMS): 끔 / 켬",
+    "총 24가지"
+   ],
+   "figma_local_component": [
+    {
+     "figma_name": "Component 5",
+     "node_ids": [
+      "11:30966"
+     ],
+     "name": "영상 상단 툴바(모드 배지 + 아이콘 줄)"
+    }
+   ]
+  },
+  {
+   "key": "dim_overlay",
+   "name": "조작 버튼 덮개(딤)",
+   "scope": "영상 공통",
+   "role": "영상을 한 번 탭하면 위·아래 검은 그라데이션 위로 버튼이 뜨는 상태. 다시 탭하거나 시간이 지나면 사라짐",
+   "figma_names": [
+    "Component 53",
+    "Component 11",
+    "Component 12",
+    "Component 10/Frame 2087327495",
+    "Component 10/Frame 2087327496"
+   ],
+   "usage_screens": {
+    "Component 53": 61,
+    "Component 11": 8,
+    "Component 12": 24,
+    "Component 10/Frame 2087327495": 28,
+    "Component 10/Frame 2087327496": 10
+   },
+   "used_in": [
+    "\"영상 뷰 딤\" 화면"
+   ],
+   "variants": [
+    "세로(위80/아래80)",
+    "가로(위80/아래120)"
+   ],
+   "figma_local_component": [
+    {
+     "figma_name": "Component 53",
+     "node_ids": [
+      "11:31615"
+     ],
+     "name": "영상 딤 오버레이 한 벌(상단+하단 세트)"
+    },
+    {
+     "figma_name": "Component 11",
+     "node_ids": [
+      "11:31175"
+     ],
+     "name": "영상 위 그라데이션 딤(컨트롤 받침)"
+    },
+    {
+     "figma_name": "Component 10/Frame 2087327495",
+     "node_ids": [
+      "11:31163"
+     ],
+     "name": "딤 하단 버튼 줄(페이지 점 + 확대)"
+    }
+   ]
+  },
+  {
+   "key": "round_button",
+   "name": "영상 위 원형 버튼",
+   "scope": "영상 공통",
+   "role": "캡쳐·확대/축소·달력·더보기 같은 회색 원형 아이콘 버튼",
+   "figma_names": [
+    "Component 7",
+    "Component 9",
+    "Component 8",
+    "ic_화살표, 더보기"
+   ],
+   "usage_screens": {
+    "Component 7": 22,
+    "Component 9": 18,
+    "Component 8": 18,
+    "ic_화살표, 더보기": 13
+   },
+   "used_in": [
+    "딤 상태 화면"
+   ],
+   "variants": [
+    "페이지 점(42x28)",
+    "확대",
+    "축소",
+    "캡처(카메라)",
+    "카메라 목록(햄버거)",
+    "날짜·시간 칩(151x28)",
+    "캘린더",
+    "움직임 감지(사람 아이콘)",
+    "빈 자리(자리만 차지)"
+   ],
+   "figma_local_component": [
+    {
+     "figma_name": "Component 7",
+     "node_ids": [
+      "11:31139"
+     ],
+     "name": "영상 컨트롤 낱개 버튼"
+    }
+   ]
+  },
+  {
+   "key": "page_dots",
+   "name": "페이지 점",
+   "scope": "다채널",
+   "role": "카메라가 분할 수보다 많을 때 몇 번째 페이지인지 점으로 표시. 7개 이상은 스와이프 시 점이 흐름",
+   "figma_names": [
+    "Component 10/Frame 2087327495"
+   ],
+   "usage_screens": {
+    "Component 10/Frame 2087327495": 28
+   },
+   "used_in": [
+    "페이지네이션 묶음"
+   ],
+   "variants": [
+    "없음",
+    "2~6개",
+    "7개 이상 스와이프"
+   ],
+   "figma_local_component": [
+    {
+     "figma_name": "Component 10/Frame 2087327495",
+     "node_ids": [
+      "11:31163"
+     ],
+     "name": "딤 하단 버튼 줄(페이지 점 + 확대)"
+    }
+   ]
+  },
+  {
+   "key": "time_pill",
+   "name": "현재 시각 알약 / 날짜·시간 칩",
+   "scope": "영상 공통",
+   "role": "실시간은 현재 시각, 녹화영상은 재생 중 날짜·시각. 설정에서 \"시간 항상 표시\"를 켜면 딤이 없어도 계속 보임",
+   "figma_names": [
+    "time",
+    "Component 45"
+   ],
+   "usage_screens": {
+    "time": 17,
+    "Component 45": 27
+   },
+   "used_in": [
+    "상태 값·날짜 선택 묶음"
+   ],
+   "variants": [
+    "날짜시간만",
+    "날짜시간 + 캡처",
+    "캘린더 + 날짜시간 + 캡처",
+    "캘린더 + 날짜시간"
+   ],
+   "figma_local_component": [
+    {
+     "figma_name": "time",
+     "node_ids": [
+      "11:30782"
+     ],
+     "name": "날짜시간 줄(캘린더·캡처 버튼 조합)"
+    },
+    {
+     "figma_name": "Component 45",
+     "node_ids": [
+      "11:31586"
+     ],
+     "name": "카메라 목록 제목줄"
+    }
+   ]
+  },
+  {
+   "key": "playback_panel",
+   "name": "녹화 재생 패널",
+   "scope": "녹화영상",
+   "role": "되감기·30초 뒤로·재생/일시정지·30초 앞으로·빨리감기 + 날짜시간 + 시간바를 묶은 흰 패널. 같은 부품의 \"플레이어 끔\" 변형(날짜시간 줄만)이 실시간 세로 화면에도 쓰임",
+   "figma_names": [
+    "Component 44",
+    "Component 43",
+    "Component 46",
+    "Component 24"
+   ],
+   "usage_screens": {
+    "Component 44": 124,
+    "Component 43": 0,
+    "Component 46": 0,
+    "Component 24": 0
+   },
+   "used_in": [
+    "녹화영상 전 화면(+실시간 세로 화면은 날짜시간 줄 변형)"
+   ],
+   "variants": [
+    "플레이어+시간바",
+    "플레이어만",
+    "날짜시간 줄만",
+    "재생",
+    "일시정지",
+    "배속 2/4/8/16",
+    "되감기 -2/-4/-8/-16"
+   ],
+   "figma_local_component": [
+    {
+     "figma_name": "Component 43",
+     "node_ids": [
+      "11:31568"
+     ],
+     "name": "녹화영상 재생 패널(재생 버튼 + 날짜시간 + 시간바)"
+    },
+    {
+     "figma_name": "Component 46",
+     "node_ids": [
+      "11:31594"
+     ],
+     "name": "재생 버튼 다섯 개 묶음"
+    },
+    {
+     "figma_name": "Component 24",
+     "node_ids": [
+      "11:31184"
+     ],
+     "name": "재생·배속 원형 버튼 세트"
+    }
+   ]
+  },
+  {
+   "key": "timeline",
+   "name": "타임라인(시간바)",
+   "scope": "녹화영상",
+   "role": "10초 눈금 + 가운데 현재 위치 선 + 주황 이벤트 점. 끌어서 시점 이동",
+   "figma_names": [
+    "Frame 2116933726",
+    "Frame 2087327574",
+    "Frame 2116933581"
+   ],
+   "usage_screens": {
+    "Frame 2116933726": 0,
+    "Frame 2087327574": 0,
+    "Frame 2116933581": 0
+   },
+   "used_in": [
+    "녹화 단일채널 화면"
+   ],
+   "variants": [
+    "기본",
+    "끌기 중",
+    "양 끝 흐림"
+   ],
+   "figma_local_component": [
+    {
+     "figma_name": "Frame 2116933726",
+     "node_ids": [
+      "11:30754"
+     ],
+     "name": "시간바 한 줄(현재 위치 표시선 포함)"
+    },
+    {
+     "figma_name": "Frame 2087327574",
+     "node_ids": [
+      "11:31582"
+     ],
+     "name": "시간바 한 줄(양 끝 흐림 버전)"
+    },
+    {
+     "figma_name": "Frame 2116933581",
+     "node_ids": [
+      "11:30819"
+     ],
+     "name": "날짜시간 칩 + 시간바(넓은 폭)"
+    }
+   ]
+  },
+  {
+   "key": "datetime_picker",
+   "name": "날짜·시간 고르기",
+   "scope": "녹화영상",
+   "role": "달력(DatePicker) + 시·분 휠. 세로는 바텀시트(날짜/시간 탭), 가로는 오른쪽 패널 또는 가운데 휠 팝업(두 안 공존)",
+   "figma_names": [
+    "DatePicker/Calendar Cell",
+    "calendar_arrow",
+    "tab",
+    "ok"
+   ],
+   "usage_screens": {
+    "DatePicker/Calendar Cell": 20,
+    "calendar_arrow": 20,
+    "tab": 8,
+    "ok": 8
+   },
+   "used_in": [
+    "날짜·시간 선택 묶음"
+   ],
+   "variants": [
+    "첫 진입",
+    "재선택",
+    "안드로이드",
+    "iOS"
+   ],
+   "figma_local_component": []
+  },
+  {
+   "key": "bottom_sheet",
+   "name": "바텀시트 / 가로 패널",
+   "scope": "영상 공통",
+   "role": "더보기(상세 설정·원격지원요청·방문점검신청), 화면 구성, PTZ 속도 등. 가로에선 폭 최대 480·높이 0.8의 가운데 시트",
+   "figma_names": [
+    "ic_닫기",
+    "close",
+    "mobile_button",
+    "m_button"
+   ],
+   "usage_screens": {
+    "ic_닫기": 63,
+    "close": 19,
+    "mobile_button": 56,
+    "m_button": 2
+   },
+   "used_in": [
+    "더보기·화면 구성·PTZ 묶음"
+   ],
+   "variants": [
+    "세로 바텀시트",
+    "가로 가운데 시트",
+    "오른쪽 패널"
+   ],
+   "figma_local_component": []
+  },
+  {
+   "key": "layout_picker",
+   "name": "분할 수 고르기",
+   "scope": "다채널",
+   "role": "몇 칸으로 볼지 선택. 그림 카드+확인 안 / 슬라이더+적용 안 두 가지 공존",
+   "figma_names": [
+    "Component 13",
+    "Component 54"
+   ],
+   "usage_screens": {
+    "Component 13": 3,
+    "Component 54": 2
+   },
+   "used_in": [
+    "화면 구성 묶음"
+   ],
+   "variants": [
+    "그림 카드형",
+    "슬라이더형"
+   ],
+   "figma_local_component": []
+  },
+  {
+   "key": "camera_list",
+   "name": "카메라 목록 / 움직임 감지 목록",
+   "scope": "영상 공통",
+   "role": "세로는 영상 아래 썸네일 격자, 가로는 오른쪽 패널. 녹화영상은 \"움직임 감지\" 탭이 붙어 감지 시점 목록으로 이동",
+   "figma_names": [
+    "Component 45",
+    "m_checkbox"
+   ],
+   "usage_screens": {
+    "Component 45": 27,
+    "m_checkbox": 2
+   },
+   "used_in": [
+    "카메라 목록·움직임 감지 묶음"
+   ],
+   "variants": [
+    "카메라 목록",
+    "움직임 감지",
+    "감지 없음(빈 화면)"
+   ],
+   "figma_local_component": [
+    {
+     "figma_name": "Component 45",
+     "node_ids": [
+      "11:31586"
+     ],
+     "name": "카메라 목록 제목줄"
+    }
+   ]
+  },
+  {
+   "key": "toast",
+   "name": "영상 안 토스트",
+   "scope": "영상 공통",
+   "role": "캡쳐 완료·배속 변경·비율 전환·배율 같은 짧은 알림",
+   "figma_names": [],
+   "usage_screens": {},
+   "used_in": [
+    "캡쳐·컨트롤·확대 묶음"
+   ],
+   "variants": [
+    "캡쳐 완료",
+    "배속",
+    "원본/채우기",
+    "배율"
+   ],
+   "figma_local_component": []
+  },
+  {
+   "key": "ptz_pad",
+   "name": "PTZ 조종판",
+   "scope": "실시간",
+   "role": "방향 조이스틱 + 확대/축소(plus/minus) + 조종 속도. 켜면 세로 화면으로 바뀜",
+   "figma_names": [
+    "plus",
+    "minus"
+   ],
+   "usage_screens": {
+    "plus": 8,
+    "minus": 8
+   },
+   "used_in": [
+    "PTZ 모드 묶음"
+   ],
+   "variants": [
+    "OFF",
+    "ON",
+    "속도 설정"
+   ],
+   "figma_local_component": []
+  },
+  {
+   "key": "svms_panel",
+   "name": "SVMS 레이아웃 리스트·이벤트 목록",
+   "scope": "SVMS 고객",
+   "role": "미리 묶은 카메라 묶음 고르기 + (녹화) 이벤트 종류 필터·목록",
+   "figma_names": [],
+   "usage_screens": {},
+   "used_in": [
+    "SVMS 묶음"
+   ],
+   "variants": [
+    "레이아웃 목록",
+    "이벤트 목록",
+    "이벤트 없음"
+   ],
+   "figma_local_component": []
+  }
+ ],
+ "local_component_detail": [
+  {
+   "node_ids": [
+    "11:30966"
+   ],
+   "figma_name": "Component 5",
+   "name": "영상 상단 툴바(모드 배지 + 아이콘 줄)",
+   "role": "영상 칸 맨 위에 붙는 줄. 왼쪽에 '실시간'(빨간 점)/'녹화영상' 배지, 오른쪽에 화면 구성·원본비율/화면채우기·PTZ·카메라 목록·더보기 아이콘",
+   "variants": [
+    "영상 유형: 실시간 / 녹화영상",
+    "화면비율: 원본비율 / 화면 채우기",
+    "PTZ(카메라 방향 조절): 없음 / 끔 / 켬",
+    "카메라목록(SVMS): 끔 / 켬",
+    "총 24가지"
+   ],
+   "used_in": "화면 안 'Component 5' 33곳. 안쪽 원본/채우기 토글은 'Component 3'·'Component 4'(28x28)로 보임",
+   "notes": "스크린샷 확인함(아이콘이 흰색이라 밝은 배경에서 희미). 아이콘 낱개 부품은 'Property 1=기타/카메라 목록/PTZ ON/PTZ OFF/원본 비율/화면 구성/화면 채우기'(11:30927~11:30952)"
+  },
+  {
+   "node_ids": [
+    "11:31175"
+   ],
+   "figma_name": "Component 11",
+   "name": "영상 위 그라데이션 딤(컨트롤 받침)",
+   "role": "영상 위·아래를 검은 그라데이션으로 어둡게 깔아 그 위 버튼·배지가 잘 보이게 하는 받침",
+   "variants": [
+    "유형: 세로(360x80) / 가로(780 폭)",
+    "상단 딤 on(가로 80) / 하단 딤 on(세로 80, 가로 120)"
+   ],
+   "used_in": "화면 안 'Component 12'(360x80·780x80, 36곳)이 이 부품의 '상단 딤 on' 배치본임을 스크린샷으로 확인(11:13262 세로: 실시간 배지+화면구성+가로세로 전환+더보기 / 11:17732 가로: 녹화영상 배지+더보기). 'Component 11' 933x120 2곳은 태블릿/폴드 펼침 하단",
+   "notes": "스크린샷 확인함. 가로형 하단은 메뉴·캡처 버튼 + 날짜시간 칩 + 확대 버튼, 세로형 하단은 페이지 점 + 확대 버튼"
+  },
+  {
+   "node_ids": [
+    "11:31615"
+   ],
+   "figma_name": "Component 53",
+   "name": "영상 딤 오버레이 한 벌(상단+하단 세트)",
+   "role": "영상을 한 번 탭했을 때 뜨는 딤 상태 전체: 상단 '실시간' 배지·화면구성·더보기 + 하단 페이지 점/확대 또는 메뉴·캡처·날짜시간·확대",
+   "variants": [
+    "세로(360x240)",
+    "가로(780x360)"
+   ],
+   "used_in": "화면 안 'Component 53' 79곳 — 크기를 늘려 기기별(476·750·752·933 폭)로도 쓰임. 비슷한 'Component 54'(780x360, 6곳)는 가로 단일채널 '영상 뷰 딤'에 쓰임",
+   "notes": "스크린샷 확인함"
+  },
+  {
+   "node_ids": [
+    "11:31163"
+   ],
+   "figma_name": "Component 10/Frame 2087327495",
+   "name": "딤 하단 버튼 줄(페이지 점 + 확대)",
+   "role": "딤 아래쪽에 놓이는 가로 줄: 가운데 페이지 점(몇 번째 화면인지), 오른쪽 확대 버튼",
+   "variants": [
+    "폭만 다름: 410 / 332 / 320 / 664 등"
+   ],
+   "used_in": "화면 안 'Component 10/Frame 2087327495' 30곳. 안쪽 40x40 동그라미 버튼들이 'Component 8'·'Component 9'·'Component 10'·'Component 11'·'Component 12'라는 이름으로 2개씩 들어감",
+   "notes": "스크린샷 확인함. 안쪽 'Component 9'=페이지 점(채널 페이지 수만큼 점), 'Component 10'=확대 버튼(11:13264·11:26551에서 확인). 'Component 10/Frame 2087327496'(395·405 폭)은 가로 확대 하단 줄: 캘린더 + 날짜시간 + 축소 버튼(11:21620에서 확인)"
+  },
+  {
+   "node_ids": [
+    "11:31139"
+   ],
+   "figma_name": "Component 7",
+   "name": "영상 컨트롤 낱개 버튼",
+   "role": "딤 위에 올라가는 회색 원형 버튼 하나하나",
+   "variants": [
+    "페이지 점(42x28)",
+    "확대",
+    "축소",
+    "캡처(카메라)",
+    "카메라 목록(햄버거)",
+    "날짜·시간 칩(151x28)",
+    "캘린더",
+    "움직임 감지(사람 아이콘)",
+    "빈 자리(자리만 차지)"
+   ],
+   "used_in": "화면 안 'Component 7' 24곳(가로 확대 하단 날짜시간 칩 147x28 등). 40x40 'Component 8~12' 인스턴스도 이 버튼들의 배치본일 가능성이 큼",
+   "notes": "스크린샷 확인함. 'Component 8~12'가 정확히 어느 버튼인지는 못 봄(needs-review)"
+  },
+  {
+   "node_ids": [
+    "11:31586"
+   ],
+   "figma_name": "Component 45",
+   "name": "카메라 목록 제목줄",
+   "role": "영상 아래 목록 영역 맨 위 제목 '카메라 목록'. 녹화영상 쪽에선 옆에 회색 '움직임 감지' 탭이 붙음",
+   "variants": [
+    "'카메라 목록'만",
+    "'카메라 목록' + '움직임 감지'"
+   ],
+   "used_in": "화면 안 'Component 45' 36곳(360·476·704·750·780 폭)",
+   "notes": "스크린샷 확인함"
+  },
+  {
+   "node_ids": [
+    "11:31568"
+   ],
+   "figma_name": "Component 43",
+   "name": "녹화영상 재생 패널(재생 버튼 + 날짜시간 + 시간바)",
+   "role": "녹화영상 화면 아래쪽 흰 패널: 되감기·30초 뒤로·일시정지·30초 앞으로·빨리감기, 날짜·시간 칩, 눈금 시간바(주황 점=이벤트로 보임)",
+   "variants": [
+    "시간바 on + 플레이어 on (360x141)",
+    "시간바 off + 플레이어 on (360x102)",
+    "시간바 off + 플레이어 off (날짜시간만, 360x45)"
+   ],
+   "used_in": "화면 안 'Component 44' 135곳이 이 부품의 배치본임을 스크린샷으로 확인(11:14652). 다만 배치본에는 캘린더·캡처 버튼 줄과 오른쪽 '2x' 배속 버튼이 더해진 새 버전 모양",
+   "notes": "스크린샷 확인함. 시간바 위 주황 점은 이벤트(움직임 등) 표시로 보임"
+  },
+  {
+   "node_ids": [
+    "11:31594"
+   ],
+   "figma_name": "Component 46",
+   "name": "재생 버튼 다섯 개 묶음",
+   "role": "되감기·30초 뒤로·일시정지·30초 앞으로·빨리감기 한 줄",
+   "variants": [
+    "진한 회색 큰 버튼(영상 위에 얹는 형태)",
+    "흰 바탕 얇은 테두리 버튼(패널 안 형태)",
+    "Figma 변형명: 유형=세로(58) / 유형=가로(56)"
+   ],
+   "used_in": "재생 패널(Component 43) 안, 가로 확대 화면 가운데 'Frame 2087327570'(360x56) 형태로 얹힘",
+   "notes": "스크린샷 확인함. 위 줄=진한 회색(영상 위에 얹힘, 가로 확대 화면 11:32308에서 확인), 아래 줄=흰 패널형. 어느 쪽이 Figma '세로/가로' 변형인지는 이름 순서로만 추정"
+  },
+  {
+   "node_ids": [
+    "11:31184"
+   ],
+   "figma_name": "Component 24",
+   "name": "재생·배속 원형 버튼 세트",
+   "role": "녹화영상 재생 버튼 낱개: 30초 뒤로/앞으로, 되감기(-2/-4/-8/-16배속), 재생/일시정지, 빨리감기(2/4/8/16배속)",
+   "variants": [
+    "유형: 세로(흰 바탕) / 가로(회색·검정)",
+    "상태: 기본 / 눌림",
+    "종류: 2·4·8·16배속, 2·4·8·16배속 역재생, 뒤로감기, 앞으로감기, 재생, 일시정지, 30초 뒤로, 30초 앞으로"
+   ],
+   "used_in": "재생 버튼 묶음(Component 46)·재생 패널 안",
+   "notes": "스크린샷 확인함. 'Component 15'/'Component 16' 이름의 눌림 변형이 섞여 있음(이름 정리 안 됨)"
+  },
+  {
+   "node_ids": [
+    "11:30782"
+   ],
+   "figma_name": "time",
+   "name": "날짜시간 줄(캘린더·캡처 버튼 조합)",
+   "role": "영상 아래 흰 줄: 가운데 날짜·시간 칩, 왼쪽 캘린더 버튼, 오른쪽 캡처 버튼 유무 조합",
+   "variants": [
+    "날짜시간만",
+    "날짜시간 + 캡처",
+    "캘린더 + 날짜시간 + 캡처",
+    "캘린더 + 날짜시간"
+   ],
+   "used_in": "화면 안 'time' 인스턴스(실시간 기본 화면들)",
+   "notes": "스크린샷 확인함. Figma 변형명은 '날짜 시간 on/off × 캡쳐 on/off'인데 실제로는 '날짜 시간=on'이 캘린더 버튼 유무를 뜻함(이름과 생김새 불일치)"
+  },
+  {
+   "node_ids": [
+    "11:30819"
+   ],
+   "figma_name": "Frame 2116933581",
+   "name": "날짜시간 칩 + 시간바(넓은 폭)",
+   "role": "485폭 시간바: 위에 날짜·시간 칩, 아래 10초 간격 시각 눈금과 이벤트 점(주황)",
+   "variants": [],
+   "used_in": "녹화영상 배속 재생 화면",
+   "notes": "스크린샷 확인함. 레이어 안에 '-8X','2X' 배속 글자가 있지만 화면엔 안 보임(숨겨진 레이어). 요청서의 '배속 표시 배지'가 아니라 시간바 부품"
+  },
+  {
+   "node_ids": [
+    "11:30754"
+   ],
+   "figma_name": "Frame 2116933726",
+   "name": "시간바 한 줄(현재 위치 표시선 포함)",
+   "role": "360폭 시간바: 10초 간격 시각 눈금 + 회색 점 + 주황 이벤트 점 + 가운데 검은 세로선(지금 재생 위치)",
+   "variants": [],
+   "used_in": "재생 패널 안 시간바",
+   "notes": "스크린샷 확인함"
+  },
+  {
+   "node_ids": [
+    "11:31582"
+   ],
+   "figma_name": "Frame 2087327574",
+   "name": "시간바 한 줄(양 끝 흐림 버전)",
+   "role": "11:30754와 같은 시간바인데 양 끝 시각 글자가 흐리게 사라지는 형태",
+   "variants": [],
+   "used_in": "재생 패널 안 시간바",
+   "notes": "스크린샷 확인함. 두 시간바 중 어느 쪽이 최종인지는 미정"
+  },
+  {
+   "node_ids": [
+    "11:31415",
+    "11:31613"
+   ],
+   "figma_name": "A-4 · 다채널 실시간 · S26 360×780 / Frame 2116933583",
+   "name": "부품 모음 안 견본 화면",
+   "role": "부품이 아니라 부품을 조립한 세로 화면 견본(홍길동님·에스원 본사 헤더 + 채널칩 + 영상)",
+   "variants": [],
+   "used_in": "부품 모음 영역에만 있음",
+   "notes": "구조 데이터로만 판정(부품 아님, 견본 화면)"
+  }
+ ]
+}
