@@ -11,3 +11,7 @@
 | `moduapp/service-video/video-screen-analysis.json` | 모두앱 영상 — 현행(레거시) 화면 분석 | `outputs/moduapp/service-video/video-v2-*` (2026-10 Figma, NVR 기준) |
 
 분리 결정: river, 2026-10-14
+
+## 대체된 레거시 기록
+
+- 서비스 지도(`registry/services/moduapp/service-map.json`)의 영상 묶음 목록 — 레거시 보드 기준이었던 값: 기기등록/가져오기 · 실시간 영상 · 녹화영상(재생, 추정) · 비밀번호 재설정 · 기기업데이트/모바일데이터 사용 팝업 · 원격지원요청. 2026-10-14 신규 기준으로 교체.

@@ -26,7 +26,7 @@
   },
   "services": [
     { "id": "SVC-guard", "name": "시스템경비", "output_folder": "outputs/moduapp/service-guard/", "blocks": ["시스템 경비(메인 제어)", "서비스 현황", "모바일보고서(구 출동보고서)", "경비/해제 이력", "긴급연락처", "경비/해제 이력 팝업"], "note": "경비 설정/해제 제어가 핵심. 제어는 권한 보유자만. 상세: outputs/moduapp/service-guard/system-guard-screen-analysis.json", "status": "analyzed" },
-    { "id": "SVC-video", "name": "영상", "output_folder": "outputs/moduapp/service-video/", "blocks": ["기기등록/가져오기", "실시간 영상", "녹화영상(재생, 추정)", "비밀번호 재설정", "기기업데이트/모바일데이터 사용 팝업", "원격지원요청"], "note": "CCTV 영상관리. 탭바 직접 노출 핵심 서비스. 홈 '최근 접속 기기 목록'과 연결. 상세(신규 기준, NVR 기준 2026-10 Figma): outputs/moduapp/service-video/video-v2-screen-analysis.json · blocks 는 레거시 서비스맵 보드 기준", "status": "analyzed" },
+    { "id":  "SVC-video", "name":  "영상", "output_folder":  "outputs/moduapp/service-video/", "blocks":  ["실시간 보기(단일·다채널)", "녹화영상 보기(날짜·시간 선택 · 재생·배속·30초 이동)", "화면 구성·화면 비율·페이지 넘김(다채널)", "핀치 확대 · 화면 캡쳐", "카메라 목록 · 움직임 감지", "더보기(상세 설정·원격지원요청·방문점검신청)", "PTZ 원격 조종(실시간)", "SVMS 레이아웃 리스트 · 이벤트 목록(SVMS 고객)"], "views":  ["실시간·기본(세로) 단일/다채널", "실시간·확대(가로) 단일/다채널", "녹화영상·기본(세로) 단일/다채널", "녹화영상·확대(가로) 단일/다채널"], "basis":  "신규 기준 — 2026-10 Figma '모두앱 영상'(node 11:10933), NVR(녹화기) 연동 기준. 클라우드영상시스템 대응은 미포함(별도 프로젝트)", "note":  "CCTV 영상 보기. 탭바 직접 노출 핵심 서비스. 상단 칩으로 실시간 ↔ 녹화영상 전환, 확대 버튼(또는 기기 회전)으로 가로 전체화면. 상세: outputs/moduapp/service-video/video-v2-screen-analysis.json", "status":  "analyzed" },
     { "id": "SVC-card", "name": "카드(출입카드)", "output_folder": "outputs/moduapp/service-card/", "blocks": ["카드 조회·관리", "보안(실물)카드 신청", "모바일 보안카드 발급", "모바일카드 초대·승인", "방문자 조회·관리", "방문자 모바일카드 신청 승인"], "note": "출입카드(보안/모바일/방문자) 발급·관리 = 사용자가 말한 '출입관리' 확인됨. 카드 발급/승인은 권한 부여 흐름. 상세: outputs/moduapp/service-card/card-screen-analysis.json", "status": "analyzed" },
     { "id": "SVC-mys1", "name": "마이에스원(계약/청구/입금)", "output_folder": "outputs/moduapp/service-mys1/", "screens": [], "status": "confirmed-label" },
     { "id": "SVC-cs", "name": "고객센터", "output_folder": "outputs/moduapp/service-cs/", "screens": [], "status": "support-area", "note": "담당자 기준 핵심 '서비스'가 아니라 지원/소통 영역(뉴스/공지·1:1문의·자주하는질문·방문예약·자료실)" }
@@ -73,6 +73,7 @@
     "좌측 하단 범례/메모 블록(색상·상태 코드 규칙 추정) 미판독",
     "섹션별 개별 화면 목록·node-id 미수집 (보드가 164086px로 커서 전체 메타데이터 조회 타임아웃)",
     "'사용자 권한관리'와 '출입관리'의 실제 위치 확정 필요",
-    "각 섹션이 보드상 독립 프레임인지(=node-id 보유) 확인 필요"
+    "각 섹션이 보드상 독립 프레임인지(=node-id 보유) 확인 필요",
+    "영상: 이전 서비스맵에 있던 '기기등록/가져오기 · 비밀번호 재설정 · 기기업데이트/모바일데이터 사용 팝업'은 신규 기준 Figma(2026-10)에 화면이 없음 — 신규에서 유지·이동·삭제 여부 확인 필요"
   ]
 }
