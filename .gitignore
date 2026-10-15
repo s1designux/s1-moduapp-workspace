@@ -3,3 +3,4 @@ add_data/
 .DS_Store
 node_modules/
 *.local
+docs/context/private.local.md
