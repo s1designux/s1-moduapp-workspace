@@ -2,3 +2,4 @@
 
 - [영상 탭 신규 기준](video-tab-baseline.md) — 2026-10 Figma(NVR 기준) 분석이 기준, 이전 분석은 레거시, 클영시는 다른 프로젝트
 - [모두앱 서비스 성격](project-moduapp-nature.md) — 다중 S1 서비스를 하나로 묶는 통합 허브 앱 (모빌리티 프로젝트 메모에서 옮김)
+- [계획: 영상 화면 유형별 부품 분석](plan-video-screen-type-components.md) — 시작 전. 화면 유형 × 부품·부품 묶음 표 만들기 (2026-10-20 계획)
