@@ -107,6 +107,7 @@
 
 - primitive token(원시 토큰)을 직접 쓰기보다 **semantic token** 또는 **component token** 기준을 우선합니다.
 - 상태값, 색상, 크기, 강조 표현은 반드시 **이유를 함께 작성**합니다.
+- **모두앱 화면은 기존 모두앱 디자인 가이드 기준입니다.** 최신 디자인 기준(S-1 디자인가이드, SW-UX-GUIDE-V3.0 등)을 적용하지 않습니다. ds-mapper의 "최신 디자인 시스템"도 모두앱에서는 기존 모두앱 가이드로 읽습니다. (river 결정 2026-10-21, `docs/context/moduapp-design-guide-basis.md`)
 
 ---
 

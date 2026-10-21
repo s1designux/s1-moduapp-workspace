@@ -47,6 +47,8 @@
 
 ## 다루지 않은 것
 - 색·글자 크기·모서리·그림자 같은 디자인 시스템 값은 재지 않았다.
+  - **모두앱 화면은 기존 모두앱 디자인 가이드를 따른다. 최신 디자인 기준(S-1 디자인가이드, SW-UX-GUIDE-V3.0)을 쓰지 않는다.** (river 결정 2026-10-21, `docs/context/moduapp-design-guide-basis.md`)
+  - 스크린샷·치수를 잰 사본 파일은 새 가이드 시험용 파일이다. 구조·크기만 믿고, 색·글자·모서리는 사본에서 가져오지 않는다.
 - 클라우드 대응, 와이어프레임은 이 워크스페이스에서 하지 않는다. 결정: river 2026-10-14, `docs/context/video-tab-baseline.md`
 - 지난 분석의 확인 필요 96건·이름 불일치 52건은 `video-v2-screen-analysis.json`의 `needs_review`·`mismatches`에 그대로 있다.
 
