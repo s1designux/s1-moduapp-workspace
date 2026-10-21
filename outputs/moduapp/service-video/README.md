@@ -18,7 +18,7 @@
 | 2 | `video-v2-context-components.html` / `.json` | 맥락 15개: 흐름 그림, 들어오기/나가기, 부품 묶음, 세로/가로 자리, 다르게 만든 곳, 규칙 6개 | 기능 하나를 어떻게 구성했는지 볼 때 |
 | 3 | `video-v2-spec-sheet.md` / `.json` | 부품 20개의 작은 사양: 자리·크기·변형·글자, Figma에서 잰 치수 | 부품을 똑같이 이어받을 때 |
 | 4 | `video-v2-screen-type-components.html` / `.json` | 화면 모양 4 × 상태 8 유형별 부품 수, 부품 묶음 12개, 두 기록 비교 | 어떤 화면 유형에 무엇이 들어가는지 셀 때 |
-| 5 | `video-v2-open-decisions.md` | 정해지지 않은 시안 5건 + 다르게 만든 곳 23건 + 이름 미확인 부품 | 확정 사양으로 쓰면 안 되는 것을 거를 때 |
+| 5 | `video-v2-open-decisions.md` | 정해지지 않은 시안 5건 + 다르게 만든 곳 25건 + 이름 미확인 부품 | 확정 사양으로 쓰면 안 되는 것을 거를 때 |
 | 6 | `video-v2-screen-analysis.json` | 화면 270개 원자료: 묶음, 흐름, 캡션, 화면 설명, 기기 규칙, 치수 기록 | 화면 하나를 깊이 볼 때 |
 | 7 | `video-v2-components.json` | 부품 원장: 역할, 변형, Figma 이름, 바로잡은 기록(`meta.corrections`) | 부품 정의의 원본 |
 | - | `images/INDEX.json` | 그림 54장 목록: 원본·사본 번호, 캡션, 모양·상태, 맥락 | 그림을 찾을 때 |
