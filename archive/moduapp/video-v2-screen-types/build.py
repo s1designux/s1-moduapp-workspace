@@ -58,7 +58,7 @@ for x in S:
 
 OUT = '/Users/designgroup_02/s1-moduapp-workspace/outputs/moduapp/service-video/'
 SHAPES = ['세로 기본 · 단일채널', '세로 기본 · 다채널', '가로 확대 · 단일채널', '가로 확대 · 다채널']
-KEY_ORDER = [c['key'] for c in comp['components']] + ['os_nav']
+KEY_ORDER = list(dict.fromkeys([c['key'] for c in comp['components']] + ['os_nav']))
 
 # 부품 묶음 후보: core = 이 묶음을 대표하는 부품. 비율 = core가 나온 화면 중 묶음 전체가 함께 나온 비율
 BUNDLES = [

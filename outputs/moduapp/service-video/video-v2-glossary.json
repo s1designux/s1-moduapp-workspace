@@ -1,0 +1,582 @@
+{
+ "meta": {
+  "title": "모두앱 영상(NVR) — 용어 사전",
+  "made_at": "2026-10-21"
+ },
+ "components": [
+  {
+   "key": "app_header",
+   "name": "상단 현장 정보 헤더",
+   "also_called": [
+    "상단 현장 선택 헤더"
+   ],
+   "figma_names": [
+    "StatusBar",
+    "More"
+   ],
+   "on_screen_text": [
+    "8층 사무실 ▾",
+    "에스원 본사 · N1234567"
+   ]
+  },
+  {
+   "key": "mode_chip",
+   "name": "실시간/녹화영상 전환 칩",
+   "also_called": [
+    "실시간/녹화영상 전환 버튼"
+   ],
+   "figma_names": [
+    "Chip",
+    "m_chips"
+   ],
+   "on_screen_text": [
+    "실시간",
+    "녹화영상"
+   ]
+  },
+  {
+   "key": "tabbar",
+   "name": "하단 탭바",
+   "also_called": [],
+   "figma_names": [
+    "home",
+    "under security",
+    "dome camera",
+    "menu(hamburger)"
+   ],
+   "on_screen_text": [
+    "홈",
+    "경비",
+    "영상",
+    "전체"
+   ]
+  },
+  {
+   "key": "video_tile",
+   "name": "영상 칸(타일)·분할 격자",
+   "also_called": [
+    "영상 칸",
+    "큰 영상 칸",
+    "영상 칸 2개 격자",
+    "2열 격자 영상 칸 8개",
+    "영상 칸 격자 4x4",
+    "카메라 이름표"
+   ],
+   "figma_names": [],
+   "on_screen_text": []
+  },
+  {
+   "key": "video_state",
+   "name": "영상 상태 표시",
+   "also_called": [
+    "빈 영상 칸",
+    "신호 없음 영상 칸",
+    "빈 영상 자리표시",
+    "신호없음 아이콘+문구",
+    "영상 없음 대체 화면",
+    "칸 하단 빨간 경고 띠"
+   ],
+   "figma_names": [
+    "dome camera trouble"
+   ],
+   "on_screen_text": [
+    "영상 수신 상태가 좋지 않음",
+    "신호없음",
+    "에스원"
+   ]
+  },
+  {
+   "key": "mode_badge",
+   "name": "모드 배지 + 상단 툴바",
+   "also_called": [
+    "영상 위 조작 버튼 덮개",
+    "실시간 배지",
+    "더보기",
+    "영상 위 딤",
+    "화면 구성",
+    "영상 위 딤 오버레이"
+   ],
+   "figma_names": [
+    "Component 5"
+   ],
+   "on_screen_text": [
+    "● 실시간",
+    "● 녹화영상"
+   ]
+  },
+  {
+   "key": "dim_overlay",
+   "name": "조작 버튼 덮개(딤)",
+   "also_called": [
+    "영상 위 조작 버튼 덮개",
+    "영상 위 딤 오버레이",
+    "영상 위 딤",
+    "빈 딤 덮개"
+   ],
+   "figma_names": [
+    "Component 53",
+    "Component 11",
+    "Component 12",
+    "Component 10/Frame 2087327495",
+    "Component 10/Frame 2087327496"
+   ],
+   "on_screen_text": []
+  },
+  {
+   "key": "round_button",
+   "name": "영상 위 원형 버튼",
+   "also_called": [
+    "화면 캡쳐 버튼",
+    "영상 위 조작 버튼 덮개",
+    "축소 버튼",
+    "전체화면 버튼",
+    "영상 위 딤 오버레이",
+    "하단 컨트롤 바"
+   ],
+   "figma_names": [
+    "Component 7",
+    "Component 9",
+    "Component 8",
+    "ic_화살표, 더보기"
+   ],
+   "on_screen_text": []
+  },
+  {
+   "key": "page_dots",
+   "name": "페이지 점",
+   "also_called": [
+    "영상 위 조작 버튼 덮개"
+   ],
+   "figma_names": [
+    "Component 10/Frame 2087327495"
+   ],
+   "on_screen_text": []
+  },
+  {
+   "key": "time_pill",
+   "name": "현재 시각 알약 / 날짜·시간 칩",
+   "also_called": [
+    "현재 시각 표시 알약",
+    "날짜·시각 표시 알약",
+    "날짜 달력 버튼",
+    "날짜·시간 표시",
+    "날짜 버튼"
+   ],
+   "figma_names": [
+    "time",
+    "Component 45"
+   ],
+   "on_screen_text": [
+    "2026.09.09. 15:53:20"
+   ]
+  },
+  {
+   "key": "playback_panel",
+   "name": "녹화 재생 패널",
+   "also_called": [
+    "재생 컨트롤 줄",
+    "재생 컨트롤",
+    "배속 표시",
+    "배속 표시 버튼",
+    "비활성 30초 버튼",
+    "재생 조작 바"
+   ],
+   "figma_names": [
+    "Component 44",
+    "Component 43",
+    "Component 46",
+    "Component 24"
+   ],
+   "on_screen_text": [
+    "2x",
+    "-2x"
+   ]
+  },
+  {
+   "key": "timeline",
+   "name": "타임라인(시간바)",
+   "also_called": [
+    "타임라인",
+    "현재 재생 시각 말풍선"
+   ],
+   "figma_names": [
+    "Frame 2116933726",
+    "Frame 2087327574",
+    "Frame 2116933581"
+   ],
+   "on_screen_text": []
+  },
+  {
+   "key": "datetime_picker",
+   "name": "날짜·시간 고르기",
+   "also_called": [
+    "날짜 달력",
+    "오른쪽 패널",
+    "날짜/시간 탭",
+    "취소·시간 선택 버튼",
+    "시·분 스크롤 휠",
+    "시간 휠"
+   ],
+   "figma_names": [
+    "DatePicker/Calendar Cell",
+    "calendar_arrow",
+    "tab"
+   ],
+   "on_screen_text": [
+    "날짜",
+    "시간",
+    "시간 선택",
+    "취소",
+    "확인",
+    "적용"
+   ]
+  },
+  {
+   "key": "bottom_sheet",
+   "name": "바텀시트 / 가로 패널",
+   "also_called": [
+    "바텀시트",
+    "오른쪽 패널",
+    "적용 버튼",
+    "가운데 팝업",
+    "취소·확인 버튼",
+    "닫기"
+   ],
+   "figma_names": [
+    "ic_닫기",
+    "close",
+    "mobile_button",
+    "m_button"
+   ],
+   "on_screen_text": [
+    "더보기",
+    "화면 구성",
+    "레이아웃 리스트",
+    "날짜, 시간 선택",
+    "PTZ 제어 속도",
+    "이벤트 종류"
+   ]
+  },
+  {
+   "key": "layout_picker",
+   "name": "분할 수 고르기",
+   "also_called": [
+    "바텀시트",
+    "채널 수 슬라이더",
+    "화면 구성 팝업",
+    "격자 아이콘 선택지",
+    "배치 그림 카드 3개",
+    "격자 그림 선택지"
+   ],
+   "figma_names": [
+    "Component 13",
+    "Component 54"
+   ],
+   "on_screen_text": [
+    "화면 구성",
+    "1×2 · 1×3 · 2×4",
+    "2채널 · 3채널 · 8채널",
+    "확인",
+    "적용"
+   ]
+  },
+  {
+   "key": "camera_list",
+   "name": "카메라 목록 / 움직임 감지 목록",
+   "also_called": [
+    "카메라 목록 / 움직임 감지 탭",
+    "카메라 썸네일 2열 목록",
+    "카메라 목록",
+    "감지 시각 목록",
+    "빈 화면 그림+문구",
+    "빈 화면 안내"
+   ],
+   "figma_names": [
+    "Component 45",
+    "m_checkbox",
+    "state_emoji"
+   ],
+   "on_screen_text": [
+    "카메라 목록",
+    "움직임 감지",
+    "감지된 움직임이 없어요."
+   ]
+  },
+  {
+   "key": "toast",
+   "name": "영상 안 토스트",
+   "also_called": [
+    "토스트",
+    "가운데 안내 토스트",
+    "배율 표시",
+    "배율 표시 알약",
+    "캡쳐 완료 토스트"
+   ],
+   "figma_names": [],
+   "on_screen_text": [
+    "기본 속도로 재생",
+    "일시 정지",
+    "2배속으로 빨리감기",
+    "30초 뒤로",
+    "현재 화면이 캡쳐되었어요",
+    "원본 비율 유지",
+    "화면 채우기",
+    "1.5X",
+    "원본"
+   ]
+  },
+  {
+   "key": "ptz_pad",
+   "name": "PTZ 조종판",
+   "also_called": [
+    "PTZ 모드 영역 제목",
+    "원형 방향 조종판",
+    "확대/축소 세로 막대",
+    "제어 속도 선택 버튼",
+    "바텀시트",
+    "방향 조작 원형 패드"
+   ],
+   "figma_names": [
+    "plus",
+    "minus"
+   ],
+   "on_screen_text": [
+    "PTZ 모드",
+    "카메라 방향",
+    "확대/축소",
+    "제어 속도 보통(4) ▾"
+   ]
+  },
+  {
+   "key": "svms_panel",
+   "name": "SVMS 레이아웃 리스트·이벤트 목록",
+   "also_called": [
+    "카메라 목록 / 이벤트 목록 탭",
+    "이벤트 칩",
+    "이벤트 종류 거르기 버튼",
+    "바텀시트",
+    "레이아웃 리스트 팝업",
+    "이벤트 기록 목록"
+   ],
+   "figma_names": [],
+   "on_screen_text": [
+    "레이아웃 리스트",
+    "기본 카메라 목록",
+    "이벤트 목록",
+    "이벤트 전체 ▾"
+   ]
+  },
+  {
+   "key": "os_nav",
+   "name": "기기 시스템 내비게이션 바",
+   "also_called": [
+    "안드로이드 시스템 내비게이션 바"
+   ],
+   "figma_names": [
+    "phone_navi"
+   ],
+   "on_screen_text": []
+  }
+ ],
+ "terms": [
+  {
+   "term": "딤",
+   "means": "영상을 한 번 누르면 위·아래가 검게 깔리며 조작 버튼이 뜨는 상태",
+   "also_called": [
+    "영상 뷰 딤",
+    "조작 버튼 덮개",
+    "컨트롤 표시"
+   ]
+  },
+  {
+   "term": "세로 기본 / 가로 확대",
+   "means": "화면 방향. 가로 확대는 전체화면 버튼 또는 기기 회전으로 들어감",
+   "also_called": [
+    "기본",
+    "확대",
+    "전체화면"
+   ]
+  },
+  {
+   "term": "단일채널 / 다채널",
+   "means": "카메라 1대를 크게 / 여러 대를 격자로",
+   "also_called": [
+    "1채널",
+    "N채널",
+    "분할"
+   ]
+  },
+  {
+   "term": "분할 표기",
+   "means": "세로 1×2·1×3·2×4(2·3·8채널), 가로 2×2·3×3·4×4(4·9·16채널)",
+   "also_called": [
+    "화면 구성"
+   ]
+  },
+  {
+   "term": "바텀시트",
+   "means": "세로에서 아래에서 올라오는 창(제목 + 닫기 X)",
+   "also_called": [
+    "시트"
+   ]
+  },
+  {
+   "term": "가운데 팝업",
+   "means": "가로에서 가운데 뜨는 창(폭 최대 480, 높이 화면의 80%)",
+   "also_called": [
+    "가운데 시트",
+    "팝업"
+   ]
+  },
+  {
+   "term": "오른쪽 패널",
+   "means": "가로에서 오른쪽에 붙는 창, 영상은 왼쪽으로 작아짐",
+   "also_called": [
+    "측면 패널"
+   ]
+  },
+  {
+   "term": "토스트",
+   "means": "영상 아래 가운데 잠깐 뜨는 알림 알약",
+   "also_called": [
+    "안내 토스트",
+    "배율 표시"
+   ]
+  },
+  {
+   "term": "맥락",
+   "means": "사용자가 하려는 일 15가지(맥락 파일의 contexts)",
+   "also_called": [
+    "기능 묶음"
+   ]
+  },
+  {
+   "term": "부품 묶음",
+   "means": "거의 늘 함께 나오는 부품 조합 12개(유형 파일의 bundles)",
+   "also_called": []
+  },
+  {
+   "term": "대표 상태",
+   "means": "화면 하나에 붙인 상태 8가지 중 하나(덮는 쪽 우선)",
+   "also_called": [
+    "state_type"
+   ]
+  },
+  {
+   "term": "원본 번호 / 사본 번호",
+   "means": "원본 Figma 화면 번호 11:NNNNN, 사본 파일 번호 2805:(NNNNN+2461)",
+   "also_called": []
+  }
+ ],
+ "states": [
+  {
+   "term": "기본",
+   "means": "아무것도 안 덮인 화면"
+  },
+  {
+   "term": "버튼 뜬 상태(딤)",
+   "means": "딤이 떠 있음"
+  },
+  {
+   "term": "바텀시트 열림",
+   "means": "세로 시트"
+  },
+  {
+   "term": "가운데 팝업",
+   "means": "가로 팝업"
+  },
+  {
+   "term": "오른쪽 패널",
+   "means": "가로 패널"
+  },
+  {
+   "term": "토스트",
+   "means": "토스트가 뜬 순간"
+  },
+  {
+   "term": "영상 안 나옴",
+   "means": "수신 불량·카메라 없음·신호 없음"
+  },
+  {
+   "term": "빈 화면",
+   "means": "목록에 기록이 없음"
+  }
+ ],
+ "contexts": [
+  {
+   "key": "watch",
+   "name": "영상 보기",
+   "goal": "영상 탭에 들어와 지금 현장 카메라를 본다"
+  },
+  {
+   "key": "controls",
+   "name": "조작 버튼 꺼내기",
+   "goal": "영상을 한 번 눌러 숨어 있던 조작 버튼을 꺼낸다"
+  },
+  {
+   "key": "trouble",
+   "name": "영상이 안 나올 때",
+   "goal": "영상이 안 나올 때 왜 그런지 알아챈다"
+  },
+  {
+   "key": "zoom",
+   "name": "크게 보기(핀치 확대)",
+   "goal": "영상 한 부분을 손가락으로 크게 본다"
+  },
+  {
+   "key": "layout",
+   "name": "화면 나누기(분할 수)",
+   "goal": "한 화면에 카메라를 몇 대 볼지 고른다"
+  },
+  {
+   "key": "ratio",
+   "name": "화면 비율 바꾸기",
+   "goal": "영상을 원래 비율로 볼지, 칸에 꽉 채울지 바꾼다"
+  },
+  {
+   "key": "page",
+   "name": "다음 카메라 묶음 넘기기",
+   "goal": "분할 칸보다 카메라가 많을 때 다음 묶음으로 넘긴다"
+  },
+  {
+   "key": "camera",
+   "name": "다른 카메라 고르기",
+   "goal": "지금 보는 카메라를 다른 카메라로 바꾼다"
+  },
+  {
+   "key": "group",
+   "name": "카메라 묶음 고르기(SVMS)",
+   "goal": "(SVMS 고객) 미리 묶어 둔 카메라 묶음을 고른다"
+  },
+  {
+   "key": "datetime",
+   "name": "지난 영상 날짜·시간 찾기",
+   "goal": "(녹화) 보고 싶은 날짜·시각으로 이동한다"
+  },
+  {
+   "key": "playback",
+   "name": "재생·배속 조절",
+   "goal": "(녹화) 재생·멈춤·빨리감기·30초 이동을 한다"
+  },
+  {
+   "key": "event",
+   "name": "움직임·이벤트 찾아보기",
+   "goal": "(녹화) 움직임·이벤트가 있던 시점을 찾아 본다"
+  },
+  {
+   "key": "capture",
+   "name": "화면 저장(캡쳐)",
+   "goal": "지금 화면을 사진으로 저장한다"
+  },
+  {
+   "key": "ptz",
+   "name": "카메라 방향 돌리기(PTZ)",
+   "goal": "(PTZ 카메라) 카메라 방향과 확대를 직접 조종한다"
+  },
+  {
+   "key": "more",
+   "name": "기타 메뉴(더보기)",
+   "goal": "상세 설정·원격지원요청·방문점검신청으로 간다"
+  }
+ ]
+}

@@ -10,3 +10,7 @@
 ## 맥락별 부품 조합 (2026-10-21)
 4. `python3 context_build.py` → `outputs/moduapp/service-video/video-v2-context-components.json/html`
 - 맥락 나누기·자리·다른 곳 글은 `context_spec.py`에 직접 적어 둠(스크린샷 대조 근거). 흐름 그림은 `images/contexts/`(없으면 `images/screen-types/`)에서 찾는다.
+
+## 넘겨주기 꾸러미 (2026-10-21)
+5. `python3 inst_geo.py` · `python3 node_geo.py` → Figma 사본에서 부품·영상 칸 크기와 자리를 잰다(`meta.xml` 필요).
+6. `python3 handoff.py` → 용어 사전 · 작은 사양표 · 미정 목록 · 그림 목록을 만들고, 기존 결과에 `scope`·`confidence` 꼬리표를 붙인다. **build.py · context_build.py를 다시 돌렸으면 handoff.py를 맨 마지막에 다시 돌린다**(꼬리표가 지워지므로).

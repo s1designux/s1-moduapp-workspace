@@ -5,7 +5,36 @@
   "analyzed_at": "2026-10-14",
   "note": "Figma 레이어명이 Component 5/44 같은 의미 없는 이름이라 생김새로 이름을 붙임. usage_screens = 해당 부품이 들어간 화면 수(메타데이터 기준).",
   "basis": "NVR(녹화기) 연동 기준으로 제작된 화면. 클라우드영상시스템 대응 화면·기능·구조는 포함되지 않음(별도 프로젝트에서 이 기준 위에 얹음)",
-  "role": "신규 기준(baseline) — 모두앱 영상 탭 개선 화면"
+  "role": "신규 기준(baseline) — 모두앱 영상 탭 개선 화면",
+  "corrections": [
+   {
+    "at": "2026-10-21",
+    "what": "'phone_navi'는 하단 탭바가 아니라 기기 내비게이션 바 → os_nav로 옮김",
+    "evidence": "사본 2805:16516 스크린샷"
+   },
+   {
+    "at": "2026-10-21",
+    "what": "'state_emoji'는 영상 상태 표시가 아니라 빈 목록 그림(감지된 움직임/이벤트가 없어요) → camera_list로 옮김",
+    "evidence": "사본 2805:17656 스크린샷"
+   },
+   {
+    "at": "2026-10-21",
+    "what": "'ok'는 날짜 고르기의 확인 버튼이 아니라 목록의 체크(✓) 아이콘 → 날짜 고르기에서 뺌",
+    "evidence": "사본 2805:17232 스크린샷"
+   }
+  ],
+  "needs_review_added": [
+   {
+    "at": "2026-10-21",
+    "what": "'Component 13'은 layout_picker로 적혀 있지만 가로 화면 아래 780×80·780×120 띠 자리에 있음 — 딤 아래쪽 받침일 가능성",
+    "evidence": "사본 메타데이터 자리값"
+   },
+   {
+    "at": "2026-10-21",
+    "what": "'Frame 2087327575'(16채널 화면 등 23곳, 780×360 전체)는 영상 칸 격자, 'Frame 2087327567'(가로 아래 780×39·431×39)는 가로 시간바로 보임 — 이름 미정",
+    "evidence": "사본 메타데이터 자리값"
+   }
+  ]
  },
  "components": [
   {
@@ -58,15 +87,13 @@
     "home",
     "under security",
     "dome camera",
-    "menu(hamburger)",
-    "phone_navi"
+    "menu(hamburger)"
    ],
    "usage_screens": {
     "home": 141,
     "under security": 141,
     "dome camera": 141,
-    "menu(hamburger)": 141,
-    "phone_navi": 141
+    "menu(hamburger)": 141
    },
    "used_in": [
     "세로 기본 보기 전 화면"
@@ -99,12 +126,10 @@
    "scope": "영상 공통",
    "role": "영상이 안 나올 때 칸 안 표시: 수신 상태 나쁨(빨간 띠), 카메라 없음(에스원 로고), 신호 없음(아이콘+글자)",
    "figma_names": [
-    "dome camera trouble",
-    "state_emoji"
+    "dome camera trouble"
    ],
    "usage_screens": {
-    "dome camera trouble": 8,
-    "state_emoji": 8
+    "dome camera trouble": 8
    },
    "used_in": [
     "화면 상태 값 묶음 전체"
@@ -414,14 +439,12 @@
    "figma_names": [
     "DatePicker/Calendar Cell",
     "calendar_arrow",
-    "tab",
-    "ok"
+    "tab"
    ],
    "usage_screens": {
     "DatePicker/Calendar Cell": 20,
     "calendar_arrow": 20,
-    "tab": 8,
-    "ok": 8
+    "tab": 8
    },
    "used_in": [
     "날짜·시간 선택 묶음"
@@ -490,11 +513,13 @@
    "role": "세로는 영상 아래 썸네일 격자, 가로는 오른쪽 패널. 녹화영상은 \"움직임 감지\" 탭이 붙어 감지 시점 목록으로 이동",
    "figma_names": [
     "Component 45",
-    "m_checkbox"
+    "m_checkbox",
+    "state_emoji"
    ],
    "usage_screens": {
     "Component 45": 27,
-    "m_checkbox": 2
+    "m_checkbox": 2,
+    "state_emoji": 8
    },
    "used_in": [
     "카메라 목록·움직임 감지 묶음"
@@ -570,6 +595,23 @@
     "이벤트 목록",
     "이벤트 없음"
    ],
+   "figma_local_component": []
+  },
+  {
+   "key": "os_nav",
+   "name": "기기 시스템 내비게이션 바",
+   "scope": "기기(안드로이드)",
+   "role": "화면 맨 아래 안드로이드 시스템 버튼 줄(최근 앱 · 홈 · 뒤로). 앱 부품이 아니라 기기 화면 틀",
+   "figma_names": [
+    "phone_navi"
+   ],
+   "usage_screens": {
+    "phone_navi": 141
+   },
+   "used_in": [
+    "세로 화면 전체(141)"
+   ],
+   "variants": [],
    "figma_local_component": []
   }
  ],

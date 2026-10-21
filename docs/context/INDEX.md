@@ -4,3 +4,4 @@
 - [모두앱 서비스 성격](project-moduapp-nature.md) — 다중 S1 서비스를 하나로 묶는 통합 허브 앱 (모빌리티 프로젝트 메모에서 옮김)
 - [계획: 영상 화면 유형별 부품 분석](plan-video-screen-type-components.md) — 완료(2026-10-21). Figma 기록은 사본 파일(번호+2461)에서 받음
 - [계획: 영상 맥락별 부품 조합](plan-video-context-components.md) — 완료(2026-10-21). 맥락 15개 · 규칙 6개 · 다르게 만든 곳 23개
+- [영상 NVR 분석 넘겨주기 꾸러미](handoff-video-nvr-package.md) — 2026-10-21. 다른 세션은 `outputs/moduapp/service-video/README.md`부터 읽는다
