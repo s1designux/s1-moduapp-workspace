@@ -1,0 +1,7293 @@
+{
+ "meta": {
+  "service": "video",
+  "layer": "service",
+  "title": "모두앱 영상 — 화면 유형별 부품·부품 묶음",
+  "source": "video-v2-screen-analysis.json(눈으로 적은 부품 기록) + video-v2-components.json(부품 19개 + Figma 전체 합계)",
+  "analyzed_at": "2026-10-21",
+  "basis": "NVR(녹화기) 연동 신규 기준만. 레거시·클라우드영상 대응 제외",
+  "screens": 270,
+  "status": "partial — Figma 화면별 부품 기록 대조와 스크린샷 대조가 남음",
+  "method": "화면 모양(세로/가로 × 단일/다채널)과 대표 상태(8가지)로 나눈 뒤, 눈으로 적은 부품 글을 부품 19개(+기기 내비게이션 바)로 바꿔 셈. 묶음 비율 = 대표 부품이 나온 화면 중 묶음 전체가 함께 나온 비율"
+ },
+ "axes": {
+  "shape": [
+   "세로 기본 · 단일채널",
+   "세로 기본 · 다채널",
+   "가로 확대 · 단일채널",
+   "가로 확대 · 다채널"
+  ],
+  "state": [
+   "기본",
+   "버튼 뜬 상태(딤)",
+   "바텀시트 열림",
+   "가운데 팝업",
+   "오른쪽 패널",
+   "토스트",
+   "영상 안 나옴",
+   "빈 화면"
+  ],
+  "platform_note": "iOS 가로(874×402) 16화면, 안드로이드 가로 16화면, 폴드 세로(476×752) 3화면은 platform_extra로 따로 표시"
+ },
+ "type_matrix": [
+  {
+   "shape": "세로 기본 · 단일채널",
+   "state": "기본",
+   "screen_count": 11,
+   "platform_extra": {},
+   "components": {
+    "app_header": 11,
+    "mode_chip": 9,
+    "tabbar": 11,
+    "video_tile": 11,
+    "mode_badge": 1,
+    "round_button": 9,
+    "time_pill": 9,
+    "playback_panel": 4,
+    "timeline": 4,
+    "camera_list": 5,
+    "toast": 2,
+    "ptz_pad": 4,
+    "svms_panel": 2,
+    "os_nav": 2
+   },
+   "bundles": [
+    "portrait_frame",
+    "single_list",
+    "toolbar_buttons",
+    "playback"
+   ],
+   "representative": {
+    "id": "11:14055",
+    "caption": "기본",
+    "view": "실시간·기본(단일채널)",
+    "feature": "기본 화면·상태 값",
+    "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-14055"
+   },
+   "screen_ids": [
+    "11:14055",
+    "11:14343",
+    "11:14413",
+    "11:17164",
+    "11:17227",
+    "11:17290",
+    "11:17446",
+    "11:15998",
+    "11:14771",
+    "11:14838",
+    "11:14908"
+   ]
+  },
+  {
+   "shape": "세로 기본 · 단일채널",
+   "state": "버튼 뜬 상태(딤)",
+   "screen_count": 7,
+   "platform_extra": {
+    "fold": 2
+   },
+   "components": {
+    "app_header": 7,
+    "mode_chip": 6,
+    "tabbar": 7,
+    "video_tile": 6,
+    "mode_badge": 7,
+    "dim_overlay": 5,
+    "round_button": 7,
+    "page_dots": 1,
+    "time_pill": 6,
+    "playback_panel": 2,
+    "timeline": 2,
+    "camera_list": 5,
+    "ptz_pad": 2,
+    "svms_panel": 2,
+    "os_nav": 1
+   },
+   "bundles": [
+    "portrait_frame",
+    "single_list",
+    "dim_controls",
+    "dim_controls_paged",
+    "toolbar_buttons",
+    "playback"
+   ],
+   "representative": {
+    "id": "11:16870",
+    "caption": "영상 뷰 딤",
+    "view": "실시간·기본(단일채널)",
+    "feature": "기본 화면·상태 값",
+    "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-16870"
+   },
+   "screen_ids": [
+    "11:16870",
+    "11:16938",
+    "11:17096",
+    "11:30465",
+    "11:30532",
+    "11:16550",
+    "11:16617"
+   ]
+  },
+  {
+   "shape": "세로 기본 · 단일채널",
+   "state": "바텀시트 열림",
+   "screen_count": 11,
+   "platform_extra": {
+    "fold": 1
+   },
+   "components": {
+    "app_header": 4,
+    "mode_chip": 4,
+    "video_tile": 4,
+    "time_pill": 3,
+    "datetime_picker": 5,
+    "bottom_sheet": 11,
+    "camera_list": 2,
+    "ptz_pad": 2,
+    "svms_panel": 2
+   },
+   "bundles": [
+    "sheet_datetime",
+    "sheet_svms"
+   ],
+   "representative": {
+    "id": "11:16773",
+    "caption": "날짜, 시간 선택 시",
+    "view": "녹화영상·기본(단일채널)",
+    "feature": "날짜·시간 선택",
+    "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-16773"
+   },
+   "screen_ids": [
+    "11:14553",
+    "11:17006",
+    "11:17356",
+    "11:30602",
+    "11:16773",
+    "11:16064",
+    "11:16208",
+    "11:16308",
+    "11:16450",
+    "11:14983",
+    "11:16684"
+   ]
+  },
+  {
+   "shape": "세로 기본 · 단일채널",
+   "state": "가운데 팝업",
+   "screen_count": 0,
+   "platform_extra": {},
+   "components": {},
+   "bundles": [],
+   "representative": null,
+   "screen_ids": []
+  },
+  {
+   "shape": "세로 기본 · 단일채널",
+   "state": "오른쪽 패널",
+   "screen_count": 0,
+   "platform_extra": {},
+   "components": {},
+   "bundles": [],
+   "representative": null,
+   "screen_ids": []
+  },
+  {
+   "shape": "세로 기본 · 단일채널",
+   "state": "토스트",
+   "screen_count": 14,
+   "platform_extra": {},
+   "components": {
+    "app_header": 14,
+    "mode_chip": 14,
+    "tabbar": 14,
+    "video_tile": 14,
+    "round_button": 14,
+    "time_pill": 14,
+    "playback_panel": 13,
+    "timeline": 13,
+    "camera_list": 14,
+    "toast": 14,
+    "os_nav": 13
+   },
+   "bundles": [
+    "portrait_frame",
+    "single_list",
+    "playback",
+    "speed_toast"
+   ],
+   "representative": {
+    "id": "11:15653",
+    "caption": "재생",
+    "view": "녹화영상·기본(단일채널)",
+    "feature": "영상 컨트롤(재생·배속)",
+    "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-15653"
+   },
+   "screen_ids": [
+    "11:14483",
+    "11:15653",
+    "11:15860",
+    "11:14635",
+    "11:15239",
+    "11:15377",
+    "11:15515",
+    "11:14703",
+    "11:15308",
+    "11:15446",
+    "11:15584",
+    "11:15722",
+    "11:15929",
+    "11:15791"
+   ]
+  },
+  {
+   "shape": "세로 기본 · 단일채널",
+   "state": "영상 안 나옴",
+   "screen_count": 3,
+   "platform_extra": {},
+   "components": {
+    "app_header": 3,
+    "mode_chip": 3,
+    "tabbar": 3,
+    "video_tile": 3,
+    "video_state": 3,
+    "round_button": 3,
+    "time_pill": 3,
+    "camera_list": 3
+   },
+   "bundles": [
+    "portrait_frame",
+    "single_list",
+    "tile_state"
+   ],
+   "representative": {
+    "id": "11:14122",
+    "caption": "영상 수신 상태 좋지않음",
+    "view": "실시간·기본(단일채널)",
+    "feature": "기본 화면·상태 값",
+    "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-14122"
+   },
+   "screen_ids": [
+    "11:14122",
+    "11:14192",
+    "11:14271"
+   ]
+  },
+  {
+   "shape": "세로 기본 · 단일채널",
+   "state": "빈 화면",
+   "screen_count": 3,
+   "platform_extra": {},
+   "components": {
+    "app_header": 2,
+    "tabbar": 3,
+    "video_tile": 2,
+    "playback_panel": 2,
+    "timeline": 2,
+    "camera_list": 3,
+    "svms_panel": 2
+   },
+   "bundles": [
+    "playback"
+   ],
+   "representative": {
+    "id": "11:15195",
+    "caption": "시안 01 - 이벤트 없음",
+    "view": "녹화영상·기본(단일채널)",
+    "feature": "SVMS 레이아웃 + 이벤트 목록",
+    "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-15195"
+   },
+   "screen_ids": [
+    "11:15150",
+    "11:15195",
+    "11:15096"
+   ]
+  },
+  {
+   "shape": "세로 기본 · 다채널",
+   "state": "기본",
+   "screen_count": 12,
+   "platform_extra": {},
+   "components": {
+    "app_header": 12,
+    "mode_chip": 12,
+    "tabbar": 12,
+    "video_tile": 12,
+    "time_pill": 12,
+    "playback_panel": 5,
+    "os_nav": 5
+   },
+   "bundles": [
+    "portrait_frame"
+   ],
+   "representative": {
+    "id": "11:25752",
+    "caption": "2채널 - 기본",
+    "view": "실시간·기본(다채널)",
+    "feature": "기본 화면·상태 값",
+    "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-25752"
+   },
+   "screen_ids": [
+    "11:25752",
+    "11:25884",
+    "11:25840",
+    "11:12925",
+    "11:25707",
+    "11:12973",
+    "11:12786",
+    "11:25796",
+    "11:25924",
+    "11:27864",
+    "11:28021",
+    "11:13503"
+   ]
+  },
+  {
+   "shape": "세로 기본 · 다채널",
+   "state": "버튼 뜬 상태(딤)",
+   "screen_count": 25,
+   "platform_extra": {},
+   "components": {
+    "app_header": 25,
+    "mode_chip": 24,
+    "tabbar": 25,
+    "video_tile": 25,
+    "mode_badge": 22,
+    "dim_overlay": 25,
+    "round_button": 22,
+    "page_dots": 20,
+    "time_pill": 24,
+    "playback_panel": 14,
+    "svms_panel": 2,
+    "os_nav": 2
+   },
+   "bundles": [
+    "portrait_frame",
+    "dim_controls",
+    "dim_controls_paged",
+    "toolbar_buttons"
+   ],
+   "representative": {
+    "id": "11:26459",
+    "caption": "페이지 2개",
+    "view": "녹화영상·기본(다채널)",
+    "feature": "페이지네이션",
+    "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-26459"
+   },
+   "screen_ids": [
+    "11:26174",
+    "11:13185",
+    "11:24283",
+    "11:27345",
+    "11:27520",
+    "11:27624",
+    "11:17556",
+    "11:26324",
+    "11:26414",
+    "11:26784",
+    "11:26636",
+    "11:26504",
+    "11:26928",
+    "11:27060",
+    "11:26219",
+    "11:27972",
+    "11:13656",
+    "11:26369",
+    "11:26459",
+    "11:26848",
+    "11:26701",
+    "11:26570",
+    "11:26994",
+    "11:27128",
+    "11:13726"
+   ]
+  },
+  {
+   "shape": "세로 기본 · 다채널",
+   "state": "바텀시트 열림",
+   "screen_count": 21,
+   "platform_extra": {},
+   "components": {
+    "app_header": 8,
+    "mode_chip": 8,
+    "video_tile": 16,
+    "datetime_picker": 5,
+    "bottom_sheet": 21,
+    "layout_picker": 12,
+    "svms_panel": 2
+   },
+   "bundles": [
+    "sheet_datetime",
+    "sheet_layout",
+    "sheet_svms"
+   ],
+   "representative": {
+    "id": "11:23842",
+    "caption": "2채널 선택 시",
+    "view": "녹화영상·기본(다채널)",
+    "feature": "화면 구성(분할 수)",
+    "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-23842"
+   },
+   "screen_ids": [
+    "11:27272",
+    "11:27445",
+    "11:32216",
+    "11:27386",
+    "11:27563",
+    "11:27684",
+    "11:13972",
+    "11:17625",
+    "11:28081",
+    "11:28179",
+    "11:28467",
+    "11:28323",
+    "11:28569",
+    "11:23842",
+    "11:23975",
+    "11:24112",
+    "11:23916",
+    "11:24051",
+    "11:24205",
+    "11:13888",
+    "11:13796"
+   ]
+  },
+  {
+   "shape": "세로 기본 · 다채널",
+   "state": "가운데 팝업",
+   "screen_count": 0,
+   "platform_extra": {},
+   "components": {},
+   "bundles": [],
+   "representative": null,
+   "screen_ids": []
+  },
+  {
+   "shape": "세로 기본 · 다채널",
+   "state": "오른쪽 패널",
+   "screen_count": 0,
+   "platform_extra": {},
+   "components": {},
+   "bundles": [],
+   "representative": null,
+   "screen_ids": []
+  },
+  {
+   "shape": "세로 기본 · 다채널",
+   "state": "토스트",
+   "screen_count": 24,
+   "platform_extra": {},
+   "components": {
+    "app_header": 24,
+    "mode_chip": 24,
+    "tabbar": 24,
+    "video_tile": 24,
+    "mode_badge": 23,
+    "dim_overlay": 23,
+    "round_button": 22,
+    "page_dots": 6,
+    "time_pill": 24,
+    "playback_panel": 18,
+    "timeline": 1,
+    "camera_list": 1,
+    "toast": 24
+   },
+   "bundles": [
+    "portrait_frame",
+    "single_list",
+    "dim_controls",
+    "dim_controls_paged",
+    "toolbar_buttons",
+    "playback",
+    "speed_toast"
+   ],
+   "representative": {
+    "id": "11:24841",
+    "caption": "재생",
+    "view": "녹화영상·기본(다채널)",
+    "feature": "영상 컨트롤(재생·배속)",
+    "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-24841"
+   },
+   "screen_ids": [
+    "11:13372",
+    "11:13438",
+    "11:13234",
+    "11:13303",
+    "11:12854",
+    "11:24352",
+    "11:24841",
+    "11:32146",
+    "11:25267",
+    "11:25338",
+    "11:25409",
+    "11:25480",
+    "11:24983",
+    "11:25054",
+    "11:25125",
+    "11:25196",
+    "11:24912",
+    "11:25551",
+    "11:24632",
+    "11:24698",
+    "11:24494",
+    "11:24563",
+    "11:24423",
+    "11:24770"
+   ]
+  },
+  {
+   "shape": "세로 기본 · 다채널",
+   "state": "영상 안 나옴",
+   "screen_count": 10,
+   "platform_extra": {},
+   "components": {
+    "app_header": 9,
+    "mode_chip": 9,
+    "tabbar": 10,
+    "video_tile": 10,
+    "video_state": 10,
+    "time_pill": 9,
+    "playback_panel": 3,
+    "os_nav": 2
+   },
+   "bundles": [
+    "portrait_frame",
+    "tile_state"
+   ],
+   "representative": {
+    "id": "11:25964",
+    "caption": "2채널 - 영상 수신 상태 좋지않음",
+    "view": "실시간·기본(다채널)",
+    "feature": "기본 화면·상태 값",
+    "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-25964"
+   },
+   "screen_ids": [
+    "11:25964",
+    "11:26011",
+    "11:26124",
+    "11:13021",
+    "11:13072",
+    "11:13132",
+    "11:25622",
+    "11:26068",
+    "11:27912",
+    "11:13571"
+   ]
+  },
+  {
+   "shape": "세로 기본 · 다채널",
+   "state": "빈 화면",
+   "screen_count": 0,
+   "platform_extra": {},
+   "components": {},
+   "bundles": [],
+   "representative": null,
+   "screen_ids": []
+  },
+  {
+   "shape": "가로 확대 · 단일채널",
+   "state": "기본",
+   "screen_count": 9,
+   "platform_extra": {},
+   "components": {
+    "video_tile": 8,
+    "time_pill": 1,
+    "timeline": 2,
+    "toast": 4
+   },
+   "bundles": [],
+   "representative": {
+    "id": "11:17716",
+    "caption": "기본",
+    "view": "실시간·확대(단일채널)",
+    "feature": "기본 화면·상태 값",
+    "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17716"
+   },
+   "screen_ids": [
+    "11:17716",
+    "11:21169",
+    "11:17858",
+    "11:17872",
+    "11:17721",
+    "11:21332",
+    "11:21346",
+    "11:17865",
+    "11:17879"
+   ]
+  },
+  {
+   "shape": "가로 확대 · 단일채널",
+   "state": "버튼 뜬 상태(딤)",
+   "screen_count": 4,
+   "platform_extra": {},
+   "components": {
+    "video_tile": 1,
+    "mode_badge": 4,
+    "round_button": 4,
+    "time_pill": 2,
+    "playback_panel": 2,
+    "timeline": 2
+   },
+   "bundles": [
+    "toolbar_buttons",
+    "playback"
+   ],
+   "representative": {
+    "id": "11:21241",
+    "caption": "영상 뷰 딤",
+    "view": "녹화영상·확대(단일채널)",
+    "feature": "기본 화면·상태 값",
+    "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-21241"
+   },
+   "screen_ids": [
+    "11:21229",
+    "11:21189",
+    "11:21241",
+    "11:21258"
+   ]
+  },
+  {
+   "shape": "가로 확대 · 단일채널",
+   "state": "바텀시트 열림",
+   "screen_count": 0,
+   "platform_extra": {},
+   "components": {},
+   "bundles": [],
+   "representative": null,
+   "screen_ids": []
+  },
+  {
+   "shape": "가로 확대 · 단일채널",
+   "state": "가운데 팝업",
+   "screen_count": 6,
+   "platform_extra": {},
+   "components": {
+    "mode_badge": 1,
+    "round_button": 1,
+    "datetime_picker": 1,
+    "bottom_sheet": 6,
+    "camera_list": 1,
+    "svms_panel": 1
+   },
+   "bundles": [
+    "toolbar_buttons",
+    "sheet_datetime",
+    "panel_camera_list",
+    "sheet_svms"
+   ],
+   "representative": {
+    "id": "11:27798",
+    "caption": "더보기 버튼 선택 시",
+    "view": "녹화영상·확대(단일채널)",
+    "feature": "더보기",
+    "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-27798"
+   },
+   "screen_ids": [
+    "11:27778",
+    "11:21195",
+    "11:27798",
+    "11:17726",
+    "11:21275",
+    "11:21954"
+   ]
+  },
+  {
+   "shape": "가로 확대 · 단일채널",
+   "state": "오른쪽 패널",
+   "screen_count": 22,
+   "platform_extra": {
+    "android": 11,
+    "ios": 11
+   },
+   "components": {
+    "video_tile": 2,
+    "mode_badge": 2,
+    "round_button": 2,
+    "time_pill": 2,
+    "timeline": 1,
+    "datetime_picker": 10,
+    "bottom_sheet": 22,
+    "camera_list": 12,
+    "svms_panel": 5
+   },
+   "bundles": [
+    "single_list",
+    "toolbar_buttons",
+    "sheet_datetime",
+    "panel_camera_list",
+    "sheet_svms"
+   ],
+   "representative": {
+    "id": "11:31864",
+    "caption": "카메라 목록 버튼 선택 시(안드로이드)",
+    "view": "녹화영상·확대(단일채널)",
+    "feature": "카메라 목록·움직임 감지",
+    "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-31864"
+   },
+   "screen_ids": [
+    "11:31911",
+    "11:22954",
+    "11:21353",
+    "11:22022",
+    "11:22458",
+    "11:23251",
+    "11:21455",
+    "11:22103",
+    "11:22554",
+    "11:23332",
+    "11:31954",
+    "11:31997",
+    "11:31864",
+    "11:23003",
+    "11:31689",
+    "11:23056",
+    "11:31844",
+    "11:23196",
+    "11:31752",
+    "11:23124",
+    "11:31819",
+    "11:23221"
+   ]
+  },
+  {
+   "shape": "가로 확대 · 단일채널",
+   "state": "토스트",
+   "screen_count": 15,
+   "platform_extra": {},
+   "components": {
+    "video_tile": 12,
+    "mode_badge": 3,
+    "round_button": 3,
+    "playback_panel": 13,
+    "timeline": 1,
+    "toast": 15
+   },
+   "bundles": [
+    "toolbar_buttons",
+    "playback",
+    "speed_toast"
+   ],
+   "representative": {
+    "id": "11:17778",
+    "caption": "재생",
+    "view": "녹화영상·확대(단일채널)",
+    "feature": "영상 컨트롤(재생·배속)",
+    "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17778"
+   },
+   "screen_ids": [
+    "11:21181",
+    "11:21221",
+    "11:17778",
+    "11:17842",
+    "11:17762",
+    "11:17794",
+    "11:17810",
+    "11:17826",
+    "11:17770",
+    "11:17802",
+    "11:17818",
+    "11:17834",
+    "11:17786",
+    "11:17850",
+    "11:21313"
+   ]
+  },
+  {
+   "shape": "가로 확대 · 단일채널",
+   "state": "영상 안 나옴",
+   "screen_count": 4,
+   "platform_extra": {},
+   "components": {
+    "video_tile": 4,
+    "video_state": 4
+   },
+   "bundles": [
+    "tile_state"
+   ],
+   "representative": {
+    "id": "11:17886",
+    "caption": "영상 수신 상태 좋지않음",
+    "view": "실시간·확대(단일채널)",
+    "feature": "기본 화면·상태 값",
+    "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17886"
+   },
+   "screen_ids": [
+    "11:17886",
+    "11:17894",
+    "11:17926",
+    "11:17910"
+   ]
+  },
+  {
+   "shape": "가로 확대 · 단일채널",
+   "state": "빈 화면",
+   "screen_count": 0,
+   "platform_extra": {},
+   "components": {},
+   "bundles": [],
+   "representative": null,
+   "screen_ids": []
+  },
+  {
+   "shape": "가로 확대 · 다채널",
+   "state": "기본",
+   "screen_count": 15,
+   "platform_extra": {},
+   "components": {
+    "video_tile": 15,
+    "time_pill": 3,
+    "timeline": 3
+   },
+   "bundles": [],
+   "representative": {
+    "id": "11:20975",
+    "caption": "4채널 - 기본",
+    "view": "실시간·확대(다채널)",
+    "feature": "기본 화면·상태 값",
+    "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-20975"
+   },
+   "screen_ids": [
+    "11:20975",
+    "11:21011",
+    "11:20643",
+    "11:20719",
+    "11:18144",
+    "11:17935",
+    "11:19902",
+    "11:20164",
+    "11:20374",
+    "11:20993",
+    "11:21030",
+    "11:20681",
+    "11:20758",
+    "11:18211",
+    "11:18002"
+   ]
+  },
+  {
+   "shape": "가로 확대 · 다채널",
+   "state": "버튼 뜬 상태(딤)",
+   "screen_count": 8,
+   "platform_extra": {},
+   "components": {
+    "mode_badge": 8,
+    "round_button": 8,
+    "time_pill": 7,
+    "playback_panel": 4,
+    "timeline": 4
+   },
+   "bundles": [
+    "toolbar_buttons",
+    "playback"
+   ],
+   "representative": {
+    "id": "11:20935",
+    "caption": "9채널 - 영상 뷰 딤",
+    "view": "녹화영상·확대(다채널)",
+    "feature": "기본 화면·상태 값",
+    "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-20935"
+   },
+   "screen_ids": [
+    "11:21111",
+    "11:20896",
+    "11:19295",
+    "11:31622",
+    "11:21149",
+    "11:20935",
+    "11:19362",
+    "11:19430"
+   ]
+  },
+  {
+   "shape": "가로 확대 · 다채널",
+   "state": "바텀시트 열림",
+   "screen_count": 0,
+   "platform_extra": {},
+   "components": {},
+   "bundles": [],
+   "representative": null,
+   "screen_ids": []
+  },
+  {
+   "shape": "가로 확대 · 다채널",
+   "state": "가운데 팝업",
+   "screen_count": 17,
+   "platform_extra": {},
+   "components": {
+    "video_tile": 1,
+    "mode_badge": 2,
+    "round_button": 2,
+    "datetime_picker": 1,
+    "bottom_sheet": 17,
+    "layout_picker": 12,
+    "svms_panel": 1
+   },
+   "bundles": [
+    "toolbar_buttons",
+    "sheet_datetime",
+    "sheet_layout",
+    "sheet_svms"
+   ],
+   "representative": {
+    "id": "11:20305",
+    "caption": "3채널 선택 시",
+    "view": "실시간·확대(다채널)",
+    "feature": "화면 구성(분할 수)",
+    "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-20305"
+   },
+   "screen_ids": [
+    "11:20105",
+    "11:20305",
+    "11:19819",
+    "11:20205",
+    "11:20435",
+    "11:19991",
+    "11:20475",
+    "11:20556",
+    "11:20045",
+    "11:20235",
+    "11:19735",
+    "11:20175",
+    "11:20395",
+    "11:19937",
+    "11:19656",
+    "11:19118",
+    "11:19498"
+   ]
+  },
+  {
+   "shape": "가로 확대 · 다채널",
+   "state": "오른쪽 패널",
+   "screen_count": 10,
+   "platform_extra": {
+    "android": 5,
+    "ios": 5
+   },
+   "components": {
+    "round_button": 1,
+    "time_pill": 1,
+    "datetime_picker": 10,
+    "bottom_sheet": 10
+   },
+   "bundles": [
+    "sheet_datetime"
+   ],
+   "representative": {
+    "id": "11:22184",
+    "caption": "날짜 선택(안드로이드) · 달력 스크롤",
+    "view": "녹화영상·확대(다채널)",
+    "feature": "날짜·시간 선택",
+    "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-22184"
+   },
+   "screen_ids": [
+    "11:21551",
+    "11:22184",
+    "11:22650",
+    "11:23413",
+    "11:21703",
+    "11:22321",
+    "11:22802",
+    "11:23550",
+    "11:21855",
+    "11:32040"
+   ]
+  },
+  {
+   "shape": "가로 확대 · 다채널",
+   "state": "토스트",
+   "screen_count": 13,
+   "platform_extra": {},
+   "components": {
+    "video_tile": 12,
+    "mode_badge": 1,
+    "round_button": 1,
+    "time_pill": 1,
+    "playback_panel": 13,
+    "toast": 13
+   },
+   "bundles": [
+    "toolbar_buttons",
+    "speed_toast"
+   ],
+   "representative": {
+    "id": "11:18278",
+    "caption": "재생",
+    "view": "녹화영상·확대(다채널)",
+    "feature": "영상 컨트롤(재생·배속)",
+    "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-18278"
+   },
+   "screen_ids": [
+    "11:18278",
+    "11:18628",
+    "11:18348",
+    "11:18698",
+    "11:18838",
+    "11:18978",
+    "11:18418",
+    "11:18768",
+    "11:18908",
+    "11:19048",
+    "11:18488",
+    "11:18558",
+    "11:19586"
+   ]
+  },
+  {
+   "shape": "가로 확대 · 다채널",
+   "state": "영상 안 나옴",
+   "screen_count": 6,
+   "platform_extra": {},
+   "components": {
+    "video_tile": 6,
+    "video_state": 6,
+    "timeline": 1
+   },
+   "bundles": [
+    "tile_state"
+   ],
+   "representative": {
+    "id": "11:21077",
+    "caption": "4채널 - 상태값",
+    "view": "실시간·확대(다채널)",
+    "feature": "기본 화면·상태 값",
+    "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-21077"
+   },
+   "screen_ids": [
+    "11:21077",
+    "11:20844",
+    "11:19215",
+    "11:21049",
+    "11:20797",
+    "11:18069"
+   ]
+  },
+  {
+   "shape": "가로 확대 · 다채널",
+   "state": "빈 화면",
+   "screen_count": 0,
+   "platform_extra": {},
+   "components": {},
+   "bundles": [],
+   "representative": null,
+   "screen_ids": []
+  }
+ ],
+ "bundles": [
+  {
+   "key": "portrait_frame",
+   "name": "세로 기본 뼈대",
+   "desc": "맨 위 현장 헤더 → 실시간/녹화 칩 → 영상 칸 → 시각 알약 → 맨 아래 탭바. 세로 화면의 바탕 틀",
+   "members": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "tabbar"
+   ],
+   "core": "app_header",
+   "member_names": [
+    "상단 현장 정보 헤더",
+    "실시간/녹화영상 전환 칩",
+    "영상 칸(타일)·분할 격자",
+    "현재 시각 알약 / 날짜·시간 칩",
+    "하단 탭바"
+   ],
+   "together_screens": 101,
+   "core_screens": 119,
+   "together_rate": 0.85,
+   "by_shape": {
+    "세로 기본 · 단일채널": {
+     "together": 32,
+     "core_screens": 41
+    },
+    "세로 기본 · 다채널": {
+     "together": 69,
+     "core_screens": 78
+    }
+   },
+   "by_state": {
+    "기본": 21,
+    "버튼 뜬 상태(딤)": 30,
+    "영상 안 나옴": 12,
+    "토스트": 38
+   }
+  },
+  {
+   "key": "single_list",
+   "name": "단일채널 영상 + 카메라 목록",
+   "desc": "큰 영상 칸 아래 캡쳐 버튼, 그 아래 카메라 썸네일 2열 목록",
+   "members": [
+    "video_tile",
+    "round_button",
+    "camera_list"
+   ],
+   "core": "camera_list",
+   "member_names": [
+    "영상 칸(타일)·분할 격자",
+    "영상 위 원형 버튼",
+    "카메라 목록 / 움직임 감지 목록"
+   ],
+   "together_screens": 29,
+   "core_screens": 46,
+   "together_rate": 0.63,
+   "by_shape": {
+    "세로 기본 · 단일채널": {
+     "together": 26,
+     "core_screens": 32
+    },
+    "세로 기본 · 다채널": {
+     "together": 1,
+     "core_screens": 1
+    },
+    "가로 확대 · 단일채널": {
+     "together": 2,
+     "core_screens": 13
+    }
+   },
+   "by_state": {
+    "기본": 5,
+    "버튼 뜬 상태(딤)": 4,
+    "영상 안 나옴": 3,
+    "토스트": 15,
+    "오른쪽 패널": 2
+   }
+  },
+  {
+   "key": "dim_controls",
+   "name": "딤 조작 세트",
+   "desc": "영상을 탭하면 어두운 덮개 위로 모드 배지·상단 아이콘 줄·원형 버튼이 한꺼번에 뜸",
+   "members": [
+    "dim_overlay",
+    "mode_badge",
+    "round_button"
+   ],
+   "core": "dim_overlay",
+   "member_names": [
+    "조작 버튼 덮개(딤)",
+    "모드 배지 + 상단 툴바",
+    "영상 위 원형 버튼"
+   ],
+   "together_screens": 48,
+   "core_screens": 53,
+   "together_rate": 0.91,
+   "by_shape": {
+    "세로 기본 · 단일채널": {
+     "together": 5,
+     "core_screens": 5
+    },
+    "세로 기본 · 다채널": {
+     "together": 43,
+     "core_screens": 48
+    }
+   },
+   "by_state": {
+    "버튼 뜬 상태(딤)": 27,
+    "토스트": 21
+   }
+  },
+  {
+   "key": "dim_controls_paged",
+   "name": "딤 조작 세트 + 페이지 점",
+   "desc": "다채널에서 카메라가 분할 수보다 많을 때 딤 아래에 페이지 점이 붙음",
+   "members": [
+    "dim_overlay",
+    "mode_badge",
+    "round_button",
+    "page_dots"
+   ],
+   "core": "page_dots",
+   "member_names": [
+    "조작 버튼 덮개(딤)",
+    "모드 배지 + 상단 툴바",
+    "영상 위 원형 버튼",
+    "페이지 점"
+   ],
+   "together_screens": 27,
+   "core_screens": 27,
+   "together_rate": 1.0,
+   "by_shape": {
+    "세로 기본 · 단일채널": {
+     "together": 1,
+     "core_screens": 1
+    },
+    "세로 기본 · 다채널": {
+     "together": 26,
+     "core_screens": 26
+    }
+   },
+   "by_state": {
+    "버튼 뜬 상태(딤)": 21,
+    "토스트": 6
+   }
+  },
+  {
+   "key": "toolbar_buttons",
+   "name": "상단 툴바 + 원형 버튼",
+   "desc": "가로 확대에서 딤 덮개를 따로 적지 않았어도 배지 줄과 아래 버튼 줄은 늘 같이 나옴",
+   "members": [
+    "mode_badge",
+    "round_button"
+   ],
+   "core": "mode_badge",
+   "member_names": [
+    "모드 배지 + 상단 툴바",
+    "영상 위 원형 버튼"
+   ],
+   "together_screens": 72,
+   "core_screens": 74,
+   "together_rate": 0.97,
+   "by_shape": {
+    "세로 기본 · 단일채널": {
+     "together": 8,
+     "core_screens": 8
+    },
+    "세로 기본 · 다채널": {
+     "together": 43,
+     "core_screens": 45
+    },
+    "가로 확대 · 단일채널": {
+     "together": 10,
+     "core_screens": 10
+    },
+    "가로 확대 · 다채널": {
+     "together": 11,
+     "core_screens": 11
+    }
+   },
+   "by_state": {
+    "버튼 뜬 상태(딤)": 41,
+    "토스트": 25,
+    "가운데 팝업": 3,
+    "오른쪽 패널": 2,
+    "기본": 1
+   }
+  },
+  {
+   "key": "playback",
+   "name": "녹화 재생 세트",
+   "desc": "재생 컨트롤 줄 + 시간바. 녹화영상 화면 아래쪽",
+   "members": [
+    "playback_panel",
+    "timeline"
+   ],
+   "core": "timeline",
+   "member_names": [
+    "녹화 재생 패널",
+    "타임라인(시간바)"
+   ],
+   "together_screens": 29,
+   "core_screens": 36,
+   "together_rate": 0.81,
+   "by_shape": {
+    "세로 기본 · 단일채널": {
+     "together": 21,
+     "core_screens": 21
+    },
+    "세로 기본 · 다채널": {
+     "together": 1,
+     "core_screens": 1
+    },
+    "가로 확대 · 단일채널": {
+     "together": 3,
+     "core_screens": 6
+    },
+    "가로 확대 · 다채널": {
+     "together": 4,
+     "core_screens": 8
+    }
+   },
+   "by_state": {
+    "기본": 4,
+    "버튼 뜬 상태(딤)": 8,
+    "토스트": 15,
+    "빈 화면": 2
+   }
+  },
+  {
+   "key": "speed_toast",
+   "name": "재생 컨트롤 + 안내 토스트",
+   "desc": "배속·일시정지·30초 이동을 누르면 영상 가운데 토스트가 뜸",
+   "members": [
+    "playback_panel",
+    "toast"
+   ],
+   "core": "toast",
+   "member_names": [
+    "녹화 재생 패널",
+    "영상 안 토스트"
+   ],
+   "together_screens": 57,
+   "core_screens": 72,
+   "together_rate": 0.79,
+   "by_shape": {
+    "세로 기본 · 단일채널": {
+     "together": 13,
+     "core_screens": 16
+    },
+    "세로 기본 · 다채널": {
+     "together": 18,
+     "core_screens": 24
+    },
+    "가로 확대 · 단일채널": {
+     "together": 13,
+     "core_screens": 19
+    },
+    "가로 확대 · 다채널": {
+     "together": 13,
+     "core_screens": 13
+    }
+   },
+   "by_state": {
+    "토스트": 57
+   }
+  },
+  {
+   "key": "sheet_datetime",
+   "name": "시트 + 날짜·시간 고르기",
+   "desc": "세로는 바텀시트, 가로는 오른쪽 패널·가운데 팝업 안에 달력과 시·분 휠",
+   "members": [
+    "bottom_sheet",
+    "datetime_picker"
+   ],
+   "core": "datetime_picker",
+   "member_names": [
+    "바텀시트 / 가로 패널",
+    "날짜·시간 고르기"
+   ],
+   "together_screens": 32,
+   "core_screens": 32,
+   "together_rate": 1.0,
+   "by_shape": {
+    "세로 기본 · 단일채널": {
+     "together": 5,
+     "core_screens": 5
+    },
+    "세로 기본 · 다채널": {
+     "together": 5,
+     "core_screens": 5
+    },
+    "가로 확대 · 단일채널": {
+     "together": 11,
+     "core_screens": 11
+    },
+    "가로 확대 · 다채널": {
+     "together": 11,
+     "core_screens": 11
+    }
+   },
+   "by_state": {
+    "바텀시트 열림": 10,
+    "오른쪽 패널": 20,
+    "가운데 팝업": 2
+   }
+  },
+  {
+   "key": "sheet_layout",
+   "name": "시트 + 분할 수 고르기",
+   "desc": "\"화면 구성\" 시트·팝업 안에 그림 카드 또는 슬라이더 + 확인/적용",
+   "members": [
+    "bottom_sheet",
+    "layout_picker"
+   ],
+   "core": "layout_picker",
+   "member_names": [
+    "바텀시트 / 가로 패널",
+    "분할 수 고르기"
+   ],
+   "together_screens": 24,
+   "core_screens": 24,
+   "together_rate": 1.0,
+   "by_shape": {
+    "세로 기본 · 다채널": {
+     "together": 12,
+     "core_screens": 12
+    },
+    "가로 확대 · 다채널": {
+     "together": 12,
+     "core_screens": 12
+    }
+   },
+   "by_state": {
+    "바텀시트 열림": 12,
+    "가운데 팝업": 12
+   }
+  },
+  {
+   "key": "panel_camera_list",
+   "name": "오른쪽 패널 + 카메라 목록",
+   "desc": "가로 확대에서 카메라 목록·움직임 감지는 오른쪽 패널로 열림",
+   "members": [
+    "bottom_sheet",
+    "camera_list"
+   ],
+   "core": "camera_list",
+   "member_names": [
+    "바텀시트 / 가로 패널",
+    "카메라 목록 / 움직임 감지 목록"
+   ],
+   "together_screens": 13,
+   "core_screens": 13,
+   "together_rate": 1.0,
+   "by_shape": {
+    "가로 확대 · 단일채널": {
+     "together": 13,
+     "core_screens": 13
+    }
+   },
+   "by_state": {
+    "오른쪽 패널": 12,
+    "가운데 팝업": 1
+   }
+  },
+  {
+   "key": "sheet_svms",
+   "name": "시트 + 레이아웃 리스트·이벤트 목록",
+   "desc": "SVMS 카메라 묶음 고르기와 이벤트 목록",
+   "members": [
+    "bottom_sheet",
+    "svms_panel"
+   ],
+   "core": "svms_panel",
+   "member_names": [
+    "바텀시트 / 가로 패널",
+    "SVMS 레이아웃 리스트·이벤트 목록"
+   ],
+   "together_screens": 11,
+   "core_screens": 19,
+   "together_rate": 0.58,
+   "by_shape": {
+    "세로 기본 · 단일채널": {
+     "together": 2,
+     "core_screens": 8
+    },
+    "세로 기본 · 다채널": {
+     "together": 2,
+     "core_screens": 4
+    },
+    "가로 확대 · 단일채널": {
+     "together": 6,
+     "core_screens": 6
+    },
+    "가로 확대 · 다채널": {
+     "together": 1,
+     "core_screens": 1
+    }
+   },
+   "by_state": {
+    "바텀시트 열림": 4,
+    "가운데 팝업": 2,
+    "오른쪽 패널": 5
+   }
+  },
+  {
+   "key": "tile_state",
+   "name": "영상 칸 + 영상 상태 표시",
+   "desc": "수신 불량 빨간 띠·카메라 없음 로고·신호 없음 표시가 영상 칸 안에 들어감",
+   "members": [
+    "video_tile",
+    "video_state"
+   ],
+   "core": "video_state",
+   "member_names": [
+    "영상 칸(타일)·분할 격자",
+    "영상 상태 표시"
+   ],
+   "together_screens": 23,
+   "core_screens": 23,
+   "together_rate": 1.0,
+   "by_shape": {
+    "세로 기본 · 단일채널": {
+     "together": 3,
+     "core_screens": 3
+    },
+    "세로 기본 · 다채널": {
+     "together": 10,
+     "core_screens": 10
+    },
+    "가로 확대 · 단일채널": {
+     "together": 4,
+     "core_screens": 4
+    },
+    "가로 확대 · 다채널": {
+     "together": 6,
+     "core_screens": 6
+    }
+   },
+   "by_state": {
+    "영상 안 나옴": 23
+   }
+  }
+ ],
+ "figma_compare_total": [
+  {
+   "key": "app_header",
+   "name": "상단 현장 정보 헤더",
+   "visual_screens": 119,
+   "figma_screens_total": 141
+  },
+  {
+   "key": "mode_chip",
+   "name": "실시간/녹화영상 전환 칩",
+   "visual_screens": 113,
+   "figma_screens_total": 141
+  },
+  {
+   "key": "tabbar",
+   "name": "하단 탭바",
+   "visual_screens": 109,
+   "figma_screens_total": 141
+  },
+  {
+   "key": "video_tile",
+   "name": "영상 칸(타일)·분할 격자",
+   "visual_screens": 188,
+   "figma_screens_total": null
+  },
+  {
+   "key": "video_state",
+   "name": "영상 상태 표시",
+   "visual_screens": 23,
+   "figma_screens_total": 8
+  },
+  {
+   "key": "mode_badge",
+   "name": "모드 배지 + 상단 툴바",
+   "visual_screens": 74,
+   "figma_screens_total": 33
+  },
+  {
+   "key": "dim_overlay",
+   "name": "조작 버튼 덮개(딤)",
+   "visual_screens": 53,
+   "figma_screens_total": 61
+  },
+  {
+   "key": "round_button",
+   "name": "영상 위 원형 버튼",
+   "visual_screens": 99,
+   "figma_screens_total": 22
+  },
+  {
+   "key": "page_dots",
+   "name": "페이지 점",
+   "visual_screens": 27,
+   "figma_screens_total": 28
+  },
+  {
+   "key": "time_pill",
+   "name": "현재 시각 알약 / 날짜·시간 칩",
+   "visual_screens": 121,
+   "figma_screens_total": 27
+  },
+  {
+   "key": "playback_panel",
+   "name": "녹화 재생 패널",
+   "visual_screens": 93,
+   "figma_screens_total": 124
+  },
+  {
+   "key": "timeline",
+   "name": "타임라인(시간바)",
+   "visual_screens": 36,
+   "figma_screens_total": 0
+  },
+  {
+   "key": "datetime_picker",
+   "name": "날짜·시간 고르기",
+   "visual_screens": 32,
+   "figma_screens_total": 20
+  },
+  {
+   "key": "bottom_sheet",
+   "name": "바텀시트 / 가로 패널",
+   "visual_screens": 87,
+   "figma_screens_total": 63
+  },
+  {
+   "key": "layout_picker",
+   "name": "분할 수 고르기",
+   "visual_screens": 24,
+   "figma_screens_total": 3
+  },
+  {
+   "key": "camera_list",
+   "name": "카메라 목록 / 움직임 감지 목록",
+   "visual_screens": 46,
+   "figma_screens_total": 27
+  },
+  {
+   "key": "toast",
+   "name": "영상 안 토스트",
+   "visual_screens": 72,
+   "figma_screens_total": null
+  },
+  {
+   "key": "ptz_pad",
+   "name": "PTZ 조종판",
+   "visual_screens": 8,
+   "figma_screens_total": 8
+  },
+  {
+   "key": "svms_panel",
+   "name": "SVMS 레이아웃 리스트·이벤트 목록",
+   "visual_screens": 19,
+   "figma_screens_total": null
+  },
+  {
+   "key": "os_nav",
+   "name": "기기 시스템 내비게이션 바",
+   "visual_screens": 25,
+   "figma_screens_total": null
+  }
+ ],
+ "screens": [
+  {
+   "id": "11:14055",
+   "view": "실시간·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "기본",
+   "state_raw": "기본",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "round_button",
+    "camera_list",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-14055"
+  },
+  {
+   "id": "11:16870",
+   "view": "실시간·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "영상 뷰 딤",
+   "state_raw": "딤(조작 버튼 노출)",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "round_button",
+    "camera_list",
+    "tabbar",
+    "dim_overlay",
+    "mode_badge"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-16870"
+  },
+  {
+   "id": "11:14122",
+   "view": "실시간·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "영상 수신 상태 좋지않음",
+   "state_raw": "에러(수신 불량)",
+   "state_type": "영상 안 나옴",
+   "state_flags": [
+    "영상 안 나옴"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "round_button",
+    "camera_list",
+    "tabbar",
+    "video_state"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-14122"
+  },
+  {
+   "id": "11:14192",
+   "view": "실시간·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "카메라 없음",
+   "state_raw": "빈 화면(카메라 없음)",
+   "state_type": "영상 안 나옴",
+   "state_flags": [
+    "영상 안 나옴"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "round_button",
+    "camera_list",
+    "tabbar",
+    "video_state"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-14192"
+  },
+  {
+   "id": "11:14271",
+   "view": "실시간·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "신호 없음",
+   "state_raw": "에러(신호 없음)",
+   "state_type": "영상 안 나옴",
+   "state_flags": [
+    "영상 안 나옴"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "round_button",
+    "camera_list",
+    "tabbar",
+    "video_state"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-14271"
+  },
+  {
+   "id": "11:14343",
+   "view": "실시간·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "핀치 확대",
+   "caption": "화면 확대 시",
+   "state_raw": "확대됨(1.5X)",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "round_button",
+    "camera_list",
+    "tabbar",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-14343"
+  },
+  {
+   "id": "11:14413",
+   "view": "실시간·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "핀치 확대",
+   "caption": "원본 사이즈로 복귀 시",
+   "state_raw": "원본 크기",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "round_button",
+    "camera_list",
+    "tabbar",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-14413"
+  },
+  {
+   "id": "11:14483",
+   "view": "실시간·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "화면 캡쳐",
+   "caption": "화면 캡쳐 완료 시",
+   "state_raw": "완료(토스트)",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "round_button",
+    "camera_list",
+    "tabbar",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-14483"
+  },
+  {
+   "id": "11:14553",
+   "view": "실시간·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "더보기",
+   "caption": "더보기 버튼 선택 시",
+   "state_raw": "바텀시트 열림",
+   "state_type": "바텀시트 열림",
+   "state_flags": [
+    "바텀시트 열림"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "camera_list",
+    "bottom_sheet"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-14553"
+  },
+  {
+   "id": "11:16938",
+   "view": "실시간·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "SVMS 레이아웃 리스트",
+   "caption": "SVMS 카메라 목록 버튼",
+   "state_raw": "딤(조작 버튼 노출)",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "round_button",
+    "camera_list",
+    "tabbar",
+    "svms_panel",
+    "dim_overlay",
+    "mode_badge",
+    "page_dots"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-16938"
+  },
+  {
+   "id": "11:17006",
+   "view": "실시간·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "SVMS 레이아웃 리스트",
+   "caption": "버튼 선택 시",
+   "state_raw": "바텀시트 열림(선택됨)",
+   "state_type": "바텀시트 열림",
+   "state_flags": [
+    "바텀시트 열림"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "bottom_sheet",
+    "svms_panel"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17006"
+  },
+  {
+   "id": "11:17096",
+   "view": "실시간·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "PTZ 모드",
+   "caption": "PTZ OFF",
+   "state_raw": "딤(PTZ 꺼짐)",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "round_button",
+    "camera_list",
+    "tabbar",
+    "dim_overlay",
+    "mode_badge"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17096"
+  },
+  {
+   "id": "11:17164",
+   "view": "실시간·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "PTZ 모드",
+   "caption": "PTZ ON",
+   "state_raw": "PTZ 켜짐(왼쪽 방향 누름)",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "round_button",
+    "ptz_pad",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17164"
+  },
+  {
+   "id": "11:17227",
+   "view": "실시간·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "PTZ 모드",
+   "caption": "PTZ ON (중복 화면 추정)",
+   "state_raw": "PTZ 켜짐(왼쪽 방향 누름)",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "round_button",
+    "ptz_pad",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17227"
+  },
+  {
+   "id": "11:30465",
+   "view": "실시간·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "fold",
+   "feature": "PTZ 모드",
+   "caption": "Fold 8 와이드(접힘)",
+   "state_raw": "PTZ 켜짐",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "round_button",
+    "mode_badge",
+    "ptz_pad",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-30465"
+  },
+  {
+   "id": "11:17290",
+   "view": "실시간·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "PTZ 모드",
+   "caption": "PTZ 감도 설정 기능 추가된 경우",
+   "state_raw": "PTZ 켜짐 + 속도 선택 표시",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "round_button",
+    "ptz_pad",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17290"
+  },
+  {
+   "id": "11:17356",
+   "view": "실시간·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "PTZ 모드",
+   "caption": "PTZ 제어 속도 선택 시",
+   "state_raw": "바텀시트 열림(4 선택됨)",
+   "state_type": "바텀시트 열림",
+   "state_flags": [
+    "바텀시트 열림"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "bottom_sheet",
+    "ptz_pad"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17356"
+  },
+  {
+   "id": "11:30532",
+   "view": "실시간·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "fold",
+   "feature": "PTZ 모드",
+   "caption": "Fold 8 와이드(접힘) - PTZ 감도 설정 기능 추가된 경우",
+   "state_raw": "PTZ 켜짐 + 속도 선택 표시",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "round_button",
+    "mode_badge",
+    "ptz_pad",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-30532"
+  },
+  {
+   "id": "11:30602",
+   "view": "실시간·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "fold",
+   "feature": "PTZ 모드",
+   "caption": "Fold 8 와이드(접힘) - PTZ 제어 속도 선택 시",
+   "state_raw": "바텀시트 열림(4 선택됨)",
+   "state_type": "바텀시트 열림",
+   "state_flags": [
+    "바텀시트 열림"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "bottom_sheet",
+    "ptz_pad"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-30602"
+  },
+  {
+   "id": "11:25752",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "2채널 - 기본",
+   "state_raw": "기본",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-25752"
+  },
+  {
+   "id": "11:26174",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "2채널 - 영상 뷰 딤",
+   "state_raw": "딤(조작 버튼 노출)",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "tabbar",
+    "dim_overlay",
+    "mode_badge",
+    "page_dots",
+    "round_button"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-26174"
+  },
+  {
+   "id": "11:25964",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "2채널 - 영상 수신 상태 좋지않음",
+   "state_raw": "에러(수신 불량, 1번 칸)",
+   "state_type": "영상 안 나옴",
+   "state_flags": [
+    "영상 안 나옴"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "tabbar",
+    "video_state"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-25964"
+  },
+  {
+   "id": "11:26011",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "2채널 - 카메라 없음",
+   "state_raw": "빈 화면(1번 칸)",
+   "state_type": "영상 안 나옴",
+   "state_flags": [
+    "영상 안 나옴"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "tabbar",
+    "video_state"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-26011"
+  },
+  {
+   "id": "11:26124",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "2채널 - 신호 없음",
+   "state_raw": "에러(신호 없음, 1번 칸)",
+   "state_type": "영상 안 나옴",
+   "state_flags": [
+    "영상 안 나옴"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "tabbar",
+    "video_state"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-26124"
+  },
+  {
+   "id": "11:25884",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "2채널 - 카메라 숨김",
+   "state_raw": "숨김(2번 칸 비움)",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-25884"
+  },
+  {
+   "id": "11:25840",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "2채널 - 홈에서 접근 시",
+   "state_raw": "선택됨(1번 칸 파란 테두리)",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-25840"
+  },
+  {
+   "id": "11:12925",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "3채널 - 기본",
+   "state_raw": "기본",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-12925"
+  },
+  {
+   "id": "11:13185",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "3채널 - 영상 뷰 딤",
+   "state_raw": "딤(조작 버튼 노출)",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "tabbar",
+    "dim_overlay",
+    "mode_badge",
+    "page_dots",
+    "round_button"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-13185"
+  },
+  {
+   "id": "11:13021",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "3채널 - 영상 수신 상태 좋지않음",
+   "state_raw": "에러(수신 불량, 1번 칸)",
+   "state_type": "영상 안 나옴",
+   "state_flags": [
+    "영상 안 나옴"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "tabbar",
+    "video_state"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-13021"
+  },
+  {
+   "id": "11:13072",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "3채널 - 카메라 없음",
+   "state_raw": "빈 화면(1번 칸)",
+   "state_type": "영상 안 나옴",
+   "state_flags": [
+    "영상 안 나옴"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "tabbar",
+    "video_state"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-13072"
+  },
+  {
+   "id": "11:13132",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "3채널 - 신호 없음",
+   "state_raw": "에러(신호 없음, 1번 칸)",
+   "state_type": "영상 안 나옴",
+   "state_flags": [
+    "영상 안 나옴"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "tabbar",
+    "video_state"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-13132"
+  },
+  {
+   "id": "11:25707",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "3채널 - 카메라 숨김",
+   "state_raw": "숨김(3번 칸 비움)",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-25707"
+  },
+  {
+   "id": "11:12973",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "3채널 - 홈에서 접근 시",
+   "state_raw": "선택됨(1번 칸 파란 테두리)",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-12973"
+  },
+  {
+   "id": "11:12786",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "8채널 - 기본",
+   "state_raw": "기본",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-12786"
+  },
+  {
+   "id": "11:24283",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "8채널 - 영상 뷰 딤",
+   "state_raw": "딤(조작 버튼 노출)",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "tabbar",
+    "dim_overlay",
+    "mode_badge",
+    "page_dots",
+    "round_button"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-24283"
+  },
+  {
+   "id": "11:25622",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "8채널 - 상태값",
+   "state_raw": "여러 상태 혼합",
+   "state_type": "영상 안 나옴",
+   "state_flags": [
+    "영상 안 나옴"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "tabbar",
+    "video_state"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-25622"
+  },
+  {
+   "id": "11:27272",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "화면 구성(분할 수)",
+   "caption": "2채널 선택 시",
+   "state_raw": "바텀시트 열림(1×2 선택됨)",
+   "state_type": "바텀시트 열림",
+   "state_flags": [
+    "바텀시트 열림"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "bottom_sheet",
+    "layout_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-27272"
+  },
+  {
+   "id": "11:27445",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "화면 구성(분할 수)",
+   "caption": "3채널 선택 시",
+   "state_raw": "바텀시트 열림(1×3 선택됨)",
+   "state_type": "바텀시트 열림",
+   "state_flags": [
+    "바텀시트 열림"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "bottom_sheet",
+    "layout_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-27445"
+  },
+  {
+   "id": "11:32216",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "화면 구성(분할 수)",
+   "caption": "8채널 선택 시",
+   "state_raw": "바텀시트 열림(2×4 선택됨)",
+   "state_type": "바텀시트 열림",
+   "state_flags": [
+    "바텀시트 열림"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "bottom_sheet",
+    "layout_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-32216"
+  },
+  {
+   "id": "11:27345",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "화면 구성(분할 수)",
+   "caption": "2채널 - 시트 열리기 전 딤(추정)",
+   "state_raw": "딤(시트 비어 있음)",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "playback_panel",
+    "time_pill",
+    "tabbar",
+    "dim_overlay"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-27345"
+  },
+  {
+   "id": "11:27520",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "화면 구성(분할 수)",
+   "caption": "3채널 - 시트 열리기 전 딤(추정)",
+   "state_raw": "딤(시트 비어 있음)",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "playback_panel",
+    "time_pill",
+    "tabbar",
+    "dim_overlay"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-27520"
+  },
+  {
+   "id": "11:27624",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "화면 구성(분할 수)",
+   "caption": "8채널 - 시트 열리기 전 딤(추정)",
+   "state_raw": "딤(시트 비어 있음)",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "playback_panel",
+    "time_pill",
+    "tabbar",
+    "dim_overlay"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-27624"
+  },
+  {
+   "id": "11:27386",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "화면 구성(분할 수)",
+   "caption": "2채널 선택 시",
+   "state_raw": "바텀시트 열림(2채널 선택됨)",
+   "state_type": "바텀시트 열림",
+   "state_flags": [
+    "바텀시트 열림"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "bottom_sheet",
+    "layout_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-27386"
+  },
+  {
+   "id": "11:27563",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "화면 구성(분할 수)",
+   "caption": "3채널 선택 시",
+   "state_raw": "바텀시트 열림(3채널 선택됨)",
+   "state_type": "바텀시트 열림",
+   "state_flags": [
+    "바텀시트 열림"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "bottom_sheet",
+    "layout_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-27563"
+  },
+  {
+   "id": "11:27684",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "화면 구성(분할 수)",
+   "caption": "8채널 선택 시",
+   "state_raw": "바텀시트 열림(8채널 선택됨)",
+   "state_type": "바텀시트 열림",
+   "state_flags": [
+    "바텀시트 열림"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "bottom_sheet",
+    "layout_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-27684"
+  },
+  {
+   "id": "11:13372",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "화면 비율",
+   "caption": "2채널 - 원본 비율",
+   "state_raw": "원본 비율(토스트)",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트",
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "tabbar",
+    "dim_overlay",
+    "mode_badge",
+    "page_dots",
+    "round_button",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-13372"
+  },
+  {
+   "id": "11:13438",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "화면 비율",
+   "caption": "2채널 - 화면 채우기",
+   "state_raw": "화면 채우기(토스트)",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트",
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "tabbar",
+    "dim_overlay",
+    "mode_badge",
+    "page_dots",
+    "round_button",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-13438"
+  },
+  {
+   "id": "11:13234",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "화면 비율",
+   "caption": "3채널 - 원본 비율",
+   "state_raw": "원본 비율(토스트)",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트",
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "tabbar",
+    "dim_overlay",
+    "mode_badge",
+    "page_dots",
+    "round_button",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-13234"
+  },
+  {
+   "id": "11:13303",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "화면 비율",
+   "caption": "3채널 - 화면 채우기",
+   "state_raw": "화면 채우기(토스트)",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트",
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "tabbar",
+    "dim_overlay",
+    "mode_badge",
+    "page_dots",
+    "round_button",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-13303"
+  },
+  {
+   "id": "11:12854",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "화면 비율",
+   "caption": "8채널 - 원본 비율",
+   "state_raw": "원본 비율(토스트)",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트",
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "tabbar",
+    "dim_overlay",
+    "mode_badge",
+    "page_dots",
+    "round_button",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-12854"
+  },
+  {
+   "id": "11:24352",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "화면 비율",
+   "caption": "8채널 - 화면 채우기",
+   "state_raw": "화면 채우기(토스트)",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트",
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "tabbar",
+    "dim_overlay",
+    "mode_badge",
+    "page_dots",
+    "round_button",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-24352"
+  },
+  {
+   "id": "11:13972",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "더보기",
+   "caption": "더보기 버튼 선택 시",
+   "state_raw": "바텀시트 열림",
+   "state_type": "바텀시트 열림",
+   "state_flags": [
+    "바텀시트 열림"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "bottom_sheet"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-13972"
+  },
+  {
+   "id": "11:17556",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "SVMS 레이아웃 리스트",
+   "caption": "SVMS 카메라 목록 버튼",
+   "state_raw": "딤(조작 버튼 노출)",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "tabbar",
+    "dim_overlay",
+    "mode_badge",
+    "page_dots",
+    "round_button",
+    "svms_panel"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17556"
+  },
+  {
+   "id": "11:17625",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "SVMS 레이아웃 리스트",
+   "caption": "버튼 선택 시",
+   "state_raw": "바텀시트 열림(선택됨)",
+   "state_type": "바텀시트 열림",
+   "state_flags": [
+    "바텀시트 열림"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "bottom_sheet",
+    "svms_panel"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17625"
+  },
+  {
+   "id": "11:26324",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "페이지네이션",
+   "caption": "페이지 없는 경우",
+   "state_raw": "딤(페이지 점 없음)",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "tabbar",
+    "dim_overlay",
+    "mode_badge",
+    "round_button"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-26324"
+  },
+  {
+   "id": "11:26414",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "페이지네이션",
+   "caption": "페이지 2개",
+   "state_raw": "딤(점 2개, 1번째 활성)",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "tabbar",
+    "dim_overlay",
+    "mode_badge",
+    "page_dots",
+    "round_button"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-26414"
+  },
+  {
+   "id": "11:26784",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "페이지네이션",
+   "caption": "페이지 3개",
+   "state_raw": "딤(점 3개, 1번째 활성)",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "tabbar",
+    "dim_overlay",
+    "mode_badge",
+    "page_dots",
+    "round_button"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-26784"
+  },
+  {
+   "id": "11:26636",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "페이지네이션",
+   "caption": "페이지 4개",
+   "state_raw": "딤(점 4개, 1번째 활성)",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "tabbar",
+    "dim_overlay",
+    "mode_badge",
+    "page_dots",
+    "round_button"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-26636"
+  },
+  {
+   "id": "11:26504",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "페이지네이션",
+   "caption": "페이지 5개",
+   "state_raw": "딤(점 5개, 1번째 활성)",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "tabbar",
+    "dim_overlay",
+    "mode_badge",
+    "page_dots",
+    "round_button"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-26504"
+  },
+  {
+   "id": "11:26928",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "페이지네이션",
+   "caption": "페이지 6개 이상",
+   "state_raw": "딤(점 5개 + 끝 점 작게)",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "tabbar",
+    "dim_overlay",
+    "mode_badge",
+    "page_dots",
+    "round_button"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-26928"
+  },
+  {
+   "id": "11:27060",
+   "view": "실시간·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "페이지네이션",
+   "caption": "페이지 7개 이상 스와이프 시",
+   "state_raw": "딤(가운데 점 활성, 양 끝 작게)",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "time_pill",
+    "tabbar",
+    "dim_overlay",
+    "mode_badge",
+    "page_dots",
+    "round_button"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-27060"
+  },
+  {
+   "id": "11:17716",
+   "view": "실시간·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "기본",
+   "state_raw": "기본",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "video_tile"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17716"
+  },
+  {
+   "id": "11:21229",
+   "view": "실시간·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "영상 뷰 딤",
+   "state_raw": "딤(컨트롤 표시)",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "video_tile",
+    "mode_badge",
+    "round_button",
+    "time_pill"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-21229"
+  },
+  {
+   "id": "11:21169",
+   "view": "실시간·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "시간 항상 표시 설정 시",
+   "state_raw": "기본(시간 고정)",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "video_tile",
+    "time_pill"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-21169"
+  },
+  {
+   "id": "11:17886",
+   "view": "실시간·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "영상 수신 상태 좋지않음",
+   "state_raw": "경고",
+   "state_type": "영상 안 나옴",
+   "state_flags": [
+    "영상 안 나옴"
+   ],
+   "keys": [
+    "video_tile",
+    "video_state"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17886"
+  },
+  {
+   "id": "11:17894",
+   "view": "실시간·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "카메라 없음",
+   "state_raw": "빈 화면",
+   "state_type": "영상 안 나옴",
+   "state_flags": [
+    "영상 안 나옴"
+   ],
+   "keys": [
+    "video_tile",
+    "video_state"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17894"
+  },
+  {
+   "id": "11:17926",
+   "view": "실시간·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "신호 없음",
+   "state_raw": "에러",
+   "state_type": "영상 안 나옴",
+   "state_flags": [
+    "영상 안 나옴"
+   ],
+   "keys": [
+    "video_tile",
+    "video_state"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17926"
+  },
+  {
+   "id": "11:17858",
+   "view": "실시간·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "핀치 확대",
+   "caption": "화면 확대 시",
+   "state_raw": "확대됨",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "video_tile",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17858"
+  },
+  {
+   "id": "11:17872",
+   "view": "실시간·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "핀치 확대",
+   "caption": "원본 사이즈로 복귀 시",
+   "state_raw": "원본",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "video_tile",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17872"
+  },
+  {
+   "id": "11:27778",
+   "view": "실시간·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "더보기",
+   "caption": "더보기 버튼 선택 시",
+   "state_raw": "팝업 열림",
+   "state_type": "가운데 팝업",
+   "state_flags": [
+    "가운데 팝업"
+   ],
+   "keys": [
+    "mode_badge",
+    "bottom_sheet",
+    "round_button"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-27778"
+  },
+  {
+   "id": "11:21181",
+   "view": "실시간·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "화면 캡쳐",
+   "caption": "화면 캡쳐 완료 시",
+   "state_raw": "완료",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "mode_badge",
+    "round_button",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-21181"
+  },
+  {
+   "id": "11:31911",
+   "view": "실시간·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "android",
+   "feature": "카메라 목록",
+   "caption": "카메라 목록 선택 시(안드로이드)",
+   "state_raw": "패널 열림",
+   "state_type": "오른쪽 패널",
+   "state_flags": [
+    "오른쪽 패널"
+   ],
+   "keys": [
+    "mode_badge",
+    "video_tile",
+    "bottom_sheet",
+    "camera_list",
+    "round_button",
+    "time_pill"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-31911"
+  },
+  {
+   "id": "11:22954",
+   "view": "실시간·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "ios",
+   "feature": "카메라 목록",
+   "caption": "카메라 목록 선택 시(IOS)",
+   "state_raw": "패널 열림",
+   "state_type": "오른쪽 패널",
+   "state_flags": [
+    "오른쪽 패널"
+   ],
+   "keys": [
+    "mode_badge",
+    "video_tile",
+    "bottom_sheet",
+    "camera_list",
+    "round_button",
+    "time_pill"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-22954"
+  },
+  {
+   "id": "11:21189",
+   "view": "실시간·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "SVMS 레이아웃 리스트",
+   "caption": "SVMS 카메라 목록 버튼",
+   "state_raw": "딤(버튼 표시)",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "mode_badge",
+    "round_button",
+    "time_pill"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-21189"
+  },
+  {
+   "id": "11:21195",
+   "view": "실시간·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "SVMS 레이아웃 리스트",
+   "caption": "버튼 선택 시",
+   "state_raw": "팝업 열림",
+   "state_type": "가운데 팝업",
+   "state_flags": [
+    "가운데 팝업"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "svms_panel"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-21195"
+  },
+  {
+   "id": "11:21221",
+   "view": "실시간·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "PTZ 모드",
+   "caption": "PTZ OFF",
+   "state_raw": "딤(PTZ 꺼짐)",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트",
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "mode_badge",
+    "round_button",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-21221"
+  },
+  {
+   "id": "11:17446",
+   "view": "실시간·확대(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "PTZ 모드",
+   "caption": "PTZ ON 시, 세로로 전환",
+   "state_raw": "PTZ 켜짐",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "mode_badge",
+    "round_button",
+    "time_pill",
+    "ptz_pad",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17446"
+  },
+  {
+   "id": "11:20975",
+   "view": "실시간·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "4채널 - 기본",
+   "state_raw": "기본",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "video_tile"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-20975"
+  },
+  {
+   "id": "11:21111",
+   "view": "실시간·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "4채널 - 영상 뷰 딤",
+   "state_raw": "딤(컨트롤 표시)",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "mode_badge",
+    "time_pill",
+    "round_button"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-21111"
+  },
+  {
+   "id": "11:21011",
+   "view": "실시간·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "4채널 - 시간 항상 표시 설정 시",
+   "state_raw": "기본(시간 고정)",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "video_tile",
+    "time_pill"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-21011"
+  },
+  {
+   "id": "11:21077",
+   "view": "실시간·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "4채널 - 상태값",
+   "state_raw": "칸별 상태",
+   "state_type": "영상 안 나옴",
+   "state_flags": [
+    "영상 안 나옴"
+   ],
+   "keys": [
+    "video_state",
+    "video_tile"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-21077"
+  },
+  {
+   "id": "11:20643",
+   "view": "실시간·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "9채널 - 기본",
+   "state_raw": "기본",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "video_tile"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-20643"
+  },
+  {
+   "id": "11:20896",
+   "view": "실시간·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "9채널 - 영상 뷰 딤",
+   "state_raw": "딤(컨트롤 표시)",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "mode_badge",
+    "time_pill",
+    "round_button"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-20896"
+  },
+  {
+   "id": "11:20719",
+   "view": "실시간·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "9채널 - 시간 항상 표시 설정 시",
+   "state_raw": "기본(시간 고정)",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "video_tile",
+    "time_pill"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-20719"
+  },
+  {
+   "id": "11:20844",
+   "view": "실시간·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "9채널 - 상태값",
+   "state_raw": "칸별 상태",
+   "state_type": "영상 안 나옴",
+   "state_flags": [
+    "영상 안 나옴"
+   ],
+   "keys": [
+    "video_state",
+    "video_tile"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-20844"
+  },
+  {
+   "id": "11:18144",
+   "view": "실시간·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "16채널 - 기본",
+   "state_raw": "기본",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "video_tile"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-18144"
+  },
+  {
+   "id": "11:19295",
+   "view": "실시간·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "16채널 - 영상 뷰 딤",
+   "state_raw": "딤(컨트롤 표시)",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "mode_badge",
+    "time_pill",
+    "round_button"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-19295"
+  },
+  {
+   "id": "11:17935",
+   "view": "실시간·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "16채널 - 시간 항상 표시 설정 시",
+   "state_raw": "기본(시간 고정)",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "video_tile",
+    "time_pill"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17935"
+  },
+  {
+   "id": "11:19215",
+   "view": "실시간·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "16채널 - 상태값",
+   "state_raw": "칸별 상태",
+   "state_type": "영상 안 나옴",
+   "state_flags": [
+    "영상 안 나옴"
+   ],
+   "keys": [
+    "video_state",
+    "video_tile"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-19215"
+  },
+  {
+   "id": "11:20105",
+   "view": "실시간·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "화면 구성(분할 수)",
+   "caption": "2채널 선택 시",
+   "state_raw": "팝업 열림·2x2 선택",
+   "state_type": "가운데 팝업",
+   "state_flags": [
+    "가운데 팝업"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "layout_picker",
+    "video_tile"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-20105"
+  },
+  {
+   "id": "11:20305",
+   "view": "실시간·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "화면 구성(분할 수)",
+   "caption": "3채널 선택 시",
+   "state_raw": "팝업 열림·3x3 선택",
+   "state_type": "가운데 팝업",
+   "state_flags": [
+    "가운데 팝업"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "layout_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-20305"
+  },
+  {
+   "id": "11:19819",
+   "view": "실시간·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "화면 구성(분할 수)",
+   "caption": "8채널 선택 시",
+   "state_raw": "팝업 열림·4x4 선택",
+   "state_type": "가운데 팝업",
+   "state_flags": [
+    "가운데 팝업"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "layout_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-19819"
+  },
+  {
+   "id": "11:19902",
+   "view": "실시간·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "화면 구성(분할 수)",
+   "caption": "16채널(4x4) 적용 결과",
+   "state_raw": "적용 완료",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "video_tile"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-19902"
+  },
+  {
+   "id": "11:20164",
+   "view": "실시간·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "화면 구성(분할 수)",
+   "caption": "4채널(2x2) 적용 결과",
+   "state_raw": "적용 완료",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "video_tile"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-20164"
+  },
+  {
+   "id": "11:20374",
+   "view": "실시간·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "화면 구성(분할 수)",
+   "caption": "9채널(3x3) 적용 결과",
+   "state_raw": "적용 완료",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "video_tile"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-20374"
+  },
+  {
+   "id": "11:20205",
+   "view": "실시간·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "화면 구성(분할 수)",
+   "caption": "2채널 선택 시",
+   "state_raw": "팝업 열림·4채널",
+   "state_type": "가운데 팝업",
+   "state_flags": [
+    "가운데 팝업"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "layout_picker",
+    "mode_badge",
+    "round_button"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-20205"
+  },
+  {
+   "id": "11:20435",
+   "view": "실시간·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "화면 구성(분할 수)",
+   "caption": "3채널 선택 시",
+   "state_raw": "팝업 열림·9채널",
+   "state_type": "가운데 팝업",
+   "state_flags": [
+    "가운데 팝업"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "layout_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-20435"
+  },
+  {
+   "id": "11:19991",
+   "view": "실시간·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "화면 구성(분할 수)",
+   "caption": "8채널 선택 시",
+   "state_raw": "팝업 열림·16채널",
+   "state_type": "가운데 팝업",
+   "state_flags": [
+    "가운데 팝업"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "layout_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-19991"
+  },
+  {
+   "id": "11:20475",
+   "view": "실시간·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "더보기",
+   "caption": "더보기 버튼 선택 시",
+   "state_raw": "팝업 열림",
+   "state_type": "가운데 팝업",
+   "state_flags": [
+    "가운데 팝업"
+   ],
+   "keys": [
+    "mode_badge",
+    "bottom_sheet",
+    "round_button"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-20475"
+  },
+  {
+   "id": "11:31622",
+   "view": "실시간·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "SVMS 레이아웃 리스트",
+   "caption": "더보기 버튼 선택 시",
+   "state_raw": "딤(버튼 표시)",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "mode_badge",
+    "time_pill",
+    "round_button"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-31622"
+  },
+  {
+   "id": "11:20556",
+   "view": "실시간·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "SVMS 레이아웃 리스트",
+   "caption": "레이아웃 버튼 선택 시",
+   "state_raw": "팝업 열림",
+   "state_type": "가운데 팝업",
+   "state_flags": [
+    "가운데 팝업"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "svms_panel"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-20556"
+  },
+  {
+   "id": "11:15998",
+   "view": "녹화영상·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "기본화면",
+   "state_raw": "기본",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "playback_panel",
+    "time_pill",
+    "round_button",
+    "timeline",
+    "camera_list",
+    "tabbar",
+    "os_nav"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-15998"
+  },
+  {
+   "id": "11:16550",
+   "view": "녹화영상·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "영상 뷰 딤",
+   "state_raw": "딤(영상 위 오버레이)",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "playback_panel",
+    "time_pill",
+    "round_button",
+    "timeline",
+    "camera_list",
+    "tabbar",
+    "os_nav",
+    "dim_overlay",
+    "mode_badge"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-16550"
+  },
+  {
+   "id": "11:16773",
+   "view": "녹화영상·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "날짜·시간 선택",
+   "caption": "날짜, 시간 선택 시",
+   "state_raw": "바텀시트 열림(휠 1개형)",
+   "state_type": "바텀시트 열림",
+   "state_flags": [
+    "바텀시트 열림"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "datetime_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-16773"
+  },
+  {
+   "id": "11:16064",
+   "view": "녹화영상·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "날짜·시간 선택",
+   "caption": "날짜, 시간 최초 진입 시",
+   "state_raw": "바텀시트 열림 · 날짜 탭 선택",
+   "state_type": "바텀시트 열림",
+   "state_flags": [
+    "바텀시트 열림"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "datetime_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-16064"
+  },
+  {
+   "id": "11:16208",
+   "view": "녹화영상·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "날짜·시간 선택",
+   "caption": "날짜, 시간 최초 진입 시 - 시간 선택",
+   "state_raw": "바텀시트 열림 · 시간 탭 선택",
+   "state_type": "바텀시트 열림",
+   "state_flags": [
+    "바텀시트 열림"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "datetime_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-16208"
+  },
+  {
+   "id": "11:16308",
+   "view": "녹화영상·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "날짜·시간 선택",
+   "caption": "날짜, 시간 재선택시",
+   "state_raw": "바텀시트 열림 · 날짜 탭 선택",
+   "state_type": "바텀시트 열림",
+   "state_flags": [
+    "바텀시트 열림"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "datetime_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-16308"
+  },
+  {
+   "id": "11:16450",
+   "view": "녹화영상·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "날짜·시간 선택",
+   "caption": "날짜, 시간 재선택 시 - 시간 선택",
+   "state_raw": "바텀시트 열림 · 시간 탭 선택",
+   "state_type": "바텀시트 열림",
+   "state_flags": [
+    "바텀시트 열림"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "datetime_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-16450"
+  },
+  {
+   "id": "11:15653",
+   "view": "녹화영상·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "재생",
+   "state_raw": "재생 중",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "playback_panel",
+    "time_pill",
+    "round_button",
+    "timeline",
+    "camera_list",
+    "tabbar",
+    "os_nav",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-15653"
+  },
+  {
+   "id": "11:15860",
+   "view": "녹화영상·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "일시정지",
+   "state_raw": "일시정지",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "playback_panel",
+    "time_pill",
+    "round_button",
+    "timeline",
+    "camera_list",
+    "tabbar",
+    "os_nav",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-15860"
+  },
+  {
+   "id": "11:14635",
+   "view": "녹화영상·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "2배속으로 빨리감기",
+   "state_raw": "2배속 빨리감기",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "playback_panel",
+    "time_pill",
+    "round_button",
+    "timeline",
+    "camera_list",
+    "tabbar",
+    "os_nav",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-14635"
+  },
+  {
+   "id": "11:15239",
+   "view": "녹화영상·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "4배속으로 빨리감기",
+   "state_raw": "4배속 빨리감기",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "playback_panel",
+    "time_pill",
+    "round_button",
+    "timeline",
+    "camera_list",
+    "tabbar",
+    "os_nav",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-15239"
+  },
+  {
+   "id": "11:15377",
+   "view": "녹화영상·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "8배속으로 빨리감기",
+   "state_raw": "8배속 빨리감기",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "playback_panel",
+    "time_pill",
+    "round_button",
+    "timeline",
+    "camera_list",
+    "tabbar",
+    "os_nav",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-15377"
+  },
+  {
+   "id": "11:15515",
+   "view": "녹화영상·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "16배속으로 빨리감기",
+   "state_raw": "16배속 빨리감기",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "playback_panel",
+    "time_pill",
+    "round_button",
+    "timeline",
+    "camera_list",
+    "tabbar",
+    "os_nav",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-15515"
+  },
+  {
+   "id": "11:14703",
+   "view": "녹화영상·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "2배속으로 되감기",
+   "state_raw": "2배속 되감기",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "playback_panel",
+    "time_pill",
+    "round_button",
+    "timeline",
+    "camera_list",
+    "tabbar",
+    "os_nav",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-14703"
+  },
+  {
+   "id": "11:15308",
+   "view": "녹화영상·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "4배속으로 되감기",
+   "state_raw": "4배속 되감기",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "playback_panel",
+    "time_pill",
+    "round_button",
+    "timeline",
+    "camera_list",
+    "tabbar",
+    "os_nav",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-15308"
+  },
+  {
+   "id": "11:15446",
+   "view": "녹화영상·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "8배속으로 되감기",
+   "state_raw": "8배속 되감기",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "playback_panel",
+    "time_pill",
+    "round_button",
+    "timeline",
+    "camera_list",
+    "tabbar",
+    "os_nav",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-15446"
+  },
+  {
+   "id": "11:15584",
+   "view": "녹화영상·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "16배속으로 되감기",
+   "state_raw": "16배속 되감기",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "playback_panel",
+    "time_pill",
+    "round_button",
+    "timeline",
+    "camera_list",
+    "tabbar",
+    "os_nav",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-15584"
+  },
+  {
+   "id": "11:15722",
+   "view": "녹화영상·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "30초 앞으로, 뒤로",
+   "state_raw": "30초 뒤로 이동",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "playback_panel",
+    "time_pill",
+    "round_button",
+    "timeline",
+    "camera_list",
+    "tabbar",
+    "os_nav",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-15722"
+  },
+  {
+   "id": "11:15929",
+   "view": "녹화영상·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "30초 앞으로",
+   "state_raw": "30초 앞으로 이동",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "playback_panel",
+    "time_pill",
+    "round_button",
+    "timeline",
+    "camera_list",
+    "tabbar",
+    "os_nav",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-15929"
+  },
+  {
+   "id": "11:15791",
+   "view": "녹화영상·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "화면 캡쳐",
+   "caption": "화면 캡쳐 완료 시",
+   "state_raw": "캡쳐 완료",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "playback_panel",
+    "time_pill",
+    "round_button",
+    "timeline",
+    "camera_list",
+    "tabbar",
+    "os_nav",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-15791"
+  },
+  {
+   "id": "11:14771",
+   "view": "녹화영상·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "카메라 목록·움직임 감지",
+   "caption": "움직임 감지 목록",
+   "state_raw": "목록 있음",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "playback_panel",
+    "time_pill",
+    "round_button",
+    "timeline",
+    "camera_list",
+    "tabbar",
+    "os_nav"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-14771"
+  },
+  {
+   "id": "11:15150",
+   "view": "녹화영상·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "카메라 목록·움직임 감지",
+   "caption": "움직임 감지 없는 경우",
+   "state_raw": "빈 화면",
+   "state_type": "빈 화면",
+   "state_flags": [
+    "빈 화면"
+   ],
+   "keys": [
+    "app_header",
+    "video_tile",
+    "playback_panel",
+    "timeline",
+    "camera_list",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-15150"
+  },
+  {
+   "id": "11:14838",
+   "view": "녹화영상·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "SVMS 레이아웃 + 이벤트 목록",
+   "caption": "시안 01",
+   "state_raw": "시안 01 · 이벤트 목록",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "app_header",
+    "video_tile",
+    "playback_panel",
+    "timeline",
+    "svms_panel",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-14838"
+  },
+  {
+   "id": "11:15195",
+   "view": "녹화영상·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "SVMS 레이아웃 + 이벤트 목록",
+   "caption": "시안 01 - 이벤트 없음",
+   "state_raw": "시안 01 · 빈 화면",
+   "state_type": "빈 화면",
+   "state_flags": [
+    "빈 화면"
+   ],
+   "keys": [
+    "app_header",
+    "video_tile",
+    "playback_panel",
+    "timeline",
+    "svms_panel",
+    "camera_list",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-15195"
+  },
+  {
+   "id": "11:14908",
+   "view": "녹화영상·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "SVMS 레이아웃 + 이벤트 목록",
+   "caption": "시안 02",
+   "state_raw": "시안 02 · 이벤트 목록",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "app_header",
+    "video_tile",
+    "playback_panel",
+    "timeline",
+    "svms_panel",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-14908"
+  },
+  {
+   "id": "11:15096",
+   "view": "녹화영상·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "SVMS 레이아웃 + 이벤트 목록",
+   "caption": "시안 02 - 이벤트 없음",
+   "state_raw": "시안 02 · 빈 화면",
+   "state_type": "빈 화면",
+   "state_flags": [
+    "빈 화면"
+   ],
+   "keys": [
+    "svms_panel",
+    "camera_list",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-15096"
+  },
+  {
+   "id": "11:14983",
+   "view": "녹화영상·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "SVMS 레이아웃 + 이벤트 목록",
+   "caption": "시안 02 - 이벤트 종류 필터",
+   "state_raw": "바텀시트 열림 · 3개 선택됨",
+   "state_type": "바텀시트 열림",
+   "state_flags": [
+    "바텀시트 열림"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "camera_list"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-14983"
+  },
+  {
+   "id": "11:16617",
+   "view": "녹화영상·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "SVMS 레이아웃 + 이벤트 목록",
+   "caption": "SVMS 카메라 목록 버튼",
+   "state_raw": "딤 · SVMS 카메라 목록 버튼 노출",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "dim_overlay",
+    "mode_badge",
+    "svms_panel",
+    "round_button",
+    "playback_panel",
+    "timeline",
+    "camera_list",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-16617"
+  },
+  {
+   "id": "11:16684",
+   "view": "녹화영상·기본(단일채널)",
+   "shape": "세로 기본 · 단일채널",
+   "platform": "common",
+   "feature": "SVMS 레이아웃 + 이벤트 목록",
+   "caption": "버튼 선택 시",
+   "state_raw": "바텀시트 열림",
+   "state_type": "바텀시트 열림",
+   "state_flags": [
+    "바텀시트 열림"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "svms_panel"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-16684"
+  },
+  {
+   "id": "11:25796",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "2채널 - 기본",
+   "state_raw": "기본",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "playback_panel",
+    "time_pill",
+    "tabbar",
+    "os_nav"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-25796"
+  },
+  {
+   "id": "11:26219",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "2채널 - 영상 뷰 딤",
+   "state_raw": "딤",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "playback_panel",
+    "time_pill",
+    "tabbar",
+    "os_nav",
+    "dim_overlay",
+    "mode_badge",
+    "page_dots",
+    "round_button"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-26219"
+  },
+  {
+   "id": "11:26068",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "2채널 - 카메라 없음",
+   "state_raw": "카메라 없음",
+   "state_type": "영상 안 나옴",
+   "state_flags": [
+    "영상 안 나옴"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "playback_panel",
+    "time_pill",
+    "tabbar",
+    "os_nav",
+    "video_state"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-26068"
+  },
+  {
+   "id": "11:25924",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "2채널 - 카메라 숨김",
+   "state_raw": "카메라 숨김",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "playback_panel",
+    "time_pill",
+    "tabbar",
+    "os_nav"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-25924"
+  },
+  {
+   "id": "11:27864",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "3채널 - 기본",
+   "state_raw": "기본",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "playback_panel",
+    "time_pill",
+    "tabbar",
+    "os_nav"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-27864"
+  },
+  {
+   "id": "11:27972",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "3채널 - 영상 뷰 딤",
+   "state_raw": "딤",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "playback_panel",
+    "time_pill",
+    "tabbar",
+    "os_nav",
+    "dim_overlay",
+    "mode_badge",
+    "page_dots",
+    "round_button"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-27972"
+  },
+  {
+   "id": "11:27912",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "3채널 - 카메라 없음",
+   "state_raw": "카메라 없음",
+   "state_type": "영상 안 나옴",
+   "state_flags": [
+    "영상 안 나옴"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "playback_panel",
+    "time_pill",
+    "tabbar",
+    "os_nav",
+    "video_state"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-27912"
+  },
+  {
+   "id": "11:28021",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "3채널 - 카메라 숨김",
+   "state_raw": "카메라 숨김",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "playback_panel",
+    "time_pill",
+    "tabbar",
+    "os_nav"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-28021"
+  },
+  {
+   "id": "11:13503",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "8채널 - 기본",
+   "state_raw": "기본",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "playback_panel",
+    "time_pill",
+    "tabbar",
+    "os_nav"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-13503"
+  },
+  {
+   "id": "11:13656",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "8채널 - 영상 뷰 딤",
+   "state_raw": "딤",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "video_tile",
+    "dim_overlay",
+    "mode_badge",
+    "page_dots",
+    "round_button",
+    "playback_panel",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-13656"
+  },
+  {
+   "id": "11:13571",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "8채널 - 상태값",
+   "state_raw": "카메라 없음 + 숨김 섞임",
+   "state_type": "영상 안 나옴",
+   "state_flags": [
+    "영상 안 나옴"
+   ],
+   "keys": [
+    "video_tile",
+    "video_state",
+    "playback_panel",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-13571"
+  },
+  {
+   "id": "11:28081",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "날짜·시간 선택",
+   "caption": "날짜, 시간 선택",
+   "state_raw": "바텀시트 열림(휠 1개형)",
+   "state_type": "바텀시트 열림",
+   "state_flags": [
+    "바텀시트 열림"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "datetime_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-28081"
+  },
+  {
+   "id": "11:28179",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "날짜·시간 선택",
+   "caption": "날짜, 시간 최초 진입 시",
+   "state_raw": "바텀시트 · 날짜 탭",
+   "state_type": "바텀시트 열림",
+   "state_flags": [
+    "바텀시트 열림"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "datetime_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-28179"
+  },
+  {
+   "id": "11:28467",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "날짜·시간 선택",
+   "caption": "날짜, 시간 최초 진입 시 - 시간 선택",
+   "state_raw": "바텀시트 · 시간 탭",
+   "state_type": "바텀시트 열림",
+   "state_flags": [
+    "바텀시트 열림"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "datetime_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-28467"
+  },
+  {
+   "id": "11:28323",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "날짜·시간 선택",
+   "caption": "날짜, 시간 재선택시",
+   "state_raw": "바텀시트 · 날짜 탭",
+   "state_type": "바텀시트 열림",
+   "state_flags": [
+    "바텀시트 열림"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "datetime_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-28323"
+  },
+  {
+   "id": "11:28569",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "날짜·시간 선택",
+   "caption": "날짜, 시간 재선택 시 - 시간 선택",
+   "state_raw": "바텀시트 · 시간 탭",
+   "state_type": "바텀시트 열림",
+   "state_flags": [
+    "바텀시트 열림"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "datetime_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-28569"
+  },
+  {
+   "id": "11:24841",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "재생",
+   "state_raw": "재생",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트",
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "dim_overlay",
+    "mode_badge",
+    "round_button",
+    "toast",
+    "playback_panel",
+    "time_pill",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-24841"
+  },
+  {
+   "id": "11:32146",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "일시정지",
+   "state_raw": "일시정지",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "toast",
+    "playback_panel",
+    "time_pill",
+    "round_button",
+    "timeline",
+    "camera_list",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-32146"
+  },
+  {
+   "id": "11:25267",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "2배속으로 빨리감기",
+   "state_raw": "2배속 빨리감기",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트",
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "dim_overlay",
+    "mode_badge",
+    "round_button",
+    "toast",
+    "playback_panel",
+    "time_pill",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-25267"
+  },
+  {
+   "id": "11:25338",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "4배속으로 빨리감기",
+   "state_raw": "4배속 빨리감기",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트",
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "dim_overlay",
+    "mode_badge",
+    "round_button",
+    "toast",
+    "playback_panel",
+    "time_pill",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-25338"
+  },
+  {
+   "id": "11:25409",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "8배속으로 빨리감기",
+   "state_raw": "8배속 빨리감기",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트",
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "dim_overlay",
+    "mode_badge",
+    "round_button",
+    "toast",
+    "playback_panel",
+    "time_pill",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-25409"
+  },
+  {
+   "id": "11:25480",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "16배속으로 빨리감기",
+   "state_raw": "16배속 빨리감기",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트",
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "dim_overlay",
+    "mode_badge",
+    "round_button",
+    "toast",
+    "playback_panel",
+    "time_pill",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-25480"
+  },
+  {
+   "id": "11:24983",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "2배속으로 되감기",
+   "state_raw": "2배속 되감기",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트",
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "dim_overlay",
+    "mode_badge",
+    "round_button",
+    "toast",
+    "playback_panel",
+    "time_pill",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-24983"
+  },
+  {
+   "id": "11:25054",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "4배속으로 되감기",
+   "state_raw": "4배속 되감기",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트",
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "dim_overlay",
+    "mode_badge",
+    "round_button",
+    "toast",
+    "playback_panel",
+    "time_pill",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-25054"
+  },
+  {
+   "id": "11:25125",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "8배속으로 되감기",
+   "state_raw": "8배속 되감기",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트",
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "dim_overlay",
+    "mode_badge",
+    "round_button",
+    "toast",
+    "playback_panel",
+    "time_pill",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-25125"
+  },
+  {
+   "id": "11:25196",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "16배속으로 되감기",
+   "state_raw": "16배속 되감기",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트",
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "dim_overlay",
+    "mode_badge",
+    "round_button",
+    "toast",
+    "playback_panel",
+    "time_pill",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-25196"
+  },
+  {
+   "id": "11:24912",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "30초 앞으로, 뒤로",
+   "state_raw": "30초 앞으로",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트",
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "dim_overlay",
+    "mode_badge",
+    "round_button",
+    "toast",
+    "playback_panel",
+    "time_pill",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-24912"
+  },
+  {
+   "id": "11:25551",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "30초 뒤로",
+   "state_raw": "30초 뒤로",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트",
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "dim_overlay",
+    "mode_badge",
+    "round_button",
+    "toast",
+    "playback_panel",
+    "time_pill",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-25551"
+  },
+  {
+   "id": "11:23842",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "화면 구성(분할 수)",
+   "caption": "2채널 선택 시",
+   "state_raw": "바텀시트 · 1×2 선택(안 A: 배치 그림 카드)",
+   "state_type": "바텀시트 열림",
+   "state_flags": [
+    "바텀시트 열림"
+   ],
+   "keys": [
+    "video_tile",
+    "bottom_sheet",
+    "layout_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-23842"
+  },
+  {
+   "id": "11:23975",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "화면 구성(분할 수)",
+   "caption": "3채널 선택 시",
+   "state_raw": "바텀시트 · 1×3 선택(안 A)",
+   "state_type": "바텀시트 열림",
+   "state_flags": [
+    "바텀시트 열림"
+   ],
+   "keys": [
+    "video_tile",
+    "bottom_sheet",
+    "layout_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-23975"
+  },
+  {
+   "id": "11:24112",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "화면 구성(분할 수)",
+   "caption": "8채널 선택 시",
+   "state_raw": "바텀시트 · 2×4 선택(안 A)",
+   "state_type": "바텀시트 열림",
+   "state_flags": [
+    "바텀시트 열림"
+   ],
+   "keys": [
+    "video_tile",
+    "bottom_sheet",
+    "layout_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-24112"
+  },
+  {
+   "id": "11:23916",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "화면 구성(분할 수)",
+   "caption": "2채널 선택 시 (슬라이더 안)",
+   "state_raw": "바텀시트 · 2채널 선택(안 B: 슬라이더)",
+   "state_type": "바텀시트 열림",
+   "state_flags": [
+    "바텀시트 열림"
+   ],
+   "keys": [
+    "video_tile",
+    "bottom_sheet",
+    "layout_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-23916"
+  },
+  {
+   "id": "11:24051",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "화면 구성(분할 수)",
+   "caption": "3채널 선택 시 (슬라이더 안)",
+   "state_raw": "바텀시트 · 3채널 선택(안 B)",
+   "state_type": "바텀시트 열림",
+   "state_flags": [
+    "바텀시트 열림"
+   ],
+   "keys": [
+    "video_tile",
+    "bottom_sheet",
+    "layout_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-24051"
+  },
+  {
+   "id": "11:24205",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "화면 구성(분할 수)",
+   "caption": "8채널 선택 시 (슬라이더 안)",
+   "state_raw": "바텀시트 · 8채널 선택(안 B)",
+   "state_type": "바텀시트 열림",
+   "state_flags": [
+    "바텀시트 열림"
+   ],
+   "keys": [
+    "video_tile",
+    "bottom_sheet",
+    "layout_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-24205"
+  },
+  {
+   "id": "11:24632",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "화면 비율",
+   "caption": "2채널 - 원본 비율",
+   "state_raw": "원본 비율 유지",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트",
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "dim_overlay",
+    "mode_badge",
+    "toast",
+    "playback_panel",
+    "time_pill",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-24632"
+  },
+  {
+   "id": "11:24698",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "화면 비율",
+   "caption": "2채널 - 화면 채우기",
+   "state_raw": "화면 채우기",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트",
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "dim_overlay",
+    "mode_badge",
+    "toast",
+    "playback_panel",
+    "time_pill",
+    "tabbar",
+    "round_button"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-24698"
+  },
+  {
+   "id": "11:24494",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "화면 비율",
+   "caption": "3채널 - 원본 비율",
+   "state_raw": "원본 비율 유지",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트",
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "dim_overlay",
+    "mode_badge",
+    "toast",
+    "playback_panel",
+    "time_pill",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-24494"
+  },
+  {
+   "id": "11:24563",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "화면 비율",
+   "caption": "3채널 - 화면 채우기",
+   "state_raw": "화면 채우기",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트",
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "dim_overlay",
+    "mode_badge",
+    "toast",
+    "playback_panel",
+    "time_pill",
+    "tabbar",
+    "round_button"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-24563"
+  },
+  {
+   "id": "11:24423",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "화면 비율",
+   "caption": "8채널 - 원본 비율",
+   "state_raw": "원본 비율 유지",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트",
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "dim_overlay",
+    "mode_badge",
+    "toast",
+    "playback_panel",
+    "time_pill",
+    "tabbar",
+    "round_button"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-24423"
+  },
+  {
+   "id": "11:24770",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "화면 비율",
+   "caption": "8채널 - 화면 채우기",
+   "state_raw": "화면 채우기",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트",
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "dim_overlay",
+    "mode_badge",
+    "toast",
+    "playback_panel",
+    "time_pill",
+    "tabbar",
+    "round_button"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-24770"
+  },
+  {
+   "id": "11:13888",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "더보기",
+   "caption": "8채널 - 더보기 메뉴",
+   "state_raw": "더보기 메뉴 열림",
+   "state_type": "바텀시트 열림",
+   "state_flags": [
+    "바텀시트 열림",
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "video_tile",
+    "bottom_sheet"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-13888"
+  },
+  {
+   "id": "11:26369",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "페이지네이션",
+   "caption": "페이지 없는 경우",
+   "state_raw": "페이지 없음",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "dim_overlay",
+    "mode_badge",
+    "round_button",
+    "playback_panel",
+    "time_pill",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-26369"
+  },
+  {
+   "id": "11:26459",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "페이지네이션",
+   "caption": "페이지 2개",
+   "state_raw": "2페이지",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "dim_overlay",
+    "mode_badge",
+    "round_button",
+    "page_dots",
+    "playback_panel",
+    "time_pill",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-26459"
+  },
+  {
+   "id": "11:26848",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "페이지네이션",
+   "caption": "페이지 3개",
+   "state_raw": "3페이지",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "dim_overlay",
+    "mode_badge",
+    "round_button",
+    "page_dots",
+    "playback_panel",
+    "time_pill",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-26848"
+  },
+  {
+   "id": "11:26701",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "페이지네이션",
+   "caption": "페이지 4개",
+   "state_raw": "4페이지",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "dim_overlay",
+    "mode_badge",
+    "round_button",
+    "page_dots",
+    "playback_panel",
+    "time_pill",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-26701"
+  },
+  {
+   "id": "11:26570",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "페이지네이션",
+   "caption": "페이지 5개",
+   "state_raw": "5페이지",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "dim_overlay",
+    "mode_badge",
+    "round_button",
+    "page_dots",
+    "playback_panel",
+    "time_pill",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-26570"
+  },
+  {
+   "id": "11:26994",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "페이지네이션",
+   "caption": "페이지 6개 이상",
+   "state_raw": "6페이지 이상",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "dim_overlay",
+    "mode_badge",
+    "round_button",
+    "page_dots",
+    "playback_panel",
+    "time_pill",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-26994"
+  },
+  {
+   "id": "11:27128",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "페이지네이션",
+   "caption": "페이지 7개 이상 스와이프 시",
+   "state_raw": "7페이지 이상 · 스와이프",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "dim_overlay",
+    "mode_badge",
+    "round_button",
+    "page_dots",
+    "playback_panel",
+    "time_pill",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-27128"
+  },
+  {
+   "id": "11:13726",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "SVMS 레이아웃 리스트",
+   "caption": "SVMS 카메라 목록 버튼",
+   "state_raw": "딤 · SVMS 카메라 목록 버튼 노출",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "app_header",
+    "mode_chip",
+    "video_tile",
+    "dim_overlay",
+    "mode_badge",
+    "svms_panel",
+    "page_dots",
+    "round_button",
+    "playback_panel",
+    "time_pill",
+    "tabbar"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-13726"
+  },
+  {
+   "id": "11:13796",
+   "view": "녹화영상·기본(다채널)",
+   "shape": "세로 기본 · 다채널",
+   "platform": "common",
+   "feature": "SVMS 레이아웃 리스트",
+   "caption": "버튼 선택 시",
+   "state_raw": "바텀시트 열림",
+   "state_type": "바텀시트 열림",
+   "state_flags": [
+    "바텀시트 열림",
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "video_tile",
+    "bottom_sheet",
+    "svms_panel"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-13796"
+  },
+  {
+   "id": "11:17721",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "기본",
+   "state_raw": "기본",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "video_tile"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17721"
+  },
+  {
+   "id": "11:21241",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "영상 뷰 딤",
+   "state_raw": "딤",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "mode_badge",
+    "playback_panel",
+    "timeline",
+    "round_button"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-21241"
+  },
+  {
+   "id": "11:21332",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "시간바 드래그 시",
+   "state_raw": "시간바 드래그 시",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "timeline"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-21332"
+  },
+  {
+   "id": "11:21346",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "시간 항상 표시 설정 시",
+   "state_raw": "시간 항상 표시",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "video_tile",
+    "timeline"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-21346"
+  },
+  {
+   "id": "11:17910",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "카메라 없음",
+   "state_raw": "빈 화면",
+   "state_type": "영상 안 나옴",
+   "state_flags": [
+    "영상 안 나옴"
+   ],
+   "keys": [
+    "video_tile",
+    "video_state"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17910"
+  },
+  {
+   "id": "11:21353",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "android",
+   "feature": "날짜·시간 선택",
+   "caption": "날짜, 시간 최초 진입 시(안드로이드)",
+   "state_raw": "날짜 탭 · 첫 진입",
+   "state_type": "오른쪽 패널",
+   "state_flags": [
+    "오른쪽 패널"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "datetime_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-21353"
+  },
+  {
+   "id": "11:22022",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "android",
+   "feature": "날짜·시간 선택",
+   "caption": "날짜, 시간 최초 진입 시(안드로이드) · 달력 스크롤",
+   "state_raw": "날짜 탭 · 아래로 스크롤",
+   "state_type": "오른쪽 패널",
+   "state_flags": [
+    "오른쪽 패널"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "datetime_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-22022"
+  },
+  {
+   "id": "11:22458",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "ios",
+   "feature": "날짜·시간 선택",
+   "caption": "날짜, 시간 최초 진입 시(IOS )",
+   "state_raw": "날짜 탭 · 첫 진입",
+   "state_type": "오른쪽 패널",
+   "state_flags": [
+    "오른쪽 패널"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "datetime_picker",
+    "timeline"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-22458"
+  },
+  {
+   "id": "11:23251",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "ios",
+   "feature": "날짜·시간 선택",
+   "caption": "날짜, 시간 최초 진입 시(IOS) · 달력 스크롤",
+   "state_raw": "날짜 탭 · 아래로 스크롤",
+   "state_type": "오른쪽 패널",
+   "state_flags": [
+    "오른쪽 패널"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "datetime_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-23251"
+  },
+  {
+   "id": "11:21455",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "android",
+   "feature": "날짜·시간 선택",
+   "caption": "날짜, 시간 재선택 시(안드로이드)",
+   "state_raw": "날짜 탭 · 재선택",
+   "state_type": "오른쪽 패널",
+   "state_flags": [
+    "오른쪽 패널"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "datetime_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-21455"
+  },
+  {
+   "id": "11:22103",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "android",
+   "feature": "날짜·시간 선택",
+   "caption": "날짜, 시간 재선택 시(안드로이드) · 달력 스크롤",
+   "state_raw": "날짜 탭 · 재선택 스크롤",
+   "state_type": "오른쪽 패널",
+   "state_flags": [
+    "오른쪽 패널"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "datetime_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-22103"
+  },
+  {
+   "id": "11:22554",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "ios",
+   "feature": "날짜·시간 선택",
+   "caption": "날짜, 시간 재선택 시(안드로이드)",
+   "state_raw": "날짜 탭 · 재선택",
+   "state_type": "오른쪽 패널",
+   "state_flags": [
+    "오른쪽 패널"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "datetime_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-22554"
+  },
+  {
+   "id": "11:23332",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "ios",
+   "feature": "날짜·시간 선택",
+   "caption": "날짜, 시간 재선택 시(IOS) · 달력 스크롤",
+   "state_raw": "날짜 탭 · 재선택 스크롤",
+   "state_type": "오른쪽 패널",
+   "state_flags": [
+    "오른쪽 패널"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "datetime_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-23332"
+  },
+  {
+   "id": "11:31954",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "android",
+   "feature": "날짜·시간 선택",
+   "caption": "시간 선택(안드로이드)",
+   "state_raw": "시간 탭",
+   "state_type": "오른쪽 패널",
+   "state_flags": [
+    "오른쪽 패널"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "datetime_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-31954"
+  },
+  {
+   "id": "11:31997",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "ios",
+   "feature": "날짜·시간 선택",
+   "caption": "시간 선택(IOS)",
+   "state_raw": "시간 탭",
+   "state_type": "오른쪽 패널",
+   "state_flags": [
+    "오른쪽 패널"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "datetime_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-31997"
+  },
+  {
+   "id": "11:17865",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "핀치 확대",
+   "caption": "화면 확대 시",
+   "state_raw": "확대됨",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "video_tile",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17865"
+  },
+  {
+   "id": "11:17879",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "핀치 확대",
+   "caption": "원본 사이즈로 복귀 시",
+   "state_raw": "원본 복귀",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "video_tile",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17879"
+  },
+  {
+   "id": "11:27798",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "더보기",
+   "caption": "더보기 버튼 선택 시",
+   "state_raw": "팝업 열림",
+   "state_type": "가운데 팝업",
+   "state_flags": [
+    "가운데 팝업"
+   ],
+   "keys": [
+    "bottom_sheet"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-27798"
+  },
+  {
+   "id": "11:31864",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "android",
+   "feature": "카메라 목록·움직임 감지",
+   "caption": "카메라 목록 버튼 선택 시(안드로이드)",
+   "state_raw": "카메라 목록 탭",
+   "state_type": "오른쪽 패널",
+   "state_flags": [
+    "오른쪽 패널"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "camera_list"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-31864"
+  },
+  {
+   "id": "11:23003",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "ios",
+   "feature": "카메라 목록·움직임 감지",
+   "caption": "카메라 목록 버튼 선택 시(IOS)",
+   "state_raw": "카메라 목록 탭",
+   "state_type": "오른쪽 패널",
+   "state_flags": [
+    "오른쪽 패널"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "camera_list"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-23003"
+  },
+  {
+   "id": "11:31689",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "android",
+   "feature": "카메라 목록·움직임 감지",
+   "caption": "움직임 감지 버튼 선택 시(안드로이드)",
+   "state_raw": "움직임 감지 탭",
+   "state_type": "오른쪽 패널",
+   "state_flags": [
+    "오른쪽 패널"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "svms_panel",
+    "camera_list"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-31689"
+  },
+  {
+   "id": "11:23056",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "ios",
+   "feature": "카메라 목록·움직임 감지",
+   "caption": "움직임 감지 버튼 선택 시(IOS)",
+   "state_raw": "움직임 감지 탭",
+   "state_type": "오른쪽 패널",
+   "state_flags": [
+    "오른쪽 패널"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "svms_panel",
+    "camera_list"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-23056"
+  },
+  {
+   "id": "11:31844",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "android",
+   "feature": "카메라 목록·움직임 감지",
+   "caption": "움직임 감지 없는 경우(안드로이드)",
+   "state_raw": "빈 화면",
+   "state_type": "오른쪽 패널",
+   "state_flags": [
+    "오른쪽 패널",
+    "빈 화면"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "camera_list"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-31844"
+  },
+  {
+   "id": "11:23196",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "ios",
+   "feature": "카메라 목록·움직임 감지",
+   "caption": "움직임 감지 없는 경우(IOS)",
+   "state_raw": "빈 화면",
+   "state_type": "오른쪽 패널",
+   "state_flags": [
+    "오른쪽 패널",
+    "빈 화면"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "camera_list"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-23196"
+  },
+  {
+   "id": "11:17726",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "날짜·시간 선택",
+   "caption": "날짜, 시간 선택",
+   "state_raw": "팝업 열림",
+   "state_type": "가운데 팝업",
+   "state_flags": [
+    "가운데 팝업"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "datetime_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17726"
+  },
+  {
+   "id": "11:17778",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "재생",
+   "state_raw": "기본 속도 재생",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "video_tile",
+    "playback_panel",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17778"
+  },
+  {
+   "id": "11:17842",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "일시정지",
+   "state_raw": "일시정지",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "video_tile",
+    "playback_panel",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17842"
+  },
+  {
+   "id": "11:17762",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "2배속으로 빨리감기",
+   "state_raw": "2배속 빨리감기",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "video_tile",
+    "playback_panel",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17762"
+  },
+  {
+   "id": "11:17794",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "4배속으로 빨리감기",
+   "state_raw": "4배속 빨리감기",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "video_tile",
+    "playback_panel",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17794"
+  },
+  {
+   "id": "11:17810",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "8배속으로 빨리감기",
+   "state_raw": "8배속 빨리감기",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "video_tile",
+    "playback_panel",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17810"
+  },
+  {
+   "id": "11:17826",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "16배속으로 빨리감기",
+   "state_raw": "16배속 빨리감기",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "video_tile",
+    "playback_panel",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17826"
+  },
+  {
+   "id": "11:17770",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "2배속으로 되감기",
+   "state_raw": "2배속 되감기",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "video_tile",
+    "playback_panel",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17770"
+  },
+  {
+   "id": "11:17802",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "4배속으로 되감기",
+   "state_raw": "4배속 되감기",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "video_tile",
+    "playback_panel",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17802"
+  },
+  {
+   "id": "11:17818",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "8배속으로 되감기",
+   "state_raw": "8배속 되감기",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "video_tile",
+    "playback_panel",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17818"
+  },
+  {
+   "id": "11:17834",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "16배속으로 되감기",
+   "state_raw": "16배속 되감기",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "video_tile",
+    "playback_panel",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17834"
+  },
+  {
+   "id": "11:17786",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "30초 앞으로, 뒤로",
+   "state_raw": "30초 앞으로",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "video_tile",
+    "playback_panel",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17786"
+  },
+  {
+   "id": "11:17850",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "30초 뒤로",
+   "state_raw": "30초 뒤로",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "video_tile",
+    "playback_panel",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-17850"
+  },
+  {
+   "id": "11:21313",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "화면 캡쳐",
+   "caption": "화면 캡쳐 완료 시",
+   "state_raw": "완료",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "mode_badge",
+    "playback_panel",
+    "timeline",
+    "round_button",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-21313"
+  },
+  {
+   "id": "11:21258",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "SVMS 레이아웃 + 이벤트 목록",
+   "caption": "SVMS 카메라 목록 버튼",
+   "state_raw": "딤",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "mode_badge",
+    "playback_panel",
+    "timeline",
+    "round_button"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-21258"
+  },
+  {
+   "id": "11:21275",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "SVMS 레이아웃 + 이벤트 목록",
+   "caption": "버튼 선택 시",
+   "state_raw": "팝업 열림",
+   "state_type": "가운데 팝업",
+   "state_flags": [
+    "가운데 팝업"
+   ],
+   "keys": [
+    "bottom_sheet"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-21275"
+  },
+  {
+   "id": "11:31752",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "android",
+   "feature": "SVMS 레이아웃 + 이벤트 목록",
+   "caption": "SVMS 이벤트 목록(안드로이드)",
+   "state_raw": "이벤트 목록 탭",
+   "state_type": "오른쪽 패널",
+   "state_flags": [
+    "오른쪽 패널"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "svms_panel",
+    "camera_list"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-31752"
+  },
+  {
+   "id": "11:23124",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "ios",
+   "feature": "SVMS 레이아웃 + 이벤트 목록",
+   "caption": "SVMS 이벤트 목록(IOS)",
+   "state_raw": "이벤트 목록 탭",
+   "state_type": "오른쪽 패널",
+   "state_flags": [
+    "오른쪽 패널"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "svms_panel",
+    "camera_list"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-23124"
+  },
+  {
+   "id": "11:31819",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "android",
+   "feature": "SVMS 레이아웃 + 이벤트 목록",
+   "caption": "SVMS 이벤트 목록 이벤트 없는 경우(안드로이드)",
+   "state_raw": "빈 화면",
+   "state_type": "오른쪽 패널",
+   "state_flags": [
+    "오른쪽 패널",
+    "빈 화면"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "svms_panel",
+    "camera_list"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-31819"
+  },
+  {
+   "id": "11:23221",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "ios",
+   "feature": "SVMS 레이아웃 + 이벤트 목록",
+   "caption": "SVMS 이벤트 목록 이벤트 없는 경우(IOS)",
+   "state_raw": "빈 화면",
+   "state_type": "오른쪽 패널",
+   "state_flags": [
+    "오른쪽 패널",
+    "빈 화면"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "camera_list"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-23221"
+  },
+  {
+   "id": "11:21954",
+   "view": "녹화영상·확대(단일채널)",
+   "shape": "가로 확대 · 단일채널",
+   "platform": "common",
+   "feature": "SVMS 레이아웃 + 이벤트 목록",
+   "caption": "SVMS 이벤트 종류",
+   "state_raw": "팝업 열림",
+   "state_type": "가운데 팝업",
+   "state_flags": [
+    "가운데 팝업"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "camera_list"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-21954"
+  },
+  {
+   "id": "11:20993",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "4채널 - 기본",
+   "state_raw": "기본",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "video_tile"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-20993"
+  },
+  {
+   "id": "11:21149",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "4채널 - 영상 뷰 딤",
+   "state_raw": "딤",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "mode_badge",
+    "playback_panel",
+    "timeline",
+    "round_button"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-21149"
+  },
+  {
+   "id": "11:21030",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "4채널 - 시간 항상 표시 설정 시",
+   "state_raw": "시간 항상 표시",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "video_tile",
+    "timeline"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-21030"
+  },
+  {
+   "id": "11:21049",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "4채널 - 상태값",
+   "state_raw": "상태값",
+   "state_type": "영상 안 나옴",
+   "state_flags": [
+    "영상 안 나옴"
+   ],
+   "keys": [
+    "video_tile",
+    "video_state"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-21049"
+  },
+  {
+   "id": "11:20681",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "9채널 - 기본",
+   "state_raw": "기본",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "video_tile"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-20681"
+  },
+  {
+   "id": "11:20935",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "9채널 - 영상 뷰 딤",
+   "state_raw": "딤",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "mode_badge",
+    "playback_panel",
+    "timeline",
+    "time_pill",
+    "round_button"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-20935"
+  },
+  {
+   "id": "11:20758",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "9채널 - 시간 항상 표시 설정 시",
+   "state_raw": "시간 항상 표시",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "video_tile",
+    "timeline"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-20758"
+  },
+  {
+   "id": "11:20797",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "9채널 - 상태값",
+   "state_raw": "상태값",
+   "state_type": "영상 안 나옴",
+   "state_flags": [
+    "영상 안 나옴"
+   ],
+   "keys": [
+    "video_tile",
+    "video_state"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-20797"
+  },
+  {
+   "id": "11:18211",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "16채널 - 기본",
+   "state_raw": "기본",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "video_tile"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-18211"
+  },
+  {
+   "id": "11:19362",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "16채널 - 영상 뷰 딤",
+   "state_raw": "딤",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "mode_badge",
+    "playback_panel",
+    "timeline",
+    "time_pill",
+    "round_button"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-19362"
+  },
+  {
+   "id": "11:18002",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "16채널 - 시간 항상 표시 설정 시",
+   "state_raw": "시간 항상 표시",
+   "state_type": "기본",
+   "state_flags": [],
+   "keys": [
+    "video_tile",
+    "timeline"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-18002"
+  },
+  {
+   "id": "11:18069",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "기본 화면·상태 값",
+   "caption": "16채널 - 상태값",
+   "state_raw": "상태값",
+   "state_type": "영상 안 나옴",
+   "state_flags": [
+    "영상 안 나옴"
+   ],
+   "keys": [
+    "video_tile",
+    "video_state",
+    "timeline"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-18069"
+  },
+  {
+   "id": "11:21551",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "android",
+   "feature": "날짜·시간 선택",
+   "caption": "날짜 선택(안드로이드)",
+   "state_raw": "날짜 탭 · 첫 진입",
+   "state_type": "오른쪽 패널",
+   "state_flags": [
+    "오른쪽 패널"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "datetime_picker",
+    "time_pill",
+    "round_button"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-21551"
+  },
+  {
+   "id": "11:22184",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "android",
+   "feature": "날짜·시간 선택",
+   "caption": "날짜 선택(안드로이드) · 달력 스크롤",
+   "state_raw": "날짜 탭 · 스크롤",
+   "state_type": "오른쪽 패널",
+   "state_flags": [
+    "오른쪽 패널"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "datetime_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-22184"
+  },
+  {
+   "id": "11:22650",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "ios",
+   "feature": "날짜·시간 선택",
+   "caption": "날짜 선택(IOS)",
+   "state_raw": "날짜 탭 · 첫 진입",
+   "state_type": "오른쪽 패널",
+   "state_flags": [
+    "오른쪽 패널"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "datetime_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-22650"
+  },
+  {
+   "id": "11:23413",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "ios",
+   "feature": "날짜·시간 선택",
+   "caption": "날짜 선택(IOS) · 달력 스크롤",
+   "state_raw": "날짜 탭 · 스크롤",
+   "state_type": "오른쪽 패널",
+   "state_flags": [
+    "오른쪽 패널"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "datetime_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-23413"
+  },
+  {
+   "id": "11:21703",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "android",
+   "feature": "날짜·시간 선택",
+   "caption": "날짜 선택(안드로이드)",
+   "state_raw": "날짜 탭 · 재선택",
+   "state_type": "오른쪽 패널",
+   "state_flags": [
+    "오른쪽 패널"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "datetime_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-21703"
+  },
+  {
+   "id": "11:22321",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "android",
+   "feature": "날짜·시간 선택",
+   "caption": "날짜 재선택(안드로이드) · 달력 스크롤",
+   "state_raw": "날짜 탭 · 재선택 스크롤",
+   "state_type": "오른쪽 패널",
+   "state_flags": [
+    "오른쪽 패널"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "datetime_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-22321"
+  },
+  {
+   "id": "11:22802",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "ios",
+   "feature": "날짜·시간 선택",
+   "caption": "날짜 선택(IOS)",
+   "state_raw": "날짜 탭 · 재선택",
+   "state_type": "오른쪽 패널",
+   "state_flags": [
+    "오른쪽 패널"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "datetime_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-22802"
+  },
+  {
+   "id": "11:23550",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "ios",
+   "feature": "날짜·시간 선택",
+   "caption": "날짜 재선택(IOS) · 달력 스크롤",
+   "state_raw": "날짜 탭 · 재선택 스크롤",
+   "state_type": "오른쪽 패널",
+   "state_flags": [
+    "오른쪽 패널"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "datetime_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-23550"
+  },
+  {
+   "id": "11:21855",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "android",
+   "feature": "날짜·시간 선택",
+   "caption": "시간 선택(안드로이드)",
+   "state_raw": "시간 탭",
+   "state_type": "오른쪽 패널",
+   "state_flags": [
+    "오른쪽 패널"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "datetime_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-21855"
+  },
+  {
+   "id": "11:32040",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "ios",
+   "feature": "날짜·시간 선택",
+   "caption": "시간 선택(IOS)",
+   "state_raw": "시간 탭",
+   "state_type": "오른쪽 패널",
+   "state_flags": [
+    "오른쪽 패널"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "datetime_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-32040"
+  },
+  {
+   "id": "11:20045",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "화면 구성(분할 수)",
+   "caption": "4채널 선택 시",
+   "state_raw": "2x2 선택",
+   "state_type": "가운데 팝업",
+   "state_flags": [
+    "가운데 팝업"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "layout_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-20045"
+  },
+  {
+   "id": "11:20235",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "화면 구성(분할 수)",
+   "caption": "8채널 선택 시",
+   "state_raw": "3x3 선택",
+   "state_type": "가운데 팝업",
+   "state_flags": [
+    "가운데 팝업"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "layout_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-20235"
+  },
+  {
+   "id": "11:19735",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "화면 구성(분할 수)",
+   "caption": "16채널 선택 시",
+   "state_raw": "4x4 선택",
+   "state_type": "가운데 팝업",
+   "state_flags": [
+    "가운데 팝업"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "layout_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-19735"
+  },
+  {
+   "id": "11:20175",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "화면 구성(분할 수)",
+   "caption": "4채널 선택 시",
+   "state_raw": "4채널 선택",
+   "state_type": "가운데 팝업",
+   "state_flags": [
+    "가운데 팝업"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "layout_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-20175"
+  },
+  {
+   "id": "11:20395",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "화면 구성(분할 수)",
+   "caption": "8채널 선택 시",
+   "state_raw": "9채널 선택",
+   "state_type": "가운데 팝업",
+   "state_flags": [
+    "가운데 팝업"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "layout_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-20395"
+  },
+  {
+   "id": "11:19937",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "화면 구성(분할 수)",
+   "caption": "16채널 선택 시",
+   "state_raw": "16채널 선택",
+   "state_type": "가운데 팝업",
+   "state_flags": [
+    "가운데 팝업"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "layout_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-19937"
+  },
+  {
+   "id": "11:19656",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "더보기",
+   "caption": "더보기 버튼 선택 시",
+   "state_raw": "팝업 열림",
+   "state_type": "가운데 팝업",
+   "state_flags": [
+    "가운데 팝업"
+   ],
+   "keys": [
+    "bottom_sheet"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-19656"
+  },
+  {
+   "id": "11:19118",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "날짜·시간 선택",
+   "caption": "날짜, 시간 선택",
+   "state_raw": "팝업 열림",
+   "state_type": "가운데 팝업",
+   "state_flags": [
+    "가운데 팝업"
+   ],
+   "keys": [
+    "bottom_sheet",
+    "datetime_picker"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-19118"
+  },
+  {
+   "id": "11:18278",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "재생",
+   "state_raw": "기본 속도 재생",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "video_tile",
+    "playback_panel",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-18278"
+  },
+  {
+   "id": "11:18628",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "일시정지",
+   "state_raw": "일시정지",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "video_tile",
+    "playback_panel",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-18628"
+  },
+  {
+   "id": "11:18348",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "2배속으로 빨리감기",
+   "state_raw": "2배속 빨리감기",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "video_tile",
+    "playback_panel",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-18348"
+  },
+  {
+   "id": "11:18698",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "4배속으로 빨리감기",
+   "state_raw": "4배속 빨리감기",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "video_tile",
+    "playback_panel",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-18698"
+  },
+  {
+   "id": "11:18838",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "8배속으로 빨리감기",
+   "state_raw": "8배속 빨리감기",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "video_tile",
+    "playback_panel",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-18838"
+  },
+  {
+   "id": "11:18978",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "16배속으로 빨리감기",
+   "state_raw": "16배속 빨리감기",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "video_tile",
+    "playback_panel",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-18978"
+  },
+  {
+   "id": "11:18418",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "2배속으로 되감기",
+   "state_raw": "2배속 되감기",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "video_tile",
+    "playback_panel",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-18418"
+  },
+  {
+   "id": "11:18768",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "4배속으로 되감기",
+   "state_raw": "4배속 되감기",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "video_tile",
+    "playback_panel",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-18768"
+  },
+  {
+   "id": "11:18908",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "8배속으로 되감기",
+   "state_raw": "8배속 되감기",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "video_tile",
+    "playback_panel",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-18908"
+  },
+  {
+   "id": "11:19048",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "16배속으로 되감기",
+   "state_raw": "16배속 되감기",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "video_tile",
+    "playback_panel",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-19048"
+  },
+  {
+   "id": "11:18488",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "30초 앞으로, 뒤로",
+   "state_raw": "30초 앞으로",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "video_tile",
+    "playback_panel",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-18488"
+  },
+  {
+   "id": "11:18558",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "영상 컨트롤(재생·배속)",
+   "caption": "30초 뒤로",
+   "state_raw": "30초 뒤로",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "video_tile",
+    "playback_panel",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-18558"
+  },
+  {
+   "id": "11:19586",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "화면 캡쳐",
+   "caption": "화면 캡쳐 완료 시",
+   "state_raw": "완료",
+   "state_type": "토스트",
+   "state_flags": [
+    "토스트"
+   ],
+   "keys": [
+    "mode_badge",
+    "playback_panel",
+    "time_pill",
+    "round_button",
+    "toast"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-19586"
+  },
+  {
+   "id": "11:19430",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "SVMS 레이아웃 리스트",
+   "caption": "SVMS 카메라 목록 버튼",
+   "state_raw": "딤",
+   "state_type": "버튼 뜬 상태(딤)",
+   "state_flags": [
+    "버튼 뜬 상태(딤)"
+   ],
+   "keys": [
+    "mode_badge",
+    "playback_panel",
+    "timeline",
+    "time_pill",
+    "round_button"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-19430"
+  },
+  {
+   "id": "11:19498",
+   "view": "녹화영상·확대(다채널)",
+   "shape": "가로 확대 · 다채널",
+   "platform": "common",
+   "feature": "SVMS 레이아웃 리스트",
+   "caption": "버튼 선택 시",
+   "state_raw": "팝업 열림",
+   "state_type": "가운데 팝업",
+   "state_flags": [
+    "가운데 팝업"
+   ],
+   "keys": [
+    "bottom_sheet"
+   ],
+   "figma_link": "https://www.figma.com/design/PYnxdzOnjfmLV69sgQPseQ/?node-id=11-19498"
+  }
+ ],
+ "needs_review": [
+  {
+   "item": "Figma 부품 기록으로 유형별 다시 세기",
+   "reason": "Figma 앱에 이 파일이 열려 있지 않아 화면별 부품 이름을 받지 못함. 지금 표의 숫자는 눈으로 적은 기록만으로 셈"
+  },
+  {
+   "item": "대표 화면 스크린샷 대조",
+   "reason": "같은 이유로 스크린샷을 찍지 못함"
+  },
+  {
+   "item": "가로 확대 화면의 바탕 부품 수",
+   "reason": "가로 화면 129개 중 영상 칸이 적힌 화면이 61개뿐. 시트·패널·재생 화면은 바탕에 깔린 영상 칸·버튼을 적지 않은 경우가 많아 실제보다 적게 잡혔을 가능성이 큼"
+  },
+  {
+   "item": "세로 화면의 헤더·칩·탭바 누락",
+   "reason": "Figma 기록은 세로 141화면 모두에 헤더·칩·탭바가 있다고 셈(전체 합계). 눈으로 적은 기록은 헤더 119·칩 113·탭바 109. 대부분 시트가 덮은 날짜·화면 구성 화면에서 빠짐"
+  },
+  {
+   "item": "\"더보기\" 버튼의 소속",
+   "reason": "상단 아이콘 줄(모드 배지+툴바)로 셈. 가로 하단 줄에 있는 경우도 있을 수 있음"
+  },
+  {
+   "item": "대표 상태 하나로 나누기",
+   "reason": "한 화면에 여러 상태가 겹치면(예: 패널 안 빈 화면) 덮는 쪽을 대표로 잡음. 겹친 상태는 state_flags에 모두 남김"
+  }
+ ]
+}
