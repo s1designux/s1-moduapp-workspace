@@ -1,0 +1,898 @@
+{
+ "meta": {
+  "title": "모두앱 부품 기준 세트(현재 화면 추출본)",
+  "made_at": "2026-10-21",
+  "source": "2026-10-21 Figma 사본(SW-UX-GUIDE-V3.0-TEST · cysG5U1udpQqVagYY1hWHW · 80:16699)",
+  "scope": "모두앱 영상 탭 화면에서 쓰인 값. 다른 탭(홈 등)은 아직 보지 않음",
+  "rule": "모두앱 새 화면은 이 기준을 따른다. 최신 디자인 기준(S-1 디자인가이드·SW-UX-GUIDE-V3.0)을 적용하지 않는다 (river 2026-10-21)",
+  "method": "부품별 대표 노드 약 40곳에서 Figma 변수(get_variable_defs)와 실제 스타일(get_design_context)을 읽음. 값은 그 노드의 값 그대로",
+  "caution": "추출한 파일은 새 가이드 시험용 사본이다. 구조·크기는 원본과 같음을 확인했지만, 색이 원본과 같은지는 원본 파일로 대조하지 않았다"
+ },
+ "foundation": {
+  "font": "Pretendard (Regular 400 · Medium 500 · Bold 700)",
+  "colors": [
+   {
+    "key": "accent",
+    "use": "강조 파랑 — 선택 칩·기본 버튼·탭 선택·활성 탭바 글자·선택 테두리",
+    "value": "#1D6CEB",
+    "figma_variable": "color/button/bg/primary--default · color/text/state/accent · Primary/normal(옛 이름)",
+    "evidence": "2805:19343 · 2805:19302"
+   },
+   {
+    "key": "title",
+    "use": "제목 글자 — 시트 제목·목록 제목",
+    "value": "#000000",
+    "figma_variable": "color/text/title/primary · Font/Title(옛 이름)",
+    "evidence": "2805:19302 · 2805:17082"
+   },
+   {
+    "key": "text-strong",
+    "use": "현장명 글자",
+    "value": "#202020",
+    "figma_variable": "color/text/body/primary",
+    "evidence": "2805:19335"
+   },
+   {
+    "key": "text-body",
+    "use": "본문·보조 버튼 글자·진한 아이콘",
+    "value": "#353535",
+    "figma_variable": "color/button/label/secondary--default · color/icon/gray-dark",
+    "evidence": "2805:18592"
+   },
+   {
+    "key": "text-sub",
+    "use": "보조 글자 — PTZ 이름·탭 기본 글자",
+    "value": "#555555",
+    "figma_variable": "color/text/body/secondary · color/navigation/label/default",
+    "evidence": "2805:19667 · 2805:18597"
+   },
+   {
+    "key": "text-caption",
+    "use": "설명 글자 — 고르지 않은 분할 이름",
+    "value": "#757575",
+    "figma_variable": "color/text/state/caption",
+    "evidence": "2805:29774"
+   },
+   {
+    "key": "text-inactive",
+    "use": "꺼진 글자 — 미선택 칩·탭바 글자·기록 일시",
+    "value": "#7F7F7F",
+    "figma_variable": "Font/Tabmenu(옛 이름) · 대부분 값만 직접",
+    "evidence": "2805:19344 · 2805:19381 · 2805:17256"
+   },
+   {
+    "key": "text-helper",
+    "use": "시간바 눈금 글자 · 영상 없는 칸 바탕",
+    "value": "#9D9D9D",
+    "figma_variable": "color/text/state/helper · gray/400",
+    "evidence": "2805:28943 · 2805:16746"
+   },
+   {
+    "key": "text-faint",
+    "use": "현장 아래 줄(지점·고객번호)",
+    "value": "#BFBFBF",
+    "figma_variable": null,
+    "evidence": "2805:19335"
+   },
+   {
+    "key": "disabled",
+    "use": "흐린 글자·밝은 아이콘·휠 위아래 값·움직임 감지 꺼진 탭",
+    "value": "#C4C4C4",
+    "figma_variable": "color/icon/gray-light · color/chip/solid/label/disabled · gray/300",
+    "evidence": "2805:19302 · 2805:34335"
+   },
+   {
+    "key": "border",
+    "use": "보조 버튼·분할 카드 테두리·탭 기본 밑줄",
+    "value": "#D9D9D9",
+    "figma_variable": "color/button/border/secondary--default",
+    "evidence": "2805:28943"
+   },
+   {
+    "key": "border-legacy",
+    "use": "체크박스 테두리",
+    "value": "#DCDCDC",
+    "figma_variable": "box/Border_normal(옛 이름)",
+    "evidence": "2805:17522"
+   },
+   {
+    "key": "line",
+    "use": "구분선·목록 제목 윗줄·분할 카드 빈 칸·슬라이더 바탕",
+    "value": "#E9E9E9",
+    "figma_variable": "color/table/border/default · color/control/bg/disabled · gray/100",
+    "evidence": "2805:19350 · 2805:29888"
+   },
+   {
+    "key": "fill-soft",
+    "use": "미선택 칩 바탕·PTZ 확대 막대 바탕",
+    "value": "#F2F2F2",
+    "figma_variable": "box/BG_disabled(옛 이름) · 값만 직접",
+    "evidence": "2805:19344 · 2805:19667"
+   },
+   {
+    "key": "fill-disabled",
+    "use": "꺼진 버튼 바탕",
+    "value": "#F5F5F5",
+    "figma_variable": "color/button/bg/disabled",
+    "evidence": "페이지 변수"
+   },
+   {
+    "key": "range",
+    "use": "달력 — 녹화 있는 날 바탕",
+    "value": "#E2F1FF",
+    "figma_variable": "color/date-picker/cell/bg/range",
+    "evidence": "2805:18592"
+   },
+   {
+    "key": "live",
+    "use": "실시간 배지 빨간 점",
+    "value": "#E50533",
+    "figma_variable": "red/400",
+    "evidence": "2805:19348"
+   },
+   {
+    "key": "warning-band",
+    "use": "수신 불량 띠(투명도 50%)",
+    "value": "#F22544",
+    "figma_variable": "red/350",
+    "evidence": "2805:16650"
+   },
+   {
+    "key": "event-dot",
+    "use": "시간바 이벤트 점",
+    "value": "#FF954E",
+    "figma_variable": "orange/250",
+    "evidence": "2805:28943"
+   },
+   {
+    "key": "white",
+    "use": "바탕·영상 위 글자·아이콘",
+    "value": "#FFFFFF",
+    "figma_variable": "base/white · surface/neutral/bg/base · etc/White(옛 이름)",
+    "evidence": "-"
+   },
+   {
+    "key": "overlay",
+    "use": "영상 위 알약·원형 버튼·이름표 바탕, 시트 뒤 덮개",
+    "value": "rgba(0,0,0,0.5)",
+    "figma_variable": "color/overlay",
+    "evidence": "2805:19349 · 2805:17082"
+   },
+   {
+    "key": "dim-gradient",
+    "use": "딤 위·아래 그라데이션",
+    "value": "rgba(0,0,0,0.8) → 0",
+    "figma_variable": null,
+    "evidence": "2805:19348"
+   },
+   {
+    "key": "toast",
+    "use": "토스트 바탕",
+    "value": "rgba(34,34,34,0.9)",
+    "figma_variable": null,
+    "evidence": "2805:18181"
+   }
+  ],
+  "type": [
+   {
+    "key": "display-24B",
+    "use": "달력 년·월(2025.01)",
+    "spec": "24 · Bold · 1.3 · 0",
+    "figma_style": "title/24B"
+   },
+   {
+    "key": "sheet-title-20B",
+    "use": "시트·팝업 제목",
+    "spec": "20 · Bold · 1.3 · 0 (옛 시트는 줄높이 1.0)",
+    "figma_style": "title/20B"
+   },
+   {
+    "key": "wheel-20M",
+    "use": "시·분 휠 값",
+    "spec": "20 · Medium · 1.3",
+    "figma_style": "값만 직접"
+   },
+   {
+    "key": "site-18B",
+    "use": "현장명",
+    "spec": "18 · Bold · 1.3 · -0.36",
+    "figma_style": "값만 직접"
+   },
+   {
+    "key": "picked-18B",
+    "use": "고른 날짜·시각 한 줄",
+    "spec": "18 · Bold · 1.3 · -0.36",
+    "figma_style": "값만 직접"
+   },
+   {
+    "key": "section-16B",
+    "use": "목록 제목(카메라 목록)·선택 탭",
+    "spec": "16 · Bold · 1.3 · 0",
+    "figma_style": "title/16B"
+   },
+   {
+    "key": "label-16M",
+    "use": "버튼 글자·기본 탭·토스트",
+    "spec": "16 · Medium · 1.3 · -0.32",
+    "figma_style": "component/button/label/16M · title/16M · body/16M"
+   },
+   {
+    "key": "list-16R",
+    "use": "목록 줄(더보기·PTZ 속도·이벤트 종류)",
+    "spec": "16 · Regular · normal",
+    "figma_style": "값만 직접"
+   },
+   {
+    "key": "chip-14M",
+    "use": "칩·시각 알약·모드 배지·분할 이름·PTZ 이름",
+    "spec": "14 · Medium · 1.3 · -0.28",
+    "figma_style": "body/14M"
+   },
+   {
+    "key": "chip-14B",
+    "use": "고른 슬라이더 값",
+    "spec": "14 · Bold · 1.3",
+    "figma_style": "title/14B"
+   },
+   {
+    "key": "meta-14R",
+    "use": "기록 일시",
+    "spec": "14 · Regular · 1.3",
+    "figma_style": "값만 직접"
+   },
+   {
+    "key": "tab-12M",
+    "use": "하단 탭바 글자",
+    "spec": "12 · Medium · normal · -0.5",
+    "figma_style": "값만 직접"
+   },
+   {
+    "key": "notice-12M",
+    "use": "수신 불량 띠 글자",
+    "spec": "12 · Medium · 1.3 · 0",
+    "figma_style": "body/12M"
+   },
+   {
+    "key": "badge-12B",
+    "use": "이벤트 종류 칩(움직임)",
+    "spec": "12 · Bold · 1.0",
+    "figma_style": "값만 직접"
+   },
+   {
+    "key": "sub-12R",
+    "use": "현장 아래 줄",
+    "spec": "12 · Regular · 1.3 · 0",
+    "figma_style": "body/12R"
+   },
+   {
+    "key": "cam-10M",
+    "use": "카메라 이름표",
+    "spec": "10 · Medium · 1.4 · +0.2",
+    "figma_style": "body/10M"
+   },
+   {
+    "key": "tick-10R",
+    "use": "시간바 눈금",
+    "spec": "10 · Regular · 1.4 · +0.2",
+    "figma_style": "body/10R"
+   }
+  ],
+  "radius": [
+   {
+    "value": "2",
+    "use": "체크박스"
+   },
+   {
+    "value": "3",
+    "use": "카메라 이름표"
+   },
+   {
+    "value": "4",
+    "use": "버튼·썸네일·가로 분할 카드"
+   },
+   {
+    "value": "5.5",
+    "use": "세로 분할 카드"
+   },
+   {
+    "value": "8",
+    "use": "입력형 시트 위 모서리·슬라이더 막대"
+   },
+   {
+    "value": "10",
+    "use": "목록형(옛) 시트 위 모서리·이벤트 칩"
+   },
+   {
+    "value": "28",
+    "use": "시각 알약·모드 배지·토스트"
+   },
+   {
+    "value": "40",
+    "use": "영상 위·재생 원형 버튼·가로 시각 칩·PTZ 막대"
+   },
+   {
+    "value": "999",
+    "use": "실시간/녹화 칩(옛 칩은 100)"
+   }
+  ],
+  "spacing": [
+   {
+    "value": "20",
+    "use": "화면 좌우 여백 · 시트 안 좌우 · 시트 위아래 · 시트 안 덩어리 간격",
+    "figma_variable": "spacing/padding/inline/md · spacing/padding/block/md · spacing/section/sm"
+   },
+   {
+    "value": "24",
+    "use": "날짜/시간 탭 줄 좌우 · 옛 시트 제목 줄 위아래",
+    "figma_variable": "spacing/padding/inline/lg"
+   },
+   {
+    "value": "16",
+    "use": "버튼 안 좌우 · 토스트 좌우",
+    "figma_variable": "spacing/padding/inline/sm"
+   },
+   {
+    "value": "18",
+    "use": "옛 목록 줄 위아래(줄 높이 약 55)",
+    "figma_variable": "값만 직접"
+   },
+   {
+    "value": "12",
+    "use": "칩·알약 안 좌우 · 딤 위 아이콘 간격",
+    "figma_variable": "값만 직접"
+   },
+   {
+    "value": "8",
+    "use": "시각 줄·목록 제목 줄 위아래 · 원형 버튼 간격",
+    "figma_variable": "값만 직접"
+   },
+   {
+    "value": "4",
+    "use": "칩 사이 · 썸네일 안 여백",
+    "figma_variable": "spacing/4"
+   }
+  ],
+  "effects": [
+   {
+    "name": "딤 위 아이콘 그림자",
+    "spec": "drop-shadow 0 0 2 rgba(0,0,0,0.5)",
+    "evidence": "2805:19348"
+   },
+   {
+    "name": "가로 재생 버튼 아이콘 그림자",
+    "spec": "drop-shadow 0 0 5 rgba(0,0,0,0.5)",
+    "evidence": "2805:23709"
+   },
+   {
+    "name": "가로 시각 칩 글자 그림자",
+    "spec": "text-shadow 0 0 4 rgba(0,0,0,0.5)",
+    "evidence": "2805:23714"
+   },
+   {
+    "name": "선택된 썸네일 덮개",
+    "spec": "영상 위 rgba(0,0,0,0.5) + 가운데 재생 중 아이콘 24",
+    "evidence": "2805:19256"
+   }
+  ],
+  "icon_sizes": [
+   {
+    "size": "24",
+    "use": "일반 UI 아이콘(닫기·체크·화살표·세로 재생 버튼)"
+   },
+   {
+    "size": "28",
+    "use": "딤 위 툴바·원형 버튼 아이콘"
+   },
+   {
+    "size": "30",
+    "use": "가로 재생 버튼 아이콘"
+   },
+   {
+    "size": "32",
+    "use": "하단 탭바"
+   },
+   {
+    "size": "36",
+    "use": "신호 없음 아이콘"
+   },
+   {
+    "size": "64",
+    "use": "빈 목록 그림"
+   },
+   {
+    "size": "156",
+    "use": "PTZ 방향 패드"
+   }
+  ]
+ },
+ "components": [
+  {
+   "key": "button",
+   "name": "버튼",
+   "maps_to": "bottom_sheet",
+   "parts": [
+    {
+     "part": "기본(채움)",
+     "spec": "높이 48 · 모서리 4 · 바탕 강조 파랑 · 테두리 1 같은 색 · 글자 label-16M 흰색 · 좌우 16 · 최소 폭 80"
+    },
+    {
+     "part": "보조(테두리)",
+     "spec": "높이 48 · 바탕 흰색 · 테두리 1 #D9D9D9 · 글자 #353535"
+    },
+    {
+     "part": "꺼짐",
+     "spec": "바탕 #F5F5F5 · 테두리 #D9D9D9"
+    },
+    {
+     "part": "두 개일 때",
+     "spec": "[취소(보조)] [확인·시간 선택(기본)] 반씩"
+    }
+   ],
+   "versions": [
+    {
+     "name": "새 버튼 mobile_button",
+     "spec": "높이 48 · 글자 줄높이 1.3 · 변수로 묶임",
+     "evidence": "2805:19330"
+    },
+    {
+     "name": "옛 버튼 m_button",
+     "spec": "높이 50 · 글자 줄높이 1.0 · 값만 직접",
+     "evidence": "2805:17556"
+    }
+   ],
+   "evidence": "2805:19302 · 2805:17522"
+  },
+  {
+   "key": "chip",
+   "name": "실시간/녹화영상 칩",
+   "maps_to": "mode_chip",
+   "parts": [
+    {
+     "part": "선택",
+     "spec": "높이 30 · 좌우 12 · 모서리 999 · 바탕·테두리 강조 파랑 · 글자 chip-14M 흰색"
+    },
+    {
+     "part": "미선택",
+     "spec": "위아래 8 · 좌우 16 · 모서리 100 · 바탕 #F2F2F2 · 글자 14 Medium #7F7F7F 줄높이 1.0"
+    },
+    {
+     "part": "배치",
+     "spec": "헤더 줄 오른쪽, 칩 사이 4"
+    }
+   ],
+   "versions": [
+    {
+     "name": "선택 칩 Chip",
+     "spec": "새 칩 변수(color/chip/solid/...)",
+     "evidence": "2805:19343"
+    },
+    {
+     "name": "미선택 칩 m_chips",
+     "spec": "옛 이름(box/BG_disabled · Font/Tabmenu)",
+     "evidence": "2805:19344"
+    }
+   ],
+   "evidence": "2805:19335"
+  },
+  {
+   "key": "header",
+   "name": "상단 현장 헤더",
+   "maps_to": "app_header",
+   "parts": [
+    {
+     "part": "줄",
+     "spec": "높이 56 · 좌우 20 · 위 StatusBar 27 + 여백 16"
+    },
+    {
+     "part": "현장명",
+     "spec": "site-18B #202020 + 아래 화살표(More 24, 90도 돌림)"
+    },
+    {
+     "part": "아래 줄",
+     "spec": "sub-12R #BFBFBF \"지점ㆍ고객번호\""
+    }
+   ],
+   "versions": [],
+   "evidence": "2805:19335"
+  },
+  {
+   "key": "tabbar",
+   "name": "하단 탭바",
+   "maps_to": "tabbar",
+   "parts": [
+    {
+     "part": "줄",
+     "spec": "높이 60 · 흰 바탕 · 4칸 균등"
+    },
+    {
+     "part": "아이콘",
+     "spec": "32 · 꺼짐 #C4C4C4 / 켜짐 강조 파랑"
+    },
+    {
+     "part": "글자",
+     "spec": "tab-12M · 꺼짐 #7F7F7F / 켜짐 강조 파랑"
+    },
+    {
+     "part": "아래",
+     "spec": "안드로이드 내비게이션 바 48"
+    }
+   ],
+   "versions": [],
+   "evidence": "2805:19381"
+  },
+  {
+   "key": "time_row",
+   "name": "시각 줄 · 시각 알약",
+   "maps_to": "time_pill",
+   "parts": [
+    {
+     "part": "줄",
+     "spec": "높이 44 · 좌우 20 · 위아래 8 · 흰 바탕"
+    },
+    {
+     "part": "알약",
+     "spec": "높이 28 · 좌우 12 · 위아래 4 · 모서리 28 · 바탕 overlay · 글자 chip-14M 흰색"
+    },
+    {
+     "part": "양옆 버튼",
+     "spec": "28 원 · 흰 바탕 · 테두리 0.875 #C4C4C4 · 아이콘 24(캡쳐 / 녹화는 왼쪽 달력)"
+    },
+    {
+     "part": "가로 시각 칩",
+     "spec": "모서리 40 · 좌우 12 · 위아래 5 · 글자 그림자"
+    }
+   ],
+   "versions": [],
+   "evidence": "2805:19349 · 2805:23714"
+  },
+  {
+   "key": "badge",
+   "name": "모드 배지(딤 위)",
+   "maps_to": "mode_badge",
+   "parts": [
+    {
+     "part": "알약",
+     "spec": "높이 28 · 좌우 12 · 위아래 5 · 모서리 28 · 바탕 overlay"
+    },
+    {
+     "part": "점",
+     "spec": "6 · 실시간은 빨강 #E50533"
+    },
+    {
+     "part": "글자",
+     "spec": "chip-14M 흰색 \"실시간\"/\"녹화영상\", 점과 간격 4"
+    },
+    {
+     "part": "오른쪽 아이콘 줄",
+     "spec": "아이콘 28 · 간격 12 · 그림자"
+    }
+   ],
+   "versions": [],
+   "evidence": "2805:19348"
+  },
+  {
+   "key": "dim",
+   "name": "딤(조작 버튼 덮개)",
+   "maps_to": "dim_overlay",
+   "parts": [
+    {
+     "part": "위 띠",
+     "spec": "높이 80 · 위 12 · 아래 32 · 좌우 20 · 그라데이션 0.8 → 0"
+    },
+    {
+     "part": "아래 띠",
+     "spec": "위 28 · 아래 12 · 좌우 20 · 그라데이션 0 → 0.8 (가로는 높이 120)"
+    },
+    {
+     "part": "원형 버튼",
+     "spec": "40 원 · 바탕 overlay · 아이콘 28 그림자 · 간격 8"
+    },
+    {
+     "part": "가로 아래 줄",
+     "spec": "왼쪽 메뉴·움직임 감지·달력·캡쳐 / 가운데 시각 칩 / 오른쪽 축소"
+    }
+   ],
+   "versions": [],
+   "evidence": "2805:19348 · 2805:23713"
+  },
+  {
+   "key": "tile",
+   "name": "영상 칸 · 썸네일",
+   "maps_to": "video_tile",
+   "parts": [
+    {
+     "part": "이름표",
+     "spec": "왼쪽 위 · 바탕 overlay · 모서리 3 · 좌우 4 · 위아래 1 · 글자 cam-10M 흰색"
+    },
+    {
+     "part": "썸네일",
+     "spec": "156×87 · 모서리 4 · 안 여백 4 · 2열 간격 8 · 줄 간격 8"
+    },
+    {
+     "part": "선택 썸네일",
+     "spec": "테두리 2 강조 파랑 + 영상 위 overlay + 가운데 재생 중 아이콘 24"
+    },
+    {
+     "part": "영상 없는 칸",
+     "spec": "바탕 #9D9D9D"
+    }
+   ],
+   "versions": [],
+   "evidence": "2805:19256 · 2805:16746"
+  },
+  {
+   "key": "video_state",
+   "name": "영상 상태 표시",
+   "maps_to": "video_state",
+   "parts": [
+    {
+     "part": "수신 불량",
+     "spec": "칸 아래 띠 높이 20 · #F22544 투명도 50% · 글자 notice-12M 흰색"
+    },
+    {
+     "part": "신호 없음",
+     "spec": "회색 칸 + 아이콘 36 + \"신호없음\" 16 Medium 흰색 투명도 50%"
+    },
+    {
+     "part": "카메라 없음",
+     "spec": "회색 칸 + 가운데 \"에스원\" 로고(56×21)"
+    }
+   ],
+   "versions": [],
+   "evidence": "2805:16650 · 2805:16746 · 2805:16667"
+  },
+  {
+   "key": "toast",
+   "name": "토스트",
+   "maps_to": "toast",
+   "parts": [
+    {
+     "part": "모양",
+     "spec": "모서리 28 · 좌우 16 · 위아래 4 · 바탕 rgba(34,34,34,0.9) · 글자 label-16M 흰색"
+    },
+    {
+     "part": "자리",
+     "spec": "영상 아래 가운데"
+    }
+   ],
+   "versions": [],
+   "evidence": "2805:18181 · 2805:20244"
+  },
+  {
+   "key": "playback",
+   "name": "재생 컨트롤 · 시간바",
+   "maps_to": "playback_panel",
+   "parts": [
+    {
+     "part": "세로 줄",
+     "spec": "높이 56 · 버튼 간격 20 · 위아래 구분선 1 #E9E9E9"
+    },
+    {
+     "part": "세로 버튼",
+     "spec": "40 원 · 흰 바탕 · 테두리 1 #D9D9D9 · 아이콘 24"
+    },
+    {
+     "part": "가로 버튼",
+     "spec": "50 원 · 바탕 overlay · 아이콘 30 그림자"
+    },
+    {
+     "part": "시간바",
+     "spec": "눈금 칸 70 · 눈금 글자 tick-10R #9D9D9D · 눈금 막대 #C4C4C4 · 지금 위치선 2×24 검정 모서리 2 · 이벤트 점 3 #FF954E · 양 끝 흰색 흐림 100"
+    }
+   ],
+   "versions": [],
+   "evidence": "2805:28943 · 2805:23709"
+  },
+  {
+   "key": "sheet",
+   "name": "바텀시트 · 가로 팝업",
+   "maps_to": "bottom_sheet",
+   "parts": [
+    {
+     "part": "뒤 덮개",
+     "spec": "overlay(rgba 0,0,0,0.5)"
+    },
+    {
+     "part": "가로",
+     "spec": "폭 480 · 화면 아래에 붙음(위 두 모서리만 둥금) · 가운데 정렬"
+    },
+    {
+     "part": "닫기",
+     "spec": "오른쪽 위 X 24"
+    }
+   ],
+   "versions": [
+    {
+     "name": "입력형 시트(새) mobile_*_bottomsheet",
+     "spec": "위 모서리 8 · 위아래 20 · 덩어리 간격 20 · 제목 줄 높이 26 · 제목 줄높이 1.3 · 아래 버튼 48 — 날짜·시간, 화면 구성",
+     "evidence": "2805:19302 · 2805:29774"
+    },
+    {
+     "name": "목록형 시트(옛) ptn_m_bottom sheet",
+     "spec": "위 모서리 10(이벤트 종류는 8) · 제목 줄 위아래 24 · 제목 줄높이 1.0 · 목록 줄 위아래 18 · 글자 list-16R 검정 · 고른 줄 강조 파랑 + 체크 24 · 아래 16 — 더보기, PTZ 속도, 레이아웃 리스트, 이벤트 종류",
+     "evidence": "2805:17082 · 2805:19883 · 2805:17522"
+    }
+   ],
+   "evidence": "2805:19302 · 2805:17082"
+  },
+  {
+   "key": "tabs",
+   "name": "탭(날짜/시간)",
+   "maps_to": "datetime_picker",
+   "parts": [
+    {
+     "part": "줄",
+     "spec": "좌우 24 · 두 칸 균등 · 칸 높이 30 + 밑줄 2"
+    },
+    {
+     "part": "선택",
+     "spec": "section-16B 강조 파랑 + 밑줄 2 강조 파랑"
+    },
+    {
+     "part": "기본",
+     "spec": "label-16M #555555 + 밑줄 1 #D9D9D9"
+    }
+   ],
+   "versions": [],
+   "evidence": "2805:18597"
+  },
+  {
+   "key": "calendar",
+   "name": "달력 · 시간 휠",
+   "maps_to": "datetime_picker",
+   "parts": [
+    {
+     "part": "년·월",
+     "spec": "display-24B + 좌우 화살표 20"
+    },
+    {
+     "part": "날짜 칸",
+     "spec": "44 · 동그라미(999)"
+    },
+    {
+     "part": "상태",
+     "spec": "고른 날 강조 파랑 채움·흰 글자 / 오늘 파랑 테두리·파랑 글자 / 녹화 있는 날 #E2F1FF / 지난 달·다음 달 #C4C4C4"
+    },
+    {
+     "part": "휠",
+     "spec": "wheel-20M · 고른 줄 강조 파랑 · 위아래 #C4C4C4 · 고른 줄 위아래 구분선 · 위아래 흰색 흐림"
+    }
+   ],
+   "versions": [],
+   "evidence": "2805:18592 · 2805:19302"
+  },
+  {
+   "key": "layout_picker",
+   "name": "분할 고르기",
+   "maps_to": "layout_picker",
+   "parts": [
+    {
+     "part": "그림 카드(세로)",
+     "spec": "약 52×71 · 테두리 1.8 · 모서리 5.5 · 카드 간격 40 · 이름 chip-14M"
+    },
+    {
+     "part": "그림 카드(가로)",
+     "spec": "52×40 · 테두리 1.33 · 모서리 4"
+    },
+    {
+     "part": "상태",
+     "spec": "고른 카드 테두리·칸 강조 파랑, 이름 파랑 / 나머지 테두리 #D9D9D9·칸 #E9E9E9, 이름 #757575"
+    },
+    {
+     "part": "슬라이더",
+     "spec": "막대 높이 6 · 모서리 8 · 바탕 #E9E9E9 · 채움 강조 파랑 · 손잡이 20 흰색 테두리 #C4C4C4 · 값 이름 chip-14B 파랑 / 14M #757575"
+    }
+   ],
+   "versions": [],
+   "evidence": "2805:29774 · 2805:29888 · 2805:22577"
+  },
+  {
+   "key": "list_header",
+   "name": "목록 제목줄",
+   "maps_to": "camera_list",
+   "parts": [
+    {
+     "part": "세로",
+     "spec": "좌우 20 · 위아래 8 · 위 테두리 1 #E9E9E9 · 글자 section-16B 검정"
+    },
+    {
+     "part": "탭형(가로 패널)",
+     "spec": "\"카메라 목록\" 16B 검정 + \"움직임 감지\" 16M #C4C4C4 · 간격 12 · 오른쪽 X 24"
+    }
+   ],
+   "versions": [],
+   "evidence": "2805:19350 · 2805:34335"
+  },
+  {
+   "key": "event_row",
+   "name": "감지·이벤트 기록 줄",
+   "maps_to": "camera_list",
+   "parts": [
+    {
+     "part": "종류 칩",
+     "spec": "바탕 #1D6CEB · 모서리 10 · 좌우 7 · 위아래 4 · 글자 badge-12B 흰색"
+    },
+    {
+     "part": "일시",
+     "spec": "meta-14R #7F7F7F · 칩과 간격 3"
+    },
+    {
+     "part": "고른 줄",
+     "spec": "오른쪽 체크 24"
+    }
+   ],
+   "versions": [],
+   "evidence": "2805:17256"
+  },
+  {
+   "key": "checkbox",
+   "name": "체크박스",
+   "maps_to": "svms_panel",
+   "parts": [
+    {
+     "part": "모양",
+     "spec": "18 · 모서리 2 · 테두리 1 #DCDCDC · 흰 바탕 / 체크 켜짐은 파랑 그림"
+    },
+    {
+     "part": "줄",
+     "spec": "높이 55 · 좌우 20 · 글자와 간격 8 · list-16R"
+    }
+   ],
+   "versions": [],
+   "evidence": "2805:17522"
+  },
+  {
+   "key": "ptz",
+   "name": "PTZ 조종판",
+   "maps_to": "ptz_pad",
+   "parts": [
+    {
+     "part": "방향 패드",
+     "spec": "156 원 그림 · 아래 이름 chip-14M #555555"
+    },
+    {
+     "part": "확대/축소 막대",
+     "spec": "52×156 · 모서리 40 · 바탕 #F2F2F2 · +/− 24"
+    },
+    {
+     "part": "배치",
+     "spec": "두 덩어리 간격 70 · 흰 바탕"
+    }
+   ],
+   "versions": [],
+   "evidence": "2805:19667"
+  }
+ ],
+ "mixed_versions": [
+  {
+   "what": "버튼 높이",
+   "detail": "새 버튼 48 / 옛 버튼 50",
+   "note": "이벤트 종류 시트만 옛 버튼"
+  },
+  {
+   "what": "시트 모양",
+   "detail": "입력형 시트 모서리 8·제목 줄 26 / 목록형 시트 모서리 10·제목 줄 위아래 24",
+   "note": "같은 화면 안에서 시트를 열 때마다 모양이 다름"
+  },
+  {
+   "what": "실시간/녹화 칩",
+   "detail": "선택 칩은 새 칩(높이 30, 999) / 미선택 칩은 옛 칩(위아래 8, 100)",
+   "note": "한 쌍의 칩이 서로 다른 부품"
+  },
+  {
+   "what": "변수 이름 두 벌",
+   "detail": "새 이름(color/button/... · spacing/...) / 옛 이름(Primary/normal · Font/Title · box/... · etc/White)",
+   "note": "값은 같은 것이 많음(#1D6CEB 등)"
+  },
+  {
+   "what": "같은 이름 다른 값",
+   "detail": "'color/text/body/primary' = #202020(헤더) / #353535(달력·패널), 'color/text/body/secondary' = #353535 / #555555(PTZ)",
+   "note": "같은 변수 이름이 두 값을 가짐 — 변수 모음이 둘일 가능성"
+  },
+  {
+   "what": "직접 넣은 값",
+   "detail": "현장명 18B, 현장 아래 줄 #BFBFBF, 탭바 글자 #7F7F7F, 토스트 바탕, 딤 그라데이션",
+   "note": "변수로 묶이지 않음"
+  }
+ ]
+}
