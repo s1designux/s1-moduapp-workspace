@@ -6,3 +6,7 @@
 
 - 사본 노드 번호 = 원본 번호 + 2461 (270화면 모두 확인).
 - 대표 화면 그림은 `outputs/moduapp/service-video/images/screen-types/`에 있다(사본에서 찍은 스크린샷).
+
+## 맥락별 부품 조합 (2026-10-21)
+4. `python3 context_build.py` → `outputs/moduapp/service-video/video-v2-context-components.json/html`
+- 맥락 나누기·자리·다른 곳 글은 `context_spec.py`에 직접 적어 둠(스크린샷 대조 근거). 흐름 그림은 `images/contexts/`(없으면 `images/screen-types/`)에서 찾는다.
