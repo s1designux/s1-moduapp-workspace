@@ -4,7 +4,12 @@
   "version": "0.3.0",
   "status": "owner-confirmed",
   "owner_clarifications_2026-05-27": {
-    "core_services": ["경비(시스템경비)", "영상", "카드", "마이에스원(계약/청구/입금)"],
+    "core_services": [
+      "경비(시스템경비)",
+      "영상",
+      "카드",
+      "마이에스원(계약/청구/입금)"
+    ],
     "note": "담당자 기준 '서비스'는 위 4종. 홈·통합계정·공통·설정은 앱 셸이고, 고객센터는 지원/소통 영역(핵심 서비스 아님). 앞서 '9개 서비스'는 서비스가 아니라 보드 섹션(메뉴) 단위였음.",
     "users_are_all_admins": "모두앱 사용자는 전원 관리자(마스터관리자/일반관리자). 일반 end-user 개념 없음. 상세: permission-matrix.json"
   },
@@ -18,21 +23,115 @@
   "app_shell": {
     "description": "어느 단일 서비스에도 속하지 않는 공통/허브 영역 (Layer 0)",
     "areas": [
-      { "id": "SHELL-home", "name": "홈", "note": "통합 홈(대시보드). 시스템경비 제어·영상 최근기기·카드 신청현황을 표면화하는 멀티서비스 진입점. 노출은 서비스×권한으로 분기. 상세: outputs/moduapp/app-shell/home-screen-analysis.json", "screen_count": 13, "status": "analyzed" },
-      { "id": "SHELL-account", "name": "통합계정", "note": "로그인·계정·인증·권한 영역. 블록: 로그인/계정 규정 → 로그인 → 간편인증(PIN/지문) → 회원가입 → 내정보 → 권한. '권한' 블록에 사용자 권한관리(RBAC) 존재 확인. 상세: outputs/moduapp/app-shell/account-screen-analysis.json", "status": "analyzed" },
-      { "id": "SHELL-common", "name": "공통", "note": "공통 화면/네비게이션. 블록: 전체메뉴·알림·추가 인증·기타 공통화면·Error 페이지·공통 Navigation·우편번호 검색. 상세: outputs/moduapp/app-shell/common-screen-analysis.json", "status": "analyzed" },
-      { "id": "SHELL-settings", "name": "설정", "note": "앱 설정", "status": "confirmed-label" }
+      {
+        "id": "SHELL-home",
+        "name": "홈",
+        "note": "통합 홈(대시보드). 시스템경비 제어·영상 최근기기·카드 신청현황을 표면화하는 멀티서비스 진입점. 노출은 서비스×권한으로 분기. 상세: outputs/moduapp/app-shell/home-screen-analysis.json",
+        "screen_count": 13,
+        "status": "analyzed"
+      },
+      {
+        "id": "SHELL-account",
+        "name": "통합계정",
+        "note": "로그인·계정·인증·권한 영역. 블록: 로그인/계정 규정 → 로그인 → 간편인증(PIN/지문) → 회원가입 → 내정보 → 권한. '권한' 블록에 사용자 권한관리(RBAC) 존재 확인. 상세: outputs/moduapp/app-shell/account-screen-analysis.json",
+        "status": "analyzed"
+      },
+      {
+        "id": "SHELL-common",
+        "name": "공통",
+        "note": "공통 화면/네비게이션. 블록: 전체메뉴·알림·추가 인증·기타 공통화면·Error 페이지·공통 Navigation·우편번호 검색. 상세: outputs/moduapp/app-shell/common-screen-analysis.json",
+        "status": "analyzed"
+      },
+      {
+        "id": "SHELL-settings",
+        "name": "설정",
+        "note": "앱 설정",
+        "status": "confirmed-label"
+      }
     ]
   },
   "services": [
-    { "id": "SVC-guard", "name": "시스템경비", "output_folder": "outputs/moduapp/service-guard/", "blocks": ["시스템 경비(메인 제어)", "서비스 현황", "모바일보고서(구 출동보고서)", "경비/해제 이력", "긴급연락처", "경비/해제 이력 팝업"], "note": "경비 설정/해제 제어가 핵심. 제어는 권한 보유자만. 상세: outputs/moduapp/service-guard/system-guard-screen-analysis.json", "status": "analyzed" },
-    { "id":  "SVC-video", "name":  "영상", "output_folder":  "outputs/moduapp/service-video/", "blocks":  ["실시간 보기(단일·다채널)", "녹화영상 보기(날짜·시간 선택 · 재생·배속·30초 이동)", "화면 구성·화면 비율·페이지 넘김(다채널)", "핀치 확대 · 화면 캡쳐", "카메라 목록 · 움직임 감지", "더보기(상세 설정·원격지원요청·방문점검신청)", "PTZ 원격 조종(실시간)", "SVMS 레이아웃 리스트 · 이벤트 목록(SVMS 고객)"], "views":  ["실시간·기본(세로) 단일/다채널", "실시간·확대(가로) 단일/다채널", "녹화영상·기본(세로) 단일/다채널", "녹화영상·확대(가로) 단일/다채널"], "basis":  "신규 기준 — 2026-10 Figma '모두앱 영상'(node 11:10933), NVR(녹화기) 연동 기준. 클라우드영상시스템 대응은 미포함(별도 프로젝트)", "note":  "CCTV 영상 보기. 탭바 직접 노출 핵심 서비스. 상단 칩으로 실시간 ↔ 녹화영상 전환, 확대 버튼(또는 기기 회전)으로 가로 전체화면. 상세: outputs/moduapp/service-video/video-v2-screen-analysis.json", "status":  "analyzed" },
-    { "id": "SVC-card", "name": "카드(출입카드)", "output_folder": "outputs/moduapp/service-card/", "blocks": ["카드 조회·관리", "보안(실물)카드 신청", "모바일 보안카드 발급", "모바일카드 초대·승인", "방문자 조회·관리", "방문자 모바일카드 신청 승인"], "note": "출입카드(보안/모바일/방문자) 발급·관리 = 사용자가 말한 '출입관리' 확인됨. 카드 발급/승인은 권한 부여 흐름. 상세: outputs/moduapp/service-card/card-screen-analysis.json", "status": "analyzed" },
-    { "id": "SVC-mys1", "name": "마이에스원(계약/청구/입금)", "output_folder": "outputs/moduapp/service-mys1/", "screens": [], "status": "confirmed-label" },
-    { "id": "SVC-cs", "name": "고객센터", "output_folder": "outputs/moduapp/service-cs/", "screens": [], "status": "support-area", "note": "담당자 기준 핵심 '서비스'가 아니라 지원/소통 영역(뉴스/공지·1:1문의·자주하는질문·방문예약·자료실)" }
+    {
+      "id": "SVC-guard",
+      "name": "시스템경비",
+      "output_folder": "outputs/moduapp/service-guard/",
+      "blocks": [
+        "시스템 경비(메인 제어)",
+        "서비스 현황",
+        "모바일보고서(구 출동보고서)",
+        "경비/해제 이력",
+        "긴급연락처",
+        "경비/해제 이력 팝업"
+      ],
+      "note": "경비 설정/해제 제어가 핵심. 제어는 권한 보유자만. 상세: outputs/moduapp/service-guard/system-guard-screen-analysis.json",
+      "status": "analyzed"
+    },
+    {
+      "id": "SVC-video",
+      "name": "영상",
+      "output_folder": "outputs/moduapp/service-video/",
+      "blocks": [
+        "실시간 보기(단일·다채널)",
+        "녹화영상 보기(날짜·시간 선택 · 재생·배속·30초 이동)",
+        "화면 구성·화면 비율·페이지 넘김(다채널)",
+        "핀치 확대 · 화면 캡쳐",
+        "카메라 목록 · 움직임 감지",
+        "더보기(상세 설정·원격지원요청·방문점검신청)",
+        "PTZ 원격 조종(실시간)",
+        "SVMS 레이아웃 리스트 · 이벤트 목록(SVMS 고객)"
+      ],
+      "views": [
+        "실시간·기본(세로) 단일/다채널",
+        "실시간·확대(가로) 단일/다채널",
+        "녹화영상·기본(세로) 단일/다채널",
+        "녹화영상·확대(가로) 단일/다채널"
+      ],
+      "basis": "신규 기준 — 2026-10 Figma '모두앱 영상'(node 11:10933), NVR(녹화기) 연동 기준. 클라우드영상시스템 대응은 미포함(별도 프로젝트)",
+      "note": "CCTV 영상 보기. 탭바 직접 노출 핵심 서비스. 상단 칩으로 실시간 ↔ 녹화영상 전환, 확대 버튼(또는 기기 회전)으로 가로 전체화면. 상세: outputs/moduapp/service-video/video-v2-screen-analysis.json",
+      "status": "analyzed"
+    },
+    {
+      "id": "SVC-card",
+      "name": "카드(출입카드)",
+      "output_folder": "outputs/moduapp/service-card/",
+      "blocks": [
+        "카드 조회·관리",
+        "보안(실물)카드 신청",
+        "모바일 보안카드 발급",
+        "모바일카드 초대·승인",
+        "방문자 조회·관리",
+        "방문자 모바일카드 신청 승인"
+      ],
+      "note": "출입카드(보안/모바일/방문자) 발급·관리 = 사용자가 말한 '출입관리' 확인됨. 카드 발급/승인은 권한 부여 흐름. 상세: outputs/moduapp/service-card/card-screen-analysis.json",
+      "status": "analyzed"
+    },
+    {
+      "id": "SVC-mys1",
+      "name": "마이에스원(계약/청구/입금)",
+      "output_folder": "outputs/moduapp/service-mys1/",
+      "screens": [],
+      "status": "partially-analyzed",
+      "blocks": [
+        "계약정보 › 부가서비스(이용 현황·신규 신청·해지 신청·신청 이력)"
+      ],
+      "note": "계약/청구/입금. 계약정보 안 칩(…요금·우편물 주소·종합안심플랜·부가서비스)으로 나뉨. 부가서비스 상세: outputs/moduapp/service-mys1/addon-context-components.json"
+    },
+    {
+      "id": "SVC-cs",
+      "name": "고객센터",
+      "output_folder": "outputs/moduapp/service-cs/",
+      "screens": [],
+      "status": "support-area",
+      "note": "담당자 기준 핵심 '서비스'가 아니라 지원/소통 영역(뉴스/공지·1:1문의·자주하는질문·방문예약·자료실)"
+    }
   ],
   "global_navigation": {
-    "bottom_tab_bar": ["홈", "경비(시스템경비)", "영상", "전체메뉴"],
+    "bottom_tab_bar": [
+      "홈",
+      "경비(시스템경비)",
+      "영상",
+      "전체메뉴"
+    ],
     "note": "1차 네비게이션 = 4탭(아이콘+레이블 확인). 경비·영상이 핵심 서비스로 탭 노출. 출처: 공통 > 공통 Navigation + 전체메뉴 (node 30245:26270)",
     "status": "confirmed"
   },
@@ -40,15 +139,53 @@
     "source": "공통 > 전체메뉴 화면 (node 30245:26270)",
     "note": "전체메뉴(4번째 탭)에 전 서비스가 그룹으로 나열됨 — 화면 직접 판독으로 확인",
     "groups": {
-      "마이에스원/계약": ["계약정보", "서비스 권한", "청구·입금"],
-      "시스템경비": ["경비/해제(서비스 현황)", "모바일보고서", "경비/해제 이력", "긴급연락처 관리"],
-      "영상": ["영상보기(실시간/녹화)"],
-      "카드(출입)": ["카드 조회·관리", "실물카드 신청", "모바일카드 발급", "모바일카드 초대·승인", "방문자 조회·관리", "방문자카드 발급", "방문자카드 승인"],
-      "이벤트": ["진행중인 이벤트", "지난 이벤트", "당첨자 발표"],
-      "제휴": ["제휴 카드", "제휴 멤버"],
-      "소통": ["궁금해요 에스원", "고객의소리 에스원"],
-      "고객센터": ["뉴스/공지", "1:1 문의", "자주하는 질문", "방문예약 신청", "자료실"],
-      "기타": ["고객센터 전화 1599-3412", "로그아웃"]
+      "마이에스원/계약": [
+        "계약정보",
+        "서비스 권한",
+        "청구·입금"
+      ],
+      "시스템경비": [
+        "경비/해제(서비스 현황)",
+        "모바일보고서",
+        "경비/해제 이력",
+        "긴급연락처 관리"
+      ],
+      "영상": [
+        "영상보기(실시간/녹화)"
+      ],
+      "카드(출입)": [
+        "카드 조회·관리",
+        "실물카드 신청",
+        "모바일카드 발급",
+        "모바일카드 초대·승인",
+        "방문자 조회·관리",
+        "방문자카드 발급",
+        "방문자카드 승인"
+      ],
+      "이벤트": [
+        "진행중인 이벤트",
+        "지난 이벤트",
+        "당첨자 발표"
+      ],
+      "제휴": [
+        "제휴 카드",
+        "제휴 멤버"
+      ],
+      "소통": [
+        "궁금해요 에스원",
+        "고객의소리 에스원"
+      ],
+      "고객센터": [
+        "뉴스/공지",
+        "1:1 문의",
+        "자주하는 질문",
+        "방문예약 신청",
+        "자료실"
+      ],
+      "기타": [
+        "고객센터 전화 1599-3412",
+        "로그아웃"
+      ]
     },
     "status": "analyzed"
   },
@@ -59,8 +196,22 @@
   },
   "cross_service_flows": [],
   "assumption_vs_actual": {
-    "user_said": ["출입관리", "영상관리", "사용자 권한관리"],
-    "board_actual_sections": ["홈", "통합계정", "공통", "설정", "시스템경비", "영상", "카드", "마이에스원(계약/청구/입금)", "고객센터"],
+    "user_said": [
+      "출입관리",
+      "영상관리",
+      "사용자 권한관리"
+    ],
+    "board_actual_sections": [
+      "홈",
+      "통합계정",
+      "공통",
+      "설정",
+      "시스템경비",
+      "영상",
+      "카드",
+      "마이에스원(계약/청구/입금)",
+      "고객센터"
+    ],
     "notes": [
       "영상관리 → '영상' 섹션으로 일치",
       "출입관리 → '카드' 섹션(출입카드 발급·관리)으로 확인됨 (해결)",

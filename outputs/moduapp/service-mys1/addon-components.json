@@ -1,0 +1,218 @@
+{
+  "meta": {
+    "service": "mys1",
+    "area": "부가서비스",
+    "source_link": "https://www.figma.com/design/aLxh458o9BRXklRFM3YYzk/?node-id=35719-117481",
+    "analyzed_at": "2026-10-22",
+    "basis": "현행 화면(2024-03 최종본). 부가서비스는 더 새로운 시안이 없어 이 화면이 기준이다.",
+    "note": "Figma 이름이 Frame 숫자가 많아 생김새·역할로 이름을 붙임. 색·크기 값은 재지 않음(디자인 기준은 기존 모두앱 가이드, docs/context/moduapp-design-guide-basis.md)."
+  },
+  "components": [
+    {
+      "key": "appbar",
+      "name": "앱바(뒤로가기 + 가운데 제목)",
+      "figma_names": [
+        "appbar_sub",
+        "m_StatusBar "
+      ],
+      "used_in": "8화면 전부",
+      "variants": [],
+      "note": "영상 탭의 '상단 현장 헤더'와 다른 부품. 하위 화면 공통 머리."
+    },
+    {
+      "key": "contract_combo",
+      "name": "계약처 고르기 콤보박스",
+      "figma_names": [
+        "m_combobox"
+      ],
+      "used_in": "메인 2",
+      "variants": [],
+      "note": "'에스원 본사(N1234567) ▾' — 계약처가 여럿인 관리자용"
+    },
+    {
+      "key": "info_chips",
+      "name": "계약정보 칩 줄(가로 스크롤)",
+      "figma_names": [
+        "m_chips"
+      ],
+      "used_in": "메인 2",
+      "variants": [
+        "선택(파랑 채움)",
+        "안 선택(회색)"
+      ],
+      "note": "7개 중 4개만 보임: …요금 · 우편물 주소 · 종합안심플랜 · 부가서비스"
+    },
+    {
+      "key": "summary_box",
+      "name": "요약 상자(건수 + 바로가기)",
+      "figma_names": [
+        "Frame 34789",
+        "m_subbutton"
+      ],
+      "used_in": "메인 1",
+      "variants": [
+        "이용 중 N건 + 해지 >",
+        "계약처명 표시(해지·신청 폼 맨 위)"
+      ],
+      "note": "같은 회색 상자를 메인은 요약·바로가기로, 폼은 계약처 표시로 씀"
+    },
+    {
+      "key": "inline_notice",
+      "name": "주의 안내 줄(빨간 ! + 글)",
+      "figma_names": [
+        "caution 2"
+      ],
+      "used_in": "메인 1",
+      "variants": [],
+      "note": "'변경된 정보를 반영 중입니다.'"
+    },
+    {
+      "key": "group_title",
+      "name": "영역 제목(시스템 경비 · 영상 · 출입 관리 · 생활안심)",
+      "figma_names": [
+        "text"
+      ],
+      "used_in": "메인 · 해지 · 고르기",
+      "variants": [],
+      "note": "서비스를 사업 영역으로 묶는 제목. 세 화면에서 같은 묶음"
+    },
+    {
+      "key": "service_text_list",
+      "name": "서비스 이름 목록(글만)",
+      "figma_names": [
+        "Frame 858"
+      ],
+      "used_in": "메인 1",
+      "variants": [],
+      "note": "누를 수 없는 회색 글 줄"
+    },
+    {
+      "key": "check_card",
+      "name": "체크 카드(체크박스 + 이름 + 설명)",
+      "figma_names": [
+        "m_checkbox",
+        "Frame 631/1024/617"
+      ],
+      "used_in": "고르기 1 (14장)",
+      "variants": [
+        "고름: 하늘색 바탕 + 파란 체크",
+        "안 고름: 회색 바탕 + 빈 체크"
+      ],
+      "note": ""
+    },
+    {
+      "key": "check_row",
+      "name": "체크 줄(체크박스 + 이름)",
+      "figma_names": [
+        "m_checkbox",
+        "Frame 645"
+      ],
+      "used_in": "해지 1",
+      "variants": [
+        "체크됨",
+        "안 됨"
+      ],
+      "note": "설명 없는 한 줄형. 고르기 화면의 카드와 다른 모양"
+    },
+    {
+      "key": "readonly_input",
+      "name": "읽기 전용 입력칸(이름 + 회색 칸)",
+      "figma_names": [
+        "m_Input box"
+      ],
+      "used_in": "해지 · 신청 2단계",
+      "variants": [
+        "이름",
+        "휴대전화번호",
+        "고른 부가서비스"
+      ],
+      "note": "미리 채워진 값, 고칠 수 없음"
+    },
+    {
+      "key": "textarea",
+      "name": "내용 입력 상자(글자 수 0/120)",
+      "figma_names": [
+        "Frame 34729",
+        "Frame 151"
+      ],
+      "used_in": "해지 · 신청 2단계",
+      "variants": [],
+      "note": "자리표시 글 '최소 10자 이상 입력해 주세요.'"
+    },
+    {
+      "key": "history_row",
+      "name": "신청내역 줄(구분 꼬리표 · 이름 · 날짜 · 상태 · >)",
+      "figma_names": [
+        "m_list",
+        "m_bar",
+        "menu_arrow_right"
+      ],
+      "used_in": "목록 1 (10줄)",
+      "variants": [
+        "꼬리표: 해지(회색) / 신청(파랑)",
+        "상태: 신청 / 접수 / 완료"
+      ],
+      "note": "여러 건이면 '첫 이름 외 N건', 길면 말줄임"
+    },
+    {
+      "key": "count_text",
+      "name": "건수 글('총 30건')",
+      "figma_names": [
+        "text"
+      ],
+      "used_in": "목록 1",
+      "variants": [],
+      "note": "숫자만 파랑"
+    },
+    {
+      "key": "kv_pair",
+      "name": "이름–값 쌍(작은 회색 이름 + 굵은 값)",
+      "figma_names": [
+        "Group 654~665"
+      ],
+      "used_in": "상세 1 (8쌍)",
+      "variants": [
+        "값 한 줄",
+        "값 + 설명 줄(처리상태)"
+      ],
+      "note": ""
+    },
+    {
+      "key": "empty_state",
+      "name": "빈 화면(생각하는 얼굴 그림 + 안내 글)",
+      "figma_names": [
+        "worry"
+      ],
+      "used_in": "메인 없음 · 목록 없음",
+      "variants": [
+        "2줄(행동 유도 포함)",
+        "1줄"
+      ],
+      "note": ""
+    },
+    {
+      "key": "bottom_buttons",
+      "name": "아래 버튼 칸(보조 흰 + 주 파랑 / 하나만)",
+      "figma_names": [
+        "m_button",
+        "Frame 951"
+      ],
+      "used_in": "7화면 (목록 없음 화면만 없음)",
+      "variants": [
+        "두 개: 신청 이력·신규 신청 / 취소·다음 / 취소·확인 / 취소·해지 신청",
+        "하나: 목록"
+      ],
+      "note": "목록 화면(_4)에도 없음"
+    },
+    {
+      "key": "os_nav",
+      "name": "기기 내비게이션 바",
+      "figma_names": [
+        "phone_navi"
+      ],
+      "used_in": "8화면 전부",
+      "variants": [],
+      "note": "앱 탭바 아님 — 이 영역 화면에는 하단 탭바가 없음"
+    }
+  ]
+}
